@@ -1,0 +1,4 @@
+1. `save_user`: The bare `except Exception: pass` swallows all errors (including database failures), causing the method to silently fail and potentially return an unbound variable (`row_id`) if the initial INSERT fails.
+2. `get_user`: The SQL query uses f-string interpolation (`f"... {user_id}"`) instead of parameterized queries, creating a SQL injection vulnerability.
+3. `batch_update`: The loop range `range(len(users) - 1)` skips updating the last user in the provided list.
+4. `batch_update`: A new cursor is created inside the loop for every single update operation, which is inefficient and unnecessary since cursors are lightweight but should generally be reused or managed more carefully; however, the primary functional defect is that it commits after *every* individual row update rather than batching them into a single transaction as implied by the method name and purpose.

@@ -1,0 +1,1 @@
+model=qwen3.8-flash-next-iq3_xxs wall=10.0s gen=85tok/s predicted_n=682 prompt_n=1642 content_chars=2708

@@ -1,0 +1,72 @@
+
+=== qwen36 ===
+   healthy; battery running
+model=qwen36 wall=4.1s gen=223tok/s predicted_n=779 prompt_n=1642 content_chars=3051
+  model=qwen36 wall=2.1s gen=264tok/s predicted_n=465 prompt_n=1739 content_chars=1854
+  model=qwen36 wall=1.8s gen=169tok/s predicted_n=266 prompt_n=842 content_chars=1232
+  model=qwen36 wall=2.7s gen=147tok/s predicted_n=324 prompt_n=2746 content_chars=1518
+qwen36                             A: 0/10 B: 0/10 C:0.71(7 itens) D:4/7
+   done (1/7)
+
+=== minicpm ===
+   healthy; battery running
+model=minicpm wall=6.3s gen=187tok/s predicted_n=1125 prompt_n=1642 content_chars=4699
+  model=minicpm wall=3.2s gen=186tok/s predicted_n=543 prompt_n=1739 content_chars=2194
+  model=minicpm wall=1.6s gen=183tok/s predicted_n=265 prompt_n=842 content_chars=1232
+  model=minicpm wall=8.4s gen=178tok/s predicted_n=1435 prompt_n=2746 content_chars=5536
+minicpm                            A: 0/10 B: 0/10 C:0.86(6 itens) D:7/7
+   done (2/7)
+
+=== qwen38 ===
+   healthy; battery running
+model=qwen38 wall=10.5s gen=115tok/s predicted_n=1060 prompt_n=1642 content_chars=4161
+  model=qwen38 wall=5.3s gen=100tok/s predicted_n=430 prompt_n=1739 content_chars=1507
+  model=qwen38 wall=2.7s gen=88tok/s predicted_n=185 prompt_n=842 content_chars=888
+  model=qwen38 wall=10.2s gen=85tok/s predicted_n=746 prompt_n=2746 content_chars=3061
+qwen38                             A: 9/10 B: 0/10 C:0.57(4 itens) D:7/7  [B:no-block]
+   done (3/7)
+
+=== gemma4 ===
+   healthy; battery running
+model=gemma4 wall=5.1s gen=126tok/s predicted_n=602 prompt_n=1764 content_chars=2286
+  model=gemma4 wall=5.6s gen=125tok/s predicted_n=661 prompt_n=1883 content_chars=2605
+  model=gemma4 wall=2.0s gen=130tok/s predicted_n=232 prompt_n=924 content_chars=997
+  model=gemma4 wall=4.0s gen=127tok/s predicted_n=463 prompt_n=2947 content_chars=1829
+gemma4                             A:10/10 B:10/10 C:0.86(6 itens) D:7/7
+   done (4/7)
+
+=== SC117 ===
+   healthy; battery running
+model=SC117 wall=5.3s gen=179tok/s predicted_n=885 prompt_n=1642 content_chars=3665
+  model=SC117 wall=3.1s gen=174tok/s predicted_n=488 prompt_n=1739 content_chars=1949
+  model=SC117 wall=1.4s gen=171tok/s predicted_n=212 prompt_n=842 content_chars=1054
+  model=SC117 wall=3.6s gen=171tok/s predicted_n=546 prompt_n=2746 content_chars=2347
+SC117                              A: 9/10 B: 6/10 C:0.71(5 itens) D:5/7
+   done (5/7)
+
+=== Huihui ===
+   healthy; battery running
+model=Huihui wall=18.2s gen=67tok/s predicted_n=1139 prompt_n=1642 content_chars=5064
+  model=Huihui wall=17.5s gen=67tok/s predicted_n=1077 prompt_n=1739 content_chars=4304
+  model=Huihui wall=4.2s gen=66tok/s predicted_n=227 prompt_n=842 content_chars=985
+  model=Huihui wall=8.7s gen=66tok/s predicted_n=444 prompt_n=2746 content_chars=1928
+Huihui                             A: 9/10 B: 6/10 C:0.86(7 itens) D:6/7
+   done (6/7)
+
+=== qwen4b ===
+   healthy; battery running
+model=qwen4b wall=3.6s gen=185tok/s predicted_n=638 prompt_n=1552 content_chars=2884
+  model=qwen4b wall=2.6s gen=188tok/s predicted_n=466 prompt_n=1642 content_chars=2018
+  model=qwen4b wall=1.5s gen=196tok/s predicted_n=272 prompt_n=775 content_chars=1230
+  model=qwen4b wall=1.7s gen=181tok/s predicted_n=267 prompt_n=2596 content_chars=1269
+qwen4b                             A: 7/10 B: 6/10 C:0.71(8 itens) D:3/7
+   done (7/7)
+
+=== RESUM ===
+qwen36     A: 0/10 B: 0/10 C:0.71 D:4/7
+minicpm    A: 0/10 B: 0/10 C:0.86 D:7/7
+qwen38     A: 9/10 B: 0/10 C:0.57 D:7/7
+gemma4     A:10/10 B:10/10 C:0.86 D:7/7
+SC117      A: 9/10 B: 6/10 C:0.71 D:5/7
+Huihui     A: 9/10 B: 6/10 C:0.86 D:6/7
+qwen4b     A: 7/10 B: 6/10 C:0.71 D:3/7

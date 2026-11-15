@@ -1,0 +1,10 @@
+{
+ "ok": [
+  "tool_stat_file runs",
+  "tool_stat_file blocks escape",
+  "command_allowed rejects > redirect",
+  "command_allowed still allows echo",
+  "command_allowed still rejects rm -rf"
+ ],
+ "fail": []
+}

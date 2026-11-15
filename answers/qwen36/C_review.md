@@ -1,0 +1,7 @@
+1. `save_user`: The default mutable argument `tags=[]` creates a shared list across calls, causing unexpected mutation of tags between invocations.
+2. `save_user`: The bare `except Exception: pass` silently swallows all errors including database failures, leaving callers unaware that their data was never persisted.
+3. `get_user`: Uses f-string interpolation to embed `user_id` directly into SQL instead of parameterized queries, making this vulnerable to SQL injection attacks.
+4. `batch_update`: The loop uses `range(len(users) - 1)` which skips the last element in the input list, so the final user is never updated.
+5. `batch_update`: Calls `self.conn.commit()` inside the loop for each individual update instead of batching them into a single transaction, losing atomicity and degrading performance.
+6. `batch_update`: Does not check whether any rows were actually affected by each UPDATE (i.e., doesn't verify `cur.rowcount > 0`), so it may count users as "written" even when no matching row existed.
+7. `save_user`: If an exception occurs during tag insertion after the initial INSERT succeeds but before commit, the partially inserted user record remains in the database due to the swallowed exception and lack of rollback.

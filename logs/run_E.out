@@ -1,0 +1,29 @@
+##### qwen36
+  qwen36 healthy (10s)
+  model=qwen36 wall=18.0s gen=238tok/s predicted_n=3994 prompt_n=4232 content_chars=14349
+qwen36                   COMPLET     linies=415/401 (1.03) simbols=16/16 blocs=1 placehold=False nou=True 
+##### minicpm
+  minicpm healthy (10s)
+  model=minicpm wall=27.1s gen=152tok/s predicted_n=4008 prompt_n=4232 content_chars=14415
+minicpm                  COMPLET     linies=416/401 (1.04) simbols=16/16 blocs=1 placehold=False nou=True 
+##### gemma4
+  gemma4 healthy (10s)
+  model=gemma4 wall=41.3s gen=107tok/s predicted_n=4356 prompt_n=4598 content_chars=14352
+gemma4                   COMPLET     linies=414/401 (1.03) simbols=16/16 blocs=1 placehold=False nou=True 
+##### SC117
+  SC117 healthy (10s)
+  model=SC117 wall=29.0s gen=141tok/s predicted_n=4002 prompt_n=4232 content_chars=14399
+SC117                    COMPLET     linies=416/401 (1.04) simbols=16/16 blocs=1 placehold=False nou=True 
+##### Huihui
+  Huihui healthy (10s)
+  model=Huihui wall=80.2s gen=52tok/s predicted_n=3991 prompt_n=4232 content_chars=14341
+Huihui                   COMPLET     linies=415/401 (1.03) simbols=16/16 blocs=1 placehold=False nou=True 
+##### qwen4b
+  qwen4b healthy (5s)
+  model=qwen4b wall=28.5s gen=134tok/s predicted_n=3781 prompt_n=3945 content_chars=14626
+qwen4b                   COMPLET     linies=421/401 (1.05) simbols=16/16 blocs=1 placehold=False nou=True 
+##### Strata
+  Strata healthy (25s)
+  model=qwen3.8-flash-next-iq3_xxs wall=56.9s gen=74tok/s predicted_n=3998 prompt_n=4232 content_chars=14359
+Strata                   COMPLET     linies=415/401 (1.03) simbols=16/16 blocs=1 placehold=False nou=True 
+##### fi

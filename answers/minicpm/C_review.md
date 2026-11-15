@@ -1,0 +1,6 @@
+1. `save_user`: The default argument `tags=[]` creates a mutable shared state across all calls, which can lead to unexpected accumulation of tags; this should be `None` with internal initialization.
+2. `save_user`: The `except Exception: pass` block silently swallows all errors, making debugging impossible and potentially leaving the database in an inconsistent state where rows are inserted but commits fail or partial data exists.
+3. `get_user`: The function uses f-string interpolation (`f"SELECT ... WHERE id = {user_id}"`) instead of parameterized queries, creating a severe SQL injection vulnerability.
+4. `get_user`: While `cur.close()` is called in the `finally` block, the connection `self.conn` is never closed or managed via a context manager, leading to potential resource leaks if the repository instance persists or fails unexpectedly.
+5. `batch_update`: The loop range `range(len(users) - 1)` incorrectly iterates only up to the second-to-last element, skipping the last user in the `users` list.
+6. `batch_update`: The function commits inside the loop for each user, preventing atomicity; if a failure occurs mid-batch, half the updates will be persisted while the rest are lost, violating transactional integrity.

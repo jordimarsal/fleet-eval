@@ -1,0 +1,1 @@
+model=minicpm wall=8.4s gen=178tok/s predicted_n=1435 prompt_n=2746 content_chars=5536

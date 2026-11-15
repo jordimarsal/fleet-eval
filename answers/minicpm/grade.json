@@ -1,0 +1,61 @@
+{
+  "model": "minicpm",
+  "A": {
+    "blocks": 1,
+    "chars": 4686,
+    "passed": 9,
+    "failed": 1,
+    "syntax_ok": true,
+    "applied": true
+  },
+  "B": {
+    "blocks": 1,
+    "chars": 2181,
+    "passed": 6,
+    "failed": 4,
+    "syntax_ok": true,
+    "applied": true
+  },
+  "C": {
+    "found": [
+      "D1_mutable_default",
+      "D2_bare_except",
+      "D3_injection",
+      "D4_leak",
+      "D5_off_by_one",
+      "D7_transaction"
+    ],
+    "missing": [
+      "D6_falsy_id"
+    ],
+    "recall": 0.86,
+    "numbered_items": 6,
+    "false_positives_est": 0,
+    "functions_named": [
+      "batch_update",
+      "get_user",
+      "save_user"
+    ]
+  },
+  "D": {
+    "root_causes": {
+      "minute_collision": true,
+      "shared_root": true,
+      "resume_finished": true,
+      "find_open_none": true
+    },
+    "root_score": 4,
+    "fixes": {
+      "unique_path": true,
+      "never_resume_closed": true,
+      "hermetic_tests": true
+    },
+    "fix_score": 3,
+    "words": 769,
+    "over_300_words": true,
+    "names_exec_id_collision": true,
+    "names_env_pollution": true,
+    "total": 7,
+    "max": 7
+  }
+}

@@ -1,0 +1,4 @@
+__pycache__/
+_work_*/
+_probe_*/
+*.pyc

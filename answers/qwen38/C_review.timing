@@ -1,0 +1,1 @@
+model=qwen38 wall=2.7s gen=88tok/s predicted_n=185 prompt_n=842 content_chars=888

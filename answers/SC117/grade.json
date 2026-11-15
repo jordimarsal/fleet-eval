@@ -1,0 +1,61 @@
+{
+  "model": "SC117",
+  "A": {
+    "blocks": 1,
+    "chars": 3652,
+    "passed": 9,
+    "failed": 1,
+    "syntax_ok": true,
+    "applied": true
+  },
+  "B": {
+    "blocks": 1,
+    "chars": 1936,
+    "passed": 6,
+    "failed": 4,
+    "syntax_ok": true,
+    "applied": true
+  },
+  "C": {
+    "found": [
+      "D1_mutable_default",
+      "D2_bare_except",
+      "D3_injection",
+      "D5_off_by_one",
+      "D7_transaction"
+    ],
+    "missing": [
+      "D4_leak",
+      "D6_falsy_id"
+    ],
+    "recall": 0.71,
+    "numbered_items": 5,
+    "false_positives_est": 0,
+    "functions_named": [
+      "batch_update",
+      "get_user",
+      "save_user"
+    ]
+  },
+  "D": {
+    "root_causes": {
+      "minute_collision": true,
+      "shared_root": true,
+      "resume_finished": true,
+      "find_open_none": true
+    },
+    "root_score": 4,
+    "fixes": {
+      "unique_path": false,
+      "never_resume_closed": true,
+      "hermetic_tests": false
+    },
+    "fix_score": 1,
+    "words": 327,
+    "over_300_words": true,
+    "names_exec_id_collision": true,
+    "names_env_pollution": true,
+    "total": 5,
+    "max": 7
+  }
+}

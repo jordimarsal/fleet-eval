@@ -1,0 +1,1 @@
+model=gemma4 wall=5.6s gen=125tok/s predicted_n=661 prompt_n=1883 content_chars=2605

@@ -1,0 +1,1 @@
+model=qwen4b wall=2.6s gen=188tok/s predicted_n=466 prompt_n=1642 content_chars=2018

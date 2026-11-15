@@ -1,0 +1,176 @@
+We need answer user's request: implementer fix bugs in one complete file. Need output exactly one fenced python block containing complete corrected file src/notify/throttle.py, nothing else. We must analyze thoroughly.
+
+We have buggy throttle.py and tests spec. Need identify all bugs causing 5 failures. Let's reason.
+
+Current code:
+class Throttle:
+ init validates max_events <=0 raise, window <=0 raise. _events dict[str, deque[float]] = {}
+ allow(key): now=clock; events=setdefault(key,deque()); while events and events[0] < now - self._window: popleft(); if len(events)>=max: # refused call still proves active: remember it so spammer cannot keep probing for free. events.append(now); raise ThrottleExhausted(key)
+ events.append(now); return True
+ reset(key): self._events[key].clear()
+ remaining(key): now; events=self._events.get(key, deque()); while ...; return max-len(events)
+
+Tests:
+1 first_calls_allowed: t=3 window10 clock0. [allow a x3] == [True]*3. Current? Each allow appends. First three allowed yes. Pass.
+2 fourth blocked: after 3, len>=3 append then raise. Raises yes. But records extra event (bug maybe affects later). Test only raises pass? It passes probably. But bug in exhaustion recording may affect other tests.
+3 keys independent: max2. allow a,a,b all true. Current pass.
+4 window slides forward: max2 window10. now0 allow a twice. at now0 third raises (records at 0). now=10 allow a should be True. Current: before check drop events where < now-window =0. Events are [0,0,0]? Actually two allowed at 0 plus rejected at 0 appended => 3 zeros. Drop condition <0 none because equal not less. len=3 >=2 -> raise. So fail. If we remove rejected recording, events [0,0], still no drop (<0 false), len=2 -> raise. Wait test expects exactly one window later first events expired and allow True. With sliding window semantics, if window=10, events at t=0 should expire at now=10? They use condition < now - window currently; for now=10 threshold 0, event at 0 is not dropped. Need drop <=? Let's inspect test_events_expire_individually: t=0,5,9. At now=10 only t=0 expired -> one slot free. That means event at age 10 expires. Condition should be <= now - window? For now=10, threshold 0, drop events[0] <= 0 drops t=0. Then remaining slots max3-len(2)=1, allow true appends 10. Next call same now: events [5,9,10]; threshold 0; no drop; len=3 -> raise. Good.
+Test_window_slides_forward with max2: events [0,0]. At now=10 threshold 0; drop both (<=) => empty, allow true. Good.
+So bug #1 expiration comparison should be <= not < in both allow and remaining likely.
+
+Bug #2 exhaustion does not consume a slot: current records rejected calls. Tests expect refused call must NOT be recorded. So remove append before raise. The docstring comment says remember it but tests win. So just raise without append.
+
+Bug #3 reset of unused key no-op: current self._events[key].clear() raises KeyError if missing. Test expects no raise. Need use pop or get. Could do self._events.pop(key, None). But also maybe need clear existing. If key exists, pop removes deque entirely equivalent forget. Or if using setdefault? Use self._events.pop(key, None). That fixes.
+
+Any other bugs? Let's test all with these changes.
+
+Fixed code:
+allow:
+now = clock
+events = self._events.setdefault(key, deque())
+while events and events[0] <= now - self._window: popleft
+if len(events) >= self._max: raise ThrottleExhausted(key)
+events.append(now); return True
+
+reset: self._events.pop(key, None)
+
+remaining:
+now=clock
+events=self._events.get(key, deque())
+while events and events[0] <= now - self._window: popleft
+return self._max - len(events)
+
+Check remaining for unknown key returns max. Good. It mutates deque from dict? For known key yes. For unknown creates temporary empty not stored; fine.
+
+Potential issue: remaining should not record event, it doesn't. Good.
+
+Now check tests in detail:
+test_first_calls_allowed: pass.
+fourth blocked: after 3 allowed, fourth len=3 raise no append. pass.
+keys independent: pass.
+window slides forward: max2. allow at 0 twice. third raises no append. now10 drop both because <=0, allow true. pass.
+expire individually: max3. t0 allow [0]; t5 [0,5]; t9 [0,5,9]. At t9 next call threshold -1 no drop len3 raise no append. now10 threshold0 drop 0 -> [5,9], len2 <3 append 10 => [5,9,10] true. Next same now threshold0 no drop (5>0), len3 raise. pass.
+exhaustion_does_not_consume_slot: max2. t0 allow two [0,0]. loop 5 times: each raises no append. now increments to 1..5 but still inside window? Let's simulate with fixed expiration <=. At t=1 threshold -9 none; ... t=5 threshold -5 none. At now=10 threshold0 drop both zeros => empty. allow true append10; allow true append10; next len2 raise. pass. Note if clock advanced during rejected calls, we don't prune in test? Actually allow called and prunes before check. No issue.
+reset unused: pop None no raise. allow true. pass.
+reset clears one key: max1. allow a [0], b[0]. allow a raises. reset a pops. allow a true. allow b still [0] at now0 threshold -10 no drop len1 raise. pass.
+remaining live budget: max3. remaining unknown returns3. allow a [0]; remaining known: threshold -10 no drop len1 return2. now10 threshold0 drop 0 -> empty return3. pass.
+negative settings: init ok.
+
+Need consider type hints from __future__ annotations okay. Need preserve module docstring maybe can adjust? User says complete corrected file. We can include same docstring or update? It says docstrings not authoritative when disagree. Could keep original docstring but comment about refused call active is wrong. Better remove/adjust comments to match tests. But output only code. Need ensure exactly one fenced python block. No explanation.
+
+Potential hidden nuance: ThrottleExhausted(key) passes key as message; fine. Exception class inherits Exception. Tests only pytest.raises.
+
+Could there be bug with setdefault in allow creating entry for rejected calls? If we don't append on rejection, events deque remains empty and stored. That's okay. But if many rejections before any allowed, dict gets empty deques. Not issue. However test_exhaustion_does_not_consume_slot after repeated raises at t=0..5: each allow prunes existing events (two zeros), sees full, raises without appending. The deque remains [0,0]. Good. At now=10 drops both. Fine.
+
+But what about reset: using pop removes key entirely. If later remaining uses get returns temp empty. Good. If reset called then allow works.
+
+Should we use `self._events.get(key)` and if None return max instead of temporary deque? Current with get(key, deque()) creates new deque each time unknown, while loop no effect. Return max. Fine. But potential subtle: if key not present, `deque()` default argument is evaluated every call, but harmless. Could write cleaner:
+events = self._events.get(key)
+if events is None: return self._max
+while ...
+return max - len(events)
+This avoids temporary. Either fine. Need complete file.
+
+Need think if expiration should be `<` or `<=` based on tests. Yes <=. Let's ensure "exactly one window later: the first events have expired" means event at t=0 expires when now-window == 0. So drop <= threshold. In sliding windows often use < to keep exactly window length half-open [now-window, now], but test says closed? They want expire at exact boundary. Use <=.
+
+Potential issue in test_events_expire_individually: after now=10 allow true appends 10. Then next raise because t=5 and t=9 still count. With <= threshold 0, yes. If there were event at 10 from allowed, it remains until >20. Good.
+
+Now output strict: one fenced python block containing COMPLETE corrected file src/notify/throttle.py, nothing else before or after. So final should be:
+```python
+"""..."""
+from __future__ import annotations
+...
+```
+No extra text. Ensure no trailing explanation. Could include docstring updated. Need maybe preserve class docstrings. The module docstring says contains bugs; we can change to normal? It's okay. But user asks fix bugs in file. We can provide complete corrected file. Maybe keep original module docstring? It says This module is COMPLETE but contains bugs. That would be inaccurate. Better replace with concise docstring. But tests don't care. Since output only code, any valid. To minimize surprise, keep same structure but remove bug comment. For example:
+"""Sliding-window rate limiter, keyed per caller."""
+...
+class Throttle:
+    """Allow at most ``max_events`` per ``window`` seconds, per key."""
+...
+        # drop everything that has left the window (including exact boundary)
+...
+            raise ThrottleExhausted(key)
+...
+    def reset(self, key: str) -> None:
+        """Forget every recorded event for *key*."""
+        self._events.pop(key, None)
+
+Need ensure `deque` imported. Yes.
+
+Let's consider if there are any other hidden bugs due to type of clock returning float, max_events int. If max_events negative rejected. Good.
+
+Could test_fourth_call_in_window_is_blocked fail if allow returns True list? No.
+
+Now maybe 5 failing currently: which ones? Let's count current failures:
+- test_first_calls pass
+- fourth blocked pass? It raises yes despite append. Pass.
+- keys independent pass
+- window slides forward fail due both < and append? With append definitely fail; without append still fail due <. So one bug combination.
+- expire individually fail due < (and maybe no append issue not relevant because rejection before now10 appends extra? Current: t0,t5,t9 allowed, reject at t9 appends 9 => events [0,5,9,9]. At now10 threshold0 with < none dropped len4>=3 raise, fail. If remove append but keep <, events [0,5,9], threshold0 none drop len3 raise fail. Need <=.)
+- exhaustion_does_not_consume_slot fail due append on reject. Also expiration < at now10 would keep zeros? If no append, events [0,0]; at now10 threshold0 < none drop len2 raise fail. But test expects full budget back. Need both. However if only fix append but not <, fail. If only fix < but not append, at loop rejected calls append many events, then at now10 threshold0 drops all <=0 including rejected at t=0..5? Wait rejected at t=1..5 are >0 so remain, causing fail. Need both.
+- reset unused fail KeyError.
+- reset clears one key pass? current reset works for existing keys; allow a after reset true; b still exhausted. Pass.
+- remaining live budget: current unknown returns max; after allow returns2; now10 with < doesn't drop event at 0, returns2 instead of3 fail. So failures: window slides, expire individually, exhaustion, reset unused, remaining = 5. Yes matches.
+
+Thus three bug categories: boundary comparison, rejection recording, reset missing key. Good.
+
+Need maybe consider `remaining` should prune expired before returning. It does. With <= fixed.
+
+Potential issue: In `allow`, using setdefault means if key absent and call is rejected? Can't be rejected if absent unless max<=0 (not allowed). So no empty entries from first reject. But repeated rejects on full key keep deque. Fine.
+
+Could there be memory leak due to never removing empty deques? Not tested. Could optionally remove if empty after pruning? But not necessary. If we do pop when empty in allow/remaining might alter behavior? No tests. Keep simple.
+
+Let's ensure syntax:
+from __future__ import annotations
+
+from collections import deque
+from collections.abc import Callable
+
+
+class ThrottleExhausted(Exception):
+    """Raised when a key has spent its whole budget inside the window."""
+
+
+class Throttle:
+    """Allow at most ``max_events`` per ``window`` seconds, per key."""
+
+    def __init__(self, max_events: int, window: float, clock: Callable[[], float]) -> None:
+        if max_events <= 0:
+            raise ValueError("max_events must be > 0")
+        if window <= 0:
+            raise ValueError("window must be > 0")
+        self._max = max_events
+        self._window = window
+        self._clock = clock
+        self._events: dict[str, deque[float]] = {}
+
+    def allow(self, key: str) -> bool:
+        """Record one event for *key*, or raise ThrottleExhausted."""
+        now = self._clock()
+        events = self._events.setdefault(key, deque())
+        # Drop everything that has left the window; an event exactly one
+        # window old is expired by contract.
+        while events and events[0] <= now - self._window:
+            events.popleft()
+        if len(events) >= self._max:
+            raise ThrottleExhausted(key)
+        events.append(now)
+        return True
+
+    def reset(self, key: str) -> None:
+        """Forget every recorded event for *key*."""
+        self._events.pop(key, None)
+
+    def remaining(self, key: str) -> int:
+        """How many events *key* may still spend right now."""
+        now = self._clock()
+        events = self._events.get(key)
+        if events is None:
+            return self._max
+        while events and events[0] <= now - self._window:
+            events.popleft()
+        return self._max - len(events)
+
+This is good. But note type annotation `deque[float]` requires Python 3.9? With from __future__ annotations okay but built-in generic at runtime? In class body variable annotation not evaluated? Actually with future annotations all annotations are strings, so fine on 3.7? deque subscripting maybe not available until 3.9 but as string no evaluation. However original had it. Fine.
+
+Need output exactly one fenced block. final only code block. Ensure no analysis outside. Done.

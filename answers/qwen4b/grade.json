@@ -1,0 +1,61 @@
+{
+  "model": "qwen4b",
+  "A": {
+    "blocks": 1,
+    "chars": 2871,
+    "passed": 7,
+    "failed": 3,
+    "syntax_ok": true,
+    "applied": true
+  },
+  "B": {
+    "blocks": 1,
+    "chars": 2005,
+    "passed": 6,
+    "failed": 4,
+    "syntax_ok": true,
+    "applied": true
+  },
+  "C": {
+    "found": [
+      "D3_injection",
+      "D4_leak",
+      "D5_off_by_one",
+      "D6_falsy_id",
+      "D7_transaction"
+    ],
+    "missing": [
+      "D1_mutable_default",
+      "D2_bare_except"
+    ],
+    "recall": 0.71,
+    "numbered_items": 8,
+    "false_positives_est": 3,
+    "functions_named": [
+      "batch_update",
+      "get_user",
+      "save_user"
+    ]
+  },
+  "D": {
+    "root_causes": {
+      "minute_collision": false,
+      "shared_root": true,
+      "resume_finished": true,
+      "find_open_none": false
+    },
+    "root_score": 2,
+    "fixes": {
+      "unique_path": false,
+      "never_resume_closed": true,
+      "hermetic_tests": false
+    },
+    "fix_score": 1,
+    "words": 172,
+    "over_300_words": false,
+    "names_exec_id_collision": false,
+    "names_env_pollution": true,
+    "total": 3,
+    "max": 7
+  }
+}

@@ -1,0 +1,5 @@
+1. save_user: The mutable default argument `tags=[]` causes tags to be shared across multiple calls to the method, leading to unexpected accumulation of tag data between invocations.
+2. save_user: The bare `except Exception: pass` swallows all database errors silently, meaning the caller receives a valid row ID even if the insert failed, leaving the database in an inconsistent state without any indication of failure.
+3. get_user: Using f-string interpolation for `user_id` instead of parameterized queries creates a SQL injection vulnerability because `user_id` is treated as part of the SQL syntax rather than a literal value.
+4. batch_update: The loop uses `range(len(users) - 1)` which excludes the last element from the update operation, resulting in the final user in the list being ignored.
+5. batch_update: Executing individual UPDATE statements with immediate commits inside the loop prevents atomicity; if the process fails midway through the loop, some users will be updated while others remain unchanged, violating transaction consistency.
