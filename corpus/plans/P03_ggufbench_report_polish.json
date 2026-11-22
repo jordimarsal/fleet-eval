@@ -1,0 +1,124 @@
+{
+ "task_id": "P03_ggufbench_report_polish",
+ "repo": "ggufbench",
+ "feature": "report_polish",
+ "title": "chore(progress): close report_polish (feature 8 done, report published)",
+ "pre_ref": "4740e7296c378d1a762fe6825501cd4ba48751f1~1",
+ "post_ref": "5ee0428247f5b2d880aaf6f55bfaff86b7579228",
+ "commits": [
+  "4740e7296c378d1a762fe6825501cd4ba48751f1",
+  "297c226890b64d21719e2f0707c137fb2ad2c8dd",
+  "5ee0428247f5b2d880aaf6f55bfaff86b7579228"
+ ],
+ "truth": {
+  "files": [
+   "README.md",
+   "harness/decisions/0010-report-ui-without-javascript.md",
+   "harness/feature_list.json",
+   "harness/progress/current.md",
+   "harness/progress/history.md",
+   "harness/progress/impl_report_polish.md",
+   "harness/progress/review_report_polish.md",
+   "harness/specs/report_polish/design.md",
+   "harness/specs/report_polish/requirements.md",
+   "harness/specs/report_polish/review.md",
+   "harness/specs/report_polish/tasks.md",
+   "html_report.py",
+   "tests/test_html_report.py"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6",
+   "R7",
+   "R8",
+   "R9",
+   "R10",
+   "R11",
+   "R12"
+  ],
+  "req_statements": {
+   "R1": "WHEN the pool holds both live and retired rows, the report SHALL render a tab bar with two panes — Board (live rows only) and Retired (retired rows only) — both present in the single document, one visible at a time.",
+   "R2": "WHEN the report is opened, the Board pane SHALL be the visible one by default (no storage, no JavaScript needed to reach it).",
+   "R3": "WHILE the pool holds no retired rows, the report SHALL render the board content without a tab bar and without the retired pane.",
+   "R4": "The Retired pane SHALL NOT contain the Recommendations section nor the KPI strip: it is a record, and a retired model can neither be recommended nor win a live headline.",
+   "R5": "The KPI strip (Best overall, Fastest (gen), Lowest latency, Newest model) SHALL be computed from the live rows only — no headline figure may come from a model that was deleted.",
+   "R6": "The Recommendations section SHALL appear after the KPI strip and before the \"Weighted global\" section.",
+   "R7": "Within every per-dimension list of the report (code, agent, tools, speed in ms, gen t/s, prompt t/s) the rows SHALL run from best performer to worst — descending for the higher-is-better scores and throughputs, ascending for latency — including the lists of the Retired pane.",
+   "R8": "The Board pane SHALL NOT render any retired row (the gray styling and the \"retired\" badge stay, inside the Retired pane).",
+   "R9": "The Retired pane SHALL state that these models are a record only — retired from the bench, unable to run again.",
+   "R10": "WHILE the pool holds retired rows, the header \"models\" chip SHALL state the two counts separately (e.g. `18 models (+16 retired)`); without retired rows it SHALL keep the single total.",
+   "R11": "The \"task sets\" chip SHALL link only to set blocks rendered in the Board pane; a signature that exists only among retired rows SHALL be named as text, never as a link to a block that cannot be seen.",
+   "R12": "The report SHALL remain self-contained — no external resource, at most the existing single inline script — and the two panes SHALL stay switchable with JavaScript disabled (pure CSS)."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Split rows into live/retired; two panes (board + retired) behind pure-CSS radio",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R8",
+     "R9",
+     "R12"
+    ]
+   },
+   "T2": {
+    "title": "KPI strip computed on live rows (`_kpis(live)`) and Recommendations moved right",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R4",
+     "R5",
+     "R6"
+    ]
+   },
+   "T3": {
+    "title": "Header chips — models count split into live + retired; task-sets chip links only",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R10",
+     "R11"
+    ]
+   },
+   "T4": {
+    "title": "Flip every per-dimension list to best→worst (`_dim_bars`: scores/tps descending,",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R7"
+    ]
+   },
+   "T5": {
+    "title": "Docs (`README.md` retired wording; ADR-0010 note) + traceability",
+    "depends_on": [
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12"
+    ]
+   }
+  }
+ }
+}

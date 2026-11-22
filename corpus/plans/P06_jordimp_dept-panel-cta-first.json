@@ -1,0 +1,61 @@
+{
+ "task_id": "P06_jordimp_dept-panel-cta-first",
+ "repo": "jordimp",
+ "feature": "dept-panel-cta-first",
+ "title": "feat(ui): department CTA above cards, filled; calmer smaller panel cards (F18)",
+ "pre_ref": "a68ec72f861d8aea9362baeb2b700799e18cf4e1~1",
+ "post_ref": "a68ec72f861d8aea9362baeb2b700799e18cf4e1",
+ "commits": [
+  "a68ec72f861d8aea9362baeb2b700799e18cf4e1"
+ ],
+ "truth": {
+  "files": [
+   "src/components/site/DeptPanel.astro",
+   "src/styles/site.css",
+   "tests/fixtures/parity.json"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5"
+  ],
+  "req_statements": {
+   "R1": "WHEN a department panel renders on the home page, the system SHALL render the department CTA — and, for the operations panel, the CV button too — between the panel header/line and the panel body content (cards, pills, ledger, principles or inspections copy).  Verification: after `npm run build`, a scan over `dist/{en,es,ca}/index.html` asserts that inside every `dept-panel` the first `.btn` occurs before the panel body (` .cards`, `.ledger`, `.prose`, `.pills` or `.q-plaque-copy`).",
+   "R2": "The department CTA buttons inside panels SHALL render with a filled yellow background (`var(--y1)`) at rest, with the fill-sweep overlay disabled, distinct from project cards.  Verification: built CSS contains the scoped rule (`.dept-panel__cta .btn { background: var(--y1) }` and its `::before` disabled); visual pass on the deployed home.",
+   "R3": "WHEN a project card inside a department panel is hovered or focused, the system shall not render the yellow fill-sweep overlay; the card SHALL keep a visible hover/focus affordance (lift ≤ 2px, hard shadow ≤ 5px, focus outline unchanged).  Verification: built CSS contains the scoped rules disabling `.dept-panel .card::before` and reducing the hover transform/shadow inside panels; keyboard focus pass keeps a visible indicator.",
+   "R4": "Project cards inside department panels SHALL render reduced sizing: padding 12px, gap 8px, summary font-size 0.88rem (currently 18px/16px padding, 12px gap, 0.92rem). Whole-card link heights stay ≥ 44px.  Verification: built CSS contains the scoped sizing rules; dist scan + visual pass; the F16 tap-target rule is respected (cards are multi-line links, height > 44px).",
+   "R5": "Outside the department panels the system shall not change: `/projects` index cards keep their current styling; `llms.txt` / `llms-full.txt` content is unchanged; all existing tests stay green. The parity fixture (`tests/fixtures/parity.json`) SHALL be regenerated to match the new panel markup order.  Verification: full `npx vitest run` green; `npm run distill:parity` produces a fixture whose diff covers only panel markup order; `git diff` limited to `DeptPanel.astro`, `site.css` and fixtures."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Move the `.dept-panel__cta` block in `src/components/site/DeptPanel.astro` from after the body conditionals to right after the `.dept-line` paragraph (operations keeps both buttons inside the block); adjust the CSS rule to `margin: 2px 0 16px` and review the mobile media query touching `.dept-panel__cta` (print block — hides the CTA, no change needed); after `npm run build`, assert on `dist/{en,es,ca}/index.html` that inside every `dept-panel` the first `.btn` precedes the panel body content",
+    "depends_on": [],
+    "refs": [
+     "R1"
+    ]
+   },
+   "T2": {
+    "title": "Add the scoped rules to `src/styles/site.css` per design §Concrete style changes — filled CTA (`.dept-panel__cta .btn` background `var(--y1)`, `::before` disabled), cards calm (`.dept-panel .card::before` disabled, hover lift ≤ 2px with 5px shadow, no ink text-flip, focus-within keeps affordance), cards smaller (padding 12px, gap 8px, `.card__sum` 0.88rem); verify built CSS contains the rules and do a visual pass at desktop + mobile widths",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R2",
+     "R3",
+     "R4"
+    ]
+   },
+   "T3": {
+    "title": "Full battery — `harness/init.sh`, `npx vitest run`, `npm run check`, `npm run build`, `npm run distill:parity` (fixture diff must cover only panel markup order); assert `llms-full.txt` output unchanged; confirm `git diff` is limited to `DeptPanel.astro`, `site.css` and fixtures",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R5"
+    ]
+   }
+  }
+ }
+}

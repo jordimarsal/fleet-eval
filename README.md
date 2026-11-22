@@ -45,6 +45,34 @@ score 10/10 (A, B), the buggy file fails 5 tests (B), the diff passes
   instead of a file) scores 0 and is flagged; it is never reinterpreted as a
   capability result.
 
+## P battery (2026-11-22) — who is the best PLANNER?
+
+Motivació: el routing de farga escollia worker per A+B i reviewer per tradició
+(Strata), però no hi havia CAP mesura de planning. La font de veritat no és un
+pla escrit a mà: són **specs SDD reals ja implementades de l'estol** — el pla
+del model es nota contra el que REALMENT va passar:
+
+| veritat | d'on |
+|---|---|
+| fitxers canviats | `git diff --name-only <pre>..<post>` del commit real de la feature |
+| requisits aprovats | `requirements.md` (Rn) de la spec |
+| descomposició real | `tasks.md` (Tn + depends_on + refs — un DAG parsegable) |
+
+I l'*input* és el repo ANTERIOR (requirements aprovats + arbre de fitxers al
+commit pare). **Contaminació zero**: repos privats locals, cap model de la
+flota pot haver-se memoritzat la solució.
+
+- Corpus: `python3 harvest_plans.py` (filtres: feature completa amb 1-6 commits,
+  3-15 fitxers canviats, ≥2 requisits, ≥3 tasques) → 12 tasques de 6 repos.
+- Runner: `python3 run_P.py [slug ...]`; grader: `grade_plans.py`.
+- P score = **0.55 × file_f1** (recall+precision del llistat FILES contra els
+  fitxers reals, matching tolerant per tail/basename) **+ 0.30 × coverage**
+  (requisits mapats a tasques) **+ 0.15 × breakdown** (TASKS parsejable, cap
+  dependència penjant, GATES amb tests). Tot mecànic: no LLM judge.
+- Limitació declarada: el pla real és UN camí vàlid — la nota mesura resultats
+  (fitxers/requisits), no prosa. I el code-by-lang de ggufbench segueix sent la
+  font per al worker per idioma (fleet-eval és python-only a A/B/E).
+
 ## Results (2026-11-15; +2 models 2026-11-22)
 
 | model | A impl | B fix | C rev | D diag | E compl | E func | wall | t/s |
@@ -116,6 +144,14 @@ llm_dispatch.py                        the dispatch driver (VERSIONED since 2026
                                        copy and fall back to the historical paths
                                        ../ and /tmp/opencode, keep them in sync)
 grade.py / grade_E.py / check_E.py     mechanical graders (one -q for pytest!)
+harvest_plans.py                       build the P corpus: real SDD specs of the
+                                       estol → planning tasks (file-set from the
+                                       real commit, approved requirements, real
+                                       task DAG; private repos = zero leakage)
+prompts/P/ + corpus/plans/             the P prompts and their ground truth
+run_P.py / grade_plans.py              run + mechanical grade of the P battery
+                                       (file_f1 0.55 · requirement coverage 0.30 ·
+                                       breakdown/gates 0.15 — no LLM judge)
 answers/<slug>/                       raw answers, .timing, grade*.json
 final_table.json                      the table above, machine-readable
 ```

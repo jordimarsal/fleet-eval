@@ -1,0 +1,66 @@
+{
+ "task_id": "P02_dev-lab_readme_smoke",
+ "repo": "dev-lab",
+ "feature": "readme_smoke",
+ "title": "feat(content): readme_smoke — README humà i smoke-test de build dins npm test",
+ "pre_ref": "59ecddf0663c3f931df887b32c318168945be88d~1",
+ "post_ref": "ff02a9a1f4603695a45e8e4366729b18cb6cb874",
+ "commits": [
+  "59ecddf0663c3f931df887b32c318168945be88d",
+  "be740814433d961b7e4f23be5fa966b76e5a2d86",
+  "ff02a9a1f4603695a45e8e4366729b18cb6cb874"
+ ],
+ "truth": {
+  "files": [
+   "README.md",
+   "harness/feature_list.json",
+   "harness/progress/backlog.md",
+   "harness/progress/current.md",
+   "harness/progress/history.md",
+   "harness/progress/impl_kates_python_js.md",
+   "harness/specs/kates_python_js/APPROVAL",
+   "harness/specs/kates_python_js/design.md",
+   "harness/specs/kates_python_js/requirements.md",
+   "harness/specs/kates_python_js/review.md",
+   "harness/specs/kates_python_js/tasks.md",
+   "tests/build_smoke.test.js",
+   "tests/readme.test.js"
+  ],
+  "requirements": [
+   "R1",
+   "R2"
+  ],
+  "req_statements": {
+   "R1": "The repository shall contain a `README.md` at the root, in Catalan, that explains — with a title, an intro of what the lab is, a \"com arrencar\" section and a content map — how to run it (`harness/init.sh`, `python3 build.py`, obrir `index.html`) and where the study content lives (`md/`, quiz a `proves.html`), with a pointer to `AGENTS.md` for AI agents.",
+   "R2": "The test suite (`npm test`) shall execute `python3 build.py --check` as a smoke test that fails the suite when the build or a link check fails.  ## Verification notes - R1: testable mecànicament (`tests/readme.test.js` — existència, seccions i literals de comandes). - R2: testable mecànicament (`tests/build_smoke.test.js` — spawneja `python3 build.py --check`, exit 0) i negativament (simulant un fitxer trencat en un sandbox temporal? no: suficient comprovar exit 0 i que el test és part de la suite). - Impacte del smoke-test a les portes: `harness/init.sh` (que ja corre `npm test` i `build.py --check` per separat) passa a validar-lo dues vegades — cost ~1-2 s, assumit."
+  },
+  "tasks": {
+   "T1": {
+    "title": "`README.md` humà a l'arrel (català: què és, com arrencar amb `harness/init.sh`/`python3 build.py`/`index.html`/`proves.html`, mapa de contingut, per a agents → `AGENTS.md`) + `tests/readme.test.js` (R1)",
+    "depends_on": [],
+    "refs": [
+     "R1"
+    ]
+   },
+   "T2": {
+    "title": "`tests/build_smoke.test.js` — spawneja `python3 build.py --check` dins `npm test` i assert exit 0 (R2)",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R2"
+    ]
+   },
+   "T3": {
+    "title": "Tancament — `harness/progress/impl_readme_smoke.md` (taula R→test→fitxer), portes verdes (`npm test` + `build.py --check` + traçabilitat) i logs `harness/logs/readme_smoke/batch-{1,2}.log`",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R1",
+     "R2"
+    ]
+   }
+  }
+ }
+}

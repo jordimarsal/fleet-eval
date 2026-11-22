@@ -1,0 +1,64 @@
+{
+ "task_id": "P04_jordimp_cmd-code-copy",
+ "repo": "jordimp",
+ "feature": "cmd-code-copy",
+ "title": "feat(content): copyable install command in highlight lines (F19)",
+ "pre_ref": "56c3ecdbabbfdf51cf93f7b71f125230985a5161~1",
+ "post_ref": "56c3ecdbabbfdf51cf93f7b71f125230985a5161",
+ "commits": [
+  "56c3ecdbabbfdf51cf93f7b71f125230985a5161"
+ ],
+ "truth": {
+  "files": [
+   "src/components/site/CmdLine.astro",
+   "src/components/site/DeptCard.astro",
+   "src/lib/cmd-code.spec.ts",
+   "src/lib/cmd-code.ts",
+   "src/pages/[lang]/projects/[slug].astro",
+   "src/styles/site.css",
+   "tests/fixtures/parity.json"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4"
+  ],
+  "req_statements": {
+   "R1": "WHEN a rendered highlight contains the install command, the system SHALL wrap the command in a `<code>` element styled monospace with a background and border that distinguish it from surrounding prose.  Verification: dist scan of the project detail page and the tooling department page (en/es/ca) finds `<code` wrapping the command; built CSS contains the `.cmd-copy` rules (mono font, background, border).",
+   "R2": "WHEN the pointer hovers the code element — or it receives keyboard focus — the system SHALL reveal a copy affordance (icon) that copies the exact command text to the clipboard on activation, with visible \"copied\" feedback.  Verification: markup contains the `data-copy` affordance bound to the command (both the code text and its copy control); manual pass: hover shows the icon, click writes the command to the clipboard and shows the copied label (existing `[data-copy]` machinery).",
+   "R3": "The rendered line SHALL keep the command as selectable plain text, and the content source (`content.ts`) SHALL remain unchanged — the F17 content assertions stay green and `llms.txt`/`llms-full.txt` output is byte-identical.  Verification: full `npx vitest run` green without modifying F17 tests; `git diff` limited to the new util/spec/component, the two rendering surfaces, site.css and the parity fixture; llms snapshot untouched.",
+   "R4": "The segmentation SHALL be a pure, unit-tested helper: given a highlight line, it returns the text before and after the command plus the command itself; lines without the command pass through unchanged; HTML-escaping stays the responsibility of the rendering components (Astro's default), not the helper.  Verification: colocated `cmd-code.spec.ts` lands red first, then green: match case, no-match case, command at line start/end."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Create `src/lib/cmd-code.ts` with `splitCmdLine(text)` per design §Files (first occurrence of `npx skills add jordimarsal/harness`, three untouched segments, `null` on no-match) — but land the colocated red spec `src/lib/cmd-code.spec.ts` FIRST (match case, no-match, command at line start, command at line end); `npx vitest run src/lib/cmd-code.spec.ts` must fail before the implementation exists and pass after",
+    "depends_on": [],
+    "refs": [
+     "R4"
+    ]
+   },
+   "T2": {
+    "title": "Create `src/components/site/CmdLine.astro` per design (escaped text segments + `<code class=\"cmd-copy\" data-copy>` + hover/focus copy control, no `set:html`); render it in the project build log (`src/pages/[lang]/projects/[slug].astro`) and in the department floor highlights (`src/components/site/DeptCard.astro`); add the scoped `.cmd-copy` styles to `src/styles/site.css`; after `npm run build`, assert `dist/{en,es,ca}/projects/harness-standard/` and `dist/{en,es,ca}/departments/tooling/` contain `<code class=\"cmd-copy\"` with `data-copy=\"npx skills add jordimarsal/harness\"`, and other pages do not",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3"
+    ]
+   },
+   "T3": {
+    "title": "Full battery — `harness/init.sh`, `npx vitest run` (F17 content assertions untouched and green), `npm run check`, `npm run build`, `npm run distill:parity` (fixture diff covers only the command markup on affected pages), llms snapshot byte-identical; confirm `git diff` is limited to the new util/spec/component, the two surfaces, `site.css` and fixtures",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R3",
+     "R4"
+    ]
+   }
+  }
+ }
+}

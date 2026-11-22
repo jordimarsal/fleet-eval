@@ -1,0 +1,108 @@
+{
+ "task_id": "P07_mussol_download_jobs",
+ "repo": "mussol",
+ "feature": "download_jobs",
+ "title": "feat(jobs): run submitted jobs automatically and survive restarts",
+ "pre_ref": "af3cd9b92a5412fb8fd8d7cb7ecd2336aab6e568~1",
+ "post_ref": "af3cd9b92a5412fb8fd8d7cb7ecd2336aab6e568",
+ "commits": [
+  "af3cd9b92a5412fb8fd8d7cb7ecd2336aab6e568"
+ ],
+ "truth": {
+  "files": [
+   "harness/feature_list.json",
+   "harness/progress/history.md",
+   "harness/progress/impl_job_execution.md",
+   "harness/specs/job_execution/APPROVAL",
+   "harness/specs/job_execution/design.md",
+   "harness/specs/job_execution/requirements.md",
+   "harness/specs/job_execution/tasks.md",
+   "src/mussol/api/app.py",
+   "src/mussol/launcher.py",
+   "tests/test_api.py",
+   "tests/test_download_service.py",
+   "tests/test_job_store.py",
+   "tests/test_launcher.py",
+   "tests/test_module_boundaries.py",
+   "tests/test_web.py"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6",
+   "R7",
+   "R8"
+  ],
+  "req_statements": {
+   "R1": "The downloads module shall expose a `JobStatus` enum with `queued`, `downloading`, `transcoding`, `completed`, and `failed` members.",
+   "R2": "The system shall change a `DownloadJob` state only through behavior methods that return `Result` and reject invalid transitions.",
+   "R3": "When a URL is submitted, the system shall create one queued job per resolved track.",
+   "R4": "When a queued job runs, the system shall drive it through download, transcode, and store stages, updating its status at each stage, and any stage failure shall mark the job failed without escaping as an exception.",
+   "R5": "The system shall expose job submission, listing, and detail over HTTP with DTOs, and errors shall follow `problem+json`.",
+   "R6": "The system shall serve HTTP bound to `127.0.0.1` only.",
+   "R7": "The system shall track per-job progress between 0 and 100 across the pipeline stages.",
+   "R8": "When a submitted URL is not supported, the system shall return the typed error and create no jobs."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Implement JobStatus, JobId, DownloadJob and errors plus tests",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R2",
+     "R7"
+    ]
+   },
+   "T2": {
+    "title": "Implement YoutubeAdapter.download plus tests",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R4"
+    ]
+   },
+   "T3": {
+    "title": "Implement DownloadService submit/run plus tests",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R3",
+     "R4",
+     "R7",
+     "R8"
+    ]
+   },
+   "T4": {
+    "title": "Implement API DTOs, app and serve plus tests",
+    "depends_on": [
+     "T3"
+    ],
+    "refs": [
+     "R5",
+     "R6"
+    ]
+   },
+   "T5": {
+    "title": "Run full gates green (uv run pytest tests, ruff check, ruff format --check, mypy --strict, harness/init.sh)",
+    "depends_on": [
+     "T4"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8"
+    ]
+   }
+  }
+ }
+}
