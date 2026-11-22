@@ -32,7 +32,10 @@ mkdir -p "$FE/answers/$SLUG"
 if [ -s "$FE/answers/$SLUG/E_largefile.md" ]; then
   echo "  $SLUG: E ja hi és"
 else
-  python3 /tmp/opencode/llm_dispatch.py "$FE/prompts/E_largefile.md" \
+  # Dispatch driver: la còpia versionada del repo mana (fallback a /tmp/opencode).
+  DISPATCH="$FE/llm_dispatch.py"
+  [ -f "$DISPATCH" ] || DISPATCH=/tmp/opencode/llm_dispatch.py
+  python3 "$DISPATCH" "$FE/prompts/E_largefile.md" \
     "$FE/answers/$SLUG/E_largefile.md" "$API" "$PORT" 2>&1 | sed 's/^/  /'
 fi
 python3 "$FE/grade_E.py" "$SLUG" "$FE/answers/$SLUG"

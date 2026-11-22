@@ -111,6 +111,10 @@ prompts/                              the 5 prompts as sent
 task_{a..d}/                          fixtures + reference/ solutions
 orchestrate.py                        start → health → run → grade → stop, per model
 run_one.sh / master.sh / run_E*.sh     thin wrappers around the same dispatch
+llm_dispatch.py                        the dispatch driver (VERSIONED since 2026-11-22:
+                                       it was lost once — run_one/run_E prefer this
+                                       copy and fall back to the historical paths
+                                       ../ and /tmp/opencode, keep them in sync)
 grade.py / grade_E.py / check_E.py     mechanical graders (one -q for pytest!)
 answers/<slug>/                       raw answers, .timing, grade*.json
 final_table.json                      the table above, machine-readable
