@@ -28,19 +28,16 @@ CTX = 32768                  # prompt dels tests + digest; més que prou
 
 EXEC_PROMPT = """You are an implementer working from a plan. Implement it so the provided tests pass.
 
---- PLAN ---
+--- PLAN (defines which files to create and where) ---
 {plan}
 
---- REPOSITORY FILE TREE (before implementation) ---
-{tree}
-
---- EXISTING SOURCE FILES (before implementation, excerpts) ---
+--- EXISTING SOURCE FILES (before implementation, excerpts — for style/imports only) ---
 {digest}
 
 --- TESTS THE RESULT MUST PASS (read carefully: they define the exact API) ---
 {tests}
 
-Output ONLY the files the plan asks for, each in this format:
+Output ONLY the files the plan asks for, at EXACTLY the paths the plan lists, in this format:
 
 === FILE: relative/path.ext ===
 <file contents>
@@ -141,6 +138,36 @@ def _dispatch(prompt: str, out_path: Path, api_model: str, port: int = 8999) -> 
     return out_path.read_text(encoding="utf-8") if out_path.exists() else ""
 
 
+def baseline_tests(task_id: str, d: dict, repo: Path) -> tuple[int, int]:
+    """Codi REAL (post_ref) + tests → denominador fix i validació del sandbox.
+
+    Sense això, un codi d'executor que trenca imports fa caure el denominador
+    (vitest/pytest no compten els tests que no es poden col·leccionar) i el %
+    deixa de ser comparable. El baseline hauria de passar 100%.
+    """
+    cache = ANSWERS / "baseline" / f"{task_id}.json"
+    if cache.exists():
+        j = json.loads(cache.read_text(encoding="utf-8"))
+        return j["verds"], j["total"]
+    wt = S.ensure_worktree(d["repo"], d["post_ref"])
+    S.install_deps(wt)
+    # al post_ref els tests ja hi són; executem els de la feature
+    r = sh_git(repo, ["diff", "--name-only", d["pre_ref"], d["post_ref"]])
+    changed = set(r.stdout.splitlines())
+    pre_t = _pre_tests(repo, d["pre_ref"])
+    all_tests = S.test_files_at(repo, d["post_ref"])
+    feat = [p for p in all_tests if p not in pre_t or p in changed]
+    verds, total, out = S.run_tests(wt, feat, d["repo"])
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    cache.write_text(json.dumps({"task_id": task_id, "verds": verds, "total": total,
+                                 "tail": out[-500:]}, indent=2), encoding="utf-8")
+    return verds, total
+
+
+def sh_git(repo: Path, args: list[str]) -> subprocess.CompletedProcess:
+    return subprocess.run(["git"] + args, cwd=str(repo), capture_output=True, text=True)
+
+
 def run_one(task_id: str, plan_text: str, slug: str = "calibra") -> dict:
     d = load_task(task_id)
     repo = Path.home() / "Documents/CV/projects" / d["repo"]
@@ -171,8 +198,8 @@ def run_one(task_id: str, plan_text: str, slug: str = "calibra") -> dict:
             tests_txt_parts.append(f"--- {p} ---\n{txt[:8000]}")
     tests_txt = "\n\n".join(tests_txt_parts) or "(no tests)"
 
-    # 3. executor (amb els tests al davant)
-    prompt = EXEC_PROMPT.format(plan=plan_text, tree=tree_at(repo, d["pre_ref"]),
+    # 3. executor (amb els tests al davant; el PLA és l'única guia d'ubicació)
+    prompt = EXEC_PROMPT.format(plan=plan_text,
                                 digest=digest_at(repo, d["pre_ref"]), tests=tests_txt)
     out_md = ANSWERS / slug / "P2" / f"{task_id}.executor.md"
     out_md.parent.mkdir(parents=True, exist_ok=True)
@@ -193,14 +220,19 @@ def run_one(task_id: str, plan_text: str, slug: str = "calibra") -> dict:
     S.copy_tests(wt, repo, d["post_ref"])
 
     # 4. córrer tests de la feature
-    verds, total, out = S.run_tests(wt, feature_tests, d["repo"])
-    score = (verds / total) if total else 0.0
+    verds, total_run, out = S.run_tests(wt, feature_tests, d["repo"])
+    # denominador FIX: el total que dóna el codi real (post_ref), no el que
+    # deixa el codi de l'executor (un import trencat baixaria el total)
+    base_v, total = baseline_tests(task_id, d, repo)
+    total = total or total_run
+    score = min(verds / total, 1.0) if total else 0.0
 
     rec = {
         "task_id": task_id, "repo": d["repo"], "pre_ref": d["pre_ref"],
         "post_ref": d["post_ref"], "executor": EXECUTOR,
         "files_delivered": sorted(files), "n_written": n_written,
         "test_files": feature_tests, "verds": verds, "total": total,
+        "total_run": total_run, "baseline_verds": base_v,
         "score": round(score, 4), "wall_s": round(time.time() - t0, 1),
         "retry": retry_note, "test_output_tail": out[-1500:],
     }
@@ -262,8 +294,17 @@ def main() -> int:
         targets = ([(f"calibra_{EXECUTOR}", None)] if mode == "calibra"
                else [(s, s) for s in slugs])
         for slug, planner in targets:
-            n_done = n_skip = 0
+            n_done = n_skip = n_corrupt = 0
             for tid in with_tests:
+                # una tasca només és mesurable si el codi REAL passa els seus tests
+                d0 = load_task(tid)
+                repo0 = Path.home() / "Documents/CV/projects" / d0["repo"]
+                bv, bt = baseline_tests(tid, d0, repo0)
+                if not bt or bv != bt:
+                    n_corrupt += 1
+                    print(f"  [{slug}] {tid:44s} SKIP corpus corrupte "
+                          f"(baseline {bv}/{bt})", flush=True)
+                    continue
                 out = ANSWERS / slug / "P2" / f"{tid}.json"
                 if out.exists():
                     n_skip += 1
@@ -289,7 +330,7 @@ def main() -> int:
                 print(f"\n=== P2[{mode}] {slug} ===", flush=True)
                 print(f"executor={EXECUTOR} · tests verds: {tv}/{tt} "
                       f"({(tv/tt if tt else 0):.1%}) · {len(rows)} tasques "
-                      f"(nous={n_done} skip={n_skip})", flush=True)
+                      f"(nous={n_done} skip={n_skip} corrupte={n_corrupt})", flush=True)
                 for r in sorted(rows, key=lambda x: -x["score"]):
                     print(f"  {r['task_id']:46s} {r['verds']:2d}/{r['total']:2d}  {r['score']:.2f}",
                           flush=True)

@@ -23,7 +23,12 @@ FIXTURE_PAT = re.compile(r"fixtures?/|conftest\.py$", re.I)
 
 
 def sh(cmd: list[str], cwd: Path, timeout: int = 300) -> subprocess.CompletedProcess:
-    return subprocess.run(cmd, cwd=str(cwd), capture_output=True, text=True, timeout=timeout)
+    try:
+        return subprocess.run(cmd, cwd=str(cwd), capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired as e:
+        out = (e.stdout or "") if isinstance(e.stdout, str) else ""
+        err = (e.stderr or "") if isinstance(e.stderr, str) else ""
+        return subprocess.CompletedProcess(cmd, 124, out + "\n[TIMEOUT]", err)
 
 
 def ensure_worktree(repo_name: str, ref: str) -> Path:
@@ -80,7 +85,7 @@ def run_tests(wt: Path, files: list[str], repo_name: str) -> tuple[int, int, str
     if py:
         cmd = py_cmd(wt, ["-m", "pytest", "-q", "--no-header", "-x" if False else "--tb=no"] + py)
         r = sh(cmd, cwd=wt, timeout=300)
-        out_parts.append(r.stdout[-3000:])
+        out_parts.append((r.stdout + ("\n[stderr]\n" + r.stderr if r.stderr else ""))[-3000:])
         m = re.search(r"(\d+) passed", r.stdout)
         p = int(m.group(1)) if m else 0
         m2 = re.search(r"(\d+) failed", r.stdout)
@@ -97,7 +102,7 @@ def run_tests(wt: Path, files: list[str], repo_name: str) -> tuple[int, int, str
         else:
             cmd = ["node", "--test"] + js
         r = sh(cmd, cwd=wt, timeout=300)
-        out_parts.append(r.stdout[-3000:])
+        out_parts.append((r.stdout + ("\n[stderr]\n" + r.stderr if r.stderr else ""))[-3000:])
         # vitest: "N passed" / "Tests  N passed" ; node:test: "# pass N"
         m = re.search(r"Tests\s+(\d+)\s+passed", r.stdout) or re.search(r"(\d+)\s+passed", r.stdout)
         p = int(m.group(1)) if m else 0
