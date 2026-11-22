@@ -69,9 +69,11 @@ def run_tests(wt: Path, files: list[str], repo_name: str) -> tuple[int, int, str
     """Córrer els tests donats. Retorna (verds, total, output)."""
     if not files:
         return 0, 0, "(no test files)"
-    # separem per runner
-    py = [f for f in files if f.endswith(".py")]
-    js = [f for f in files if not f.endswith(".py")]
+    # separem per runner (sense snapshots ni fixtures com a tests executables)
+    runnable = [f for f in files
+                if not f.endswith(".snap") and not f.endswith(".json")]
+    py = [f for f in runnable if f.endswith(".py")]
+    js = [f for f in runnable if not f.endswith(".py")]
     verds = total = 0
     out_parts = []
     if py:
@@ -87,20 +89,31 @@ def run_tests(wt: Path, files: list[str], repo_name: str) -> tuple[int, int, str
         verds += p
         total += p + f + e
     if js:
-        runner = "vitest" if (wt / "vitest.config.ts").exists() or (wt / "vitest.config.mts").exists() else "node"
-        if runner == "vitest":
-            cmd = ["npx", "vitest", "run", "--reporter=basic"] + js
+        has_vitest = (wt / "vitest.config.ts").exists() or (wt / "vitest.config.mts").exists() \
+            or (wt / "vitest.config.js").exists()
+        if has_vitest:
+            cmd = ["npx", "vitest", "run", "--reporter=default"] + js
         else:
             cmd = ["node", "--test"] + js
         r = sh(cmd, cwd=wt, timeout=300)
         out_parts.append(r.stdout[-3000:])
-        # vitest: "N passed" / node:test: "# pass N"
-        m = re.search(r"(\d+)\s+passed", r.stdout)
+        # vitest: "N passed" / "Tests  N passed" ; node:test: "# pass N"
+        m = re.search(r"Tests\s+(\d+)\s+passed", r.stdout) or re.search(r"(\d+)\s+passed", r.stdout)
         p = int(m.group(1)) if m else 0
-        m2 = re.search(r"(\d+)\s+failed", r.stdout)
+        m2 = re.search(r"Tests\s+(\d+)\s+failed", r.stdout) or re.search(r"(\d+)\s+failed", r.stdout)
         f = int(m2.group(1)) if m2 else 0
+        # node:test format: "# pass 3"
+        if not p and not f:
+            m3 = re.search(r"#\s+pass\s+(\d+)", r.stdout)
+            m4 = re.search(r"#\s+fail\s+(\d+)", r.stdout)
+            p = int(m3.group(1)) if m3 else 0
+            f = int(m4.group(1)) if m4 else 0
+        # vitest suma "passed" amb "skipped"? no — passed és només verds
         verds += p
         total += p + f
+        # si vitest no va arrencar (startup error) i no hi ha comptes, marca 0/0 com a error
+        if total == 0 and ("Startup Error" in r.stdout or r.returncode not in (0, 1)):
+            out_parts.append(f"[vitest failed to start: rc={r.returncode}]")
     return verds, total, "\n".join(out_parts)
 
 
