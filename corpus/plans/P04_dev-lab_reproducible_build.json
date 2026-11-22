@@ -1,0 +1,101 @@
+{
+ "task_id": "P04_dev-lab_reproducible_build",
+ "repo": "dev-lab",
+ "feature": "reproducible_build",
+ "title": "feat(build): build reproduïble amb vendors al repo i validacions dures",
+ "pre_ref": "8edb3914e8b66b26f55a26c101d23c0c315389f5~1",
+ "post_ref": "8edb3914e8b66b26f55a26c101d23c0c315389f5",
+ "commits": [
+  "8edb3914e8b66b26f55a26c101d23c0c315389f5"
+ ],
+ "truth": {
+  "files": [
+   "build.py",
+   "harness/feature_list.json",
+   "harness/progress/history.md",
+   "harness/progress/impl_reproducible_build.md",
+   "harness/specs/reproducible_build/APPROVAL",
+   "harness/specs/reproducible_build/design.md",
+   "harness/specs/reproducible_build/requirements.md",
+   "harness/specs/reproducible_build/review.md",
+   "harness/specs/reproducible_build/tasks.md",
+   "index.html",
+   "tests/build.test.js",
+   "vendor/fonts/Fraunces.woff2",
+   "vendor/fonts/Inter.woff2",
+   "vendor/fonts/JetBrainsMono.woff2",
+   "vendor/fonts/fonts-local.css",
+   "vendor/highlight.min.js",
+   "vendor/marked.min.js"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6"
+  ],
+  "req_statements": {
+   "R1": "The repository shall contain every vendor input the build requires (`vendor/marked.min.js`, `vendor/highlight.min.js`, `vendor/fonts/fonts-local.css`, and the `vendor/fonts/*.woff2` files), and `build.py` shall source vendors and fonts from these in-repo paths instead of `/tmp/opencode/*`.",
+   "R2": "When a required vendor input is missing or empty, the build shall exit with a non-zero status and a clean error message naming the missing path (no Python traceback).",
+   "R3": "When a note cannot be assigned to any group, the build shall exit with a non-zero status reporting the unassigned slugs.",
+   "R4": "When an extra question fails schema validation, the build shall exit with a non-zero status reporting each rejected question.",
+   "R5": "The generated site shall not embed the build date; two consecutive builds on different days shall produce byte-identical outputs.",
+   "R6": "`build.py --check` shall run every content validation (group assignment, question validation, link check) without writing any output file, and shall exit non-zero on any validation error.  ## Verification notes - R1: fitxers vendor presents + `build.py` referencia els nous paths (test mecànic). - R2/R3/R4/R6: tests end-to-end en sandbox (còpia temporal del repo amb fixture   corrupta → assert exit != 0 i missatge esperat); cap mutació del repo real. - R5: doble build a la sandbox amb hash sha256 idèntic + footer de l'`index.html`   comès sense data. - Porta de la feature: `python3 build.py --check` (ara validació completa) +   `npm test`."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Crear `vendor/` (marked.min.js, highlight.min.js, fonts/fonts-local.css, fonts/*.woff2 — còpies byte-idèntiques dels outputs commitats) i apuntar `build.py` als nous paths amb `require_vendor()` (sortida neta si falta)",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R2"
+    ]
+   },
+   "T2": {
+    "title": "Refactoritzar validacions: `unassigned_notes(notes)` + `validate_questions()` executades a build i `--check`, amb `sys.exit` dur (R3, R4); el `--check` queda com a validació completa sense escriptura (R6)",
+    "depends_on": [],
+    "refs": [
+     "R3",
+     "R4",
+     "R6"
+    ]
+   },
+   "T3": {
+    "title": "Treure `datetime.date.today()` del footer de l'índex (text estàtic)",
+    "depends_on": [],
+    "refs": [
+     "R5"
+    ]
+   },
+   "T4": {
+    "title": "Crear `tests/build.test.js`: vendors presents + sandbox end-to-end (fixture sense vendor → R2; nota sense grup → R3; pregunta invàlida → R4; doble build amb sha256 idèntic → R5; --check valida sense escriure → R6)",
+    "depends_on": [
+     "T1",
+     "T2",
+     "T3"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6"
+    ]
+   },
+   "T5": {
+    "title": "Rebuild complet al repo (ara possible): verificar `git diff` de `p/*.html` buit (cross-check del mirror anterior), `index.html` només canvia el footer, assets regenerats idèntics; portes verdes + logs `harness/logs/reproducible_build/batch-{1,2}.log`",
+    "depends_on": [
+     "T4"
+    ],
+    "refs": [
+     "R1",
+     "R5",
+     "R6"
+    ]
+   }
+  }
+ }
+}

@@ -48,6 +48,14 @@ def main() -> int:
     if not corpus:
         print("corpus buit: corre harvest_plans.py primer", file=sys.stderr)
         return 1
+    # --ctx N: override del context del perfil (darrer -c guanya a llama.cpp). Útil
+    # quan el pin del .txt només carrega amb la màquina callada i la bateria P (que
+    # no mesura context) ha de córrer amb el despatx actiu. Queda al log del server.
+    ctx_override = None
+    if "--ctx" in sys.argv:
+        ctx_override = int(sys.argv[sys.argv.index("--ctx") + 1])
+        sys.argv.remove("--ctx")
+        sys.argv.remove(str(ctx_override))
     wanted = sys.argv[1:] or [s for s, f in O.FLEET.items()
                               if (O.MODELS / f).exists()]
     results: dict[str, dict] = {}
@@ -67,6 +75,8 @@ def main() -> int:
         print(f"\n=== {slug} ===", flush=True)
         O.stop_server()
         args = O.build_args(gguf)
+        if ctx_override:
+            args += ["-c", str(ctx_override)]
         (LOGS / f"{slug}.P.server.log").write_text(" ".join(args) + "\n")
         log = open(LOGS / f"{slug}.P.server.log", "a")
         proc = subprocess.Popen(args, stdout=log, stderr=subprocess.STDOUT,

@@ -1,0 +1,77 @@
+{
+ "task_id": "P02_atalaia_f8_ram_summary",
+ "repo": "atalaia",
+ "feature": "f8_ram_summary",
+ "title": "f8_ram_summary review APPROVED (5/5)",
+ "pre_ref": "b94ecda5e2cdc6c961f1ae302af0fb117a4597e1~1",
+ "post_ref": "a3ef66a74e86e0f3b5cb1e6cf2ce03050fca6fa2",
+ "commits": [
+  "b94ecda5e2cdc6c961f1ae302af0fb117a4597e1",
+  "8078167b75b55e9ba0a90884c4a285eb41a67abe",
+  "a3ef66a74e86e0f3b5cb1e6cf2ce03050fca6fa2"
+ ],
+ "truth": {
+  "files": [
+   "harness/feature_list.json",
+   "harness/progress/impl_f8_ram_summary.md",
+   "harness/progress/review_f8_ram_summary.md",
+   "harness/specs/f7_stop_all/APPROVAL",
+   "harness/specs/f8_ram_summary/design.md",
+   "harness/specs/f8_ram_summary/requirements.md",
+   "harness/specs/f8_ram_summary/review.md",
+   "harness/specs/f8_ram_summary/tasks.md",
+   "src/atalaia/api.py",
+   "src/atalaia/detectors.py",
+   "tests/test_api_system.py",
+   "tests/test_detectors.py",
+   "tests/test_web.py",
+   "web/app.js",
+   "web/index.html"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5"
+  ],
+  "req_statements": {
+   "R1": "WHEN a client requests `GET /api/system`, the system shall return `free_ram_mb` taken from `MemAvailable` in `/proc/meminfo` (converted to MB).",
+   "R2": "IF `/proc/meminfo` is missing or malformed, THEN the system shall return `free_ram_mb` as null without failing the request.",
+   "R3": "The UI top bar shall display the sum of `ram_mb` of every `up` entry and the free RAM from `/api/system`, refreshed on every poll.",
+   "R4": "WHEN any value is unavailable, the UI shall display `—` for that value.",
+   "R5": "The system summary read shall not require Docker or subprocess calls (direct file read of `/proc/meminfo`)."
+  },
+  "tasks": {
+   "T1": {
+    "title": "free_ram_mb (parse MemAvailable tolerant) + tests",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R2",
+     "R5"
+    ]
+   },
+   "T2": {
+    "title": "GET /api/system + tests",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R2"
+    ]
+   },
+   "T3": {
+    "title": "UI top bar (Σ serveis + lliure) refrescat per poll + tests estàtics",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R3",
+     "R4"
+    ]
+   }
+  }
+ }
+}

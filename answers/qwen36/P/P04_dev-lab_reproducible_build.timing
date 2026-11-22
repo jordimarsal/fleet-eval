@@ -1,0 +1,1 @@
+model=qwen36 wall=3.6s gen=211tok/s predicted_n=453 prompt_n=7805 content_chars=1719 reasoning_chars=0 budget=8000 attempts=1

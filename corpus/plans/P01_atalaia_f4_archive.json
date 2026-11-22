@@ -1,0 +1,130 @@
+{
+ "task_id": "P01_atalaia_f4_archive",
+ "repo": "atalaia",
+ "feature": "f4_archive",
+ "title": "f4_archive done (APPROVAL) + tancament de sessio",
+ "pre_ref": "576dc29b52bcb828d9fa3fbd06adecb4a81c7e7e~1",
+ "post_ref": "3135d1e38c7f04110bb1e6924b42ddf50ff532a7",
+ "commits": [
+  "576dc29b52bcb828d9fa3fbd06adecb4a81c7e7e",
+  "243e6f13b6f2e5dba90eabdec07142320bcfa9d2",
+  "3135d1e38c7f04110bb1e6924b42ddf50ff532a7"
+ ],
+ "truth": {
+  "files": [
+   "harness/feature_list.json",
+   "harness/progress/history.md",
+   "harness/progress/impl_f4_archive.md",
+   "harness/progress/review_f4_archive.md",
+   "harness/specs/f4_archive/APPROVAL",
+   "harness/specs/f4_archive/design.md",
+   "harness/specs/f4_archive/requirements.md",
+   "harness/specs/f4_archive/review.md",
+   "harness/specs/f4_archive/tasks.md",
+   "scripts/e2e_archive_demo.py",
+   "src/atalaia/api.py",
+   "src/atalaia/archive.py",
+   "tests/test_api_archive.py",
+   "tests/test_archive.py",
+   "tests/test_web.py",
+   "web/app.js",
+   "web/index.html",
+   "web/style.css"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6",
+   "R7",
+   "R8",
+   "R9",
+   "R10"
+  ],
+  "req_statements": {
+   "R1": "The system shall persist the set of archived project ids in a file under the user's state directory, surviving server restarts.",
+   "R2": "WHEN a client requests `POST /api/projects/{id}/archive`, the system shall add the id to the archived set and respond 202; archiving an already archived project shall succeed without error.",
+   "R3": "WHEN a client requests `POST /api/projects/{id}/unarchive`, the system shall remove the id from the archived set and respond 202; unarchiving a non-archived project shall succeed without error.",
+   "R4": "IF the id is unknown, THEN the system shall respond 404 for archive and unarchive requests.",
+   "R5": "The system shall include an `archived` boolean in every project payload returned by the list and detail endpoints.",
+   "R6": "WHEN the state file is missing or malformed, the system shall treat the archived set as empty and continue working.",
+   "R7": "The UI shall show two tabs — actius and arxivats — with counts, hiding archived projects from the actius tab and non-archived ones from the arxivats tab.",
+   "R8": "The UI shall offer an arxivar action in the detail drawer of every non-archived project and a desarxivar action for every archived one.",
+   "R9": "WHEN the archive state changes, the UI shall reflect the new tab assignment immediately after the next refresh.",
+   "R10": "The system shall not modify any file inside the scanned project trees to store archive state."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Implement archive.py (load/save idempotent, corrupt-tolerant) + tests",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R6"
+    ]
+   },
+   "T2": {
+    "title": "POST /api/projects/{pid}/archive i /unarchive (404 desconegut, 202 idempotent) + tests",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R2",
+     "R3",
+     "R4"
+    ]
+   },
+   "T3": {
+    "title": "camp archived a project_status (llista i detall) + tests",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R5"
+    ]
+   },
+   "T4": {
+    "title": "UI tabs actius/arxivats amb comptadors + filtratge + tests estàtics",
+    "depends_on": [
+     "T3"
+    ],
+    "refs": [
+     "R7",
+     "R9"
+    ]
+   },
+   "T5": {
+    "title": "UI botons arxivar/desarxivar al drawer + tests estàtics",
+    "depends_on": [
+     "T4"
+    ],
+    "refs": [
+     "R8"
+    ]
+   },
+   "T6": {
+    "title": "Full gates green + e2e (arxivar → desapareix d'actius → desarxivar → torna) + review/traçabilitat",
+    "depends_on": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10"
+    ]
+   }
+  }
+ }
+}

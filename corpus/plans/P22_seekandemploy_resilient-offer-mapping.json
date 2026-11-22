@@ -1,0 +1,160 @@
+{
+ "task_id": "P22_seekandemploy_resilient-offer-mapping",
+ "repo": "seekandemploy",
+ "feature": "resilient-offer-mapping",
+ "title": "feat(resilient-offer-mapping): skip unmappable offers instead of failing a source",
+ "pre_ref": "eb65ffce0fcacdb23e8a81c1cd1ed0469461bbe7~1",
+ "post_ref": "eb65ffce0fcacdb23e8a81c1cd1ed0469461bbe7",
+ "commits": [
+  "eb65ffce0fcacdb23e8a81c1cd1ed0469461bbe7"
+ ],
+ "truth": {
+  "files": [
+   "harness/progress/impl_resilient-offer-mapping.md",
+   "harness/progress/review_resilient-offer-mapping.md",
+   "harness/specs/resilient-offer-mapping/design.md",
+   "harness/specs/resilient-offer-mapping/requirements.md",
+   "harness/specs/resilient-offer-mapping/tasks.md",
+   "src/seekandemploy/collection.py",
+   "src/seekandemploy/connectors/sync.py",
+   "tests/test_collection.py",
+   "tests/test_connectors_sync.py"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6",
+   "R7",
+   "R8",
+   "R9",
+   "R10",
+   "R11",
+   "R12",
+   "R13",
+   "R14"
+  ],
+  "req_statements": {
+   "R1": "WHEN `JobConnector.map_offer` raises `ValueError` for one payload during `sync_source`, the system shall skip that payload and continue mapping the remaining payloads.",
+   "R2": "WHEN `sync_source` finishes, the system shall persist exactly one `JobOffer` per successfully mapped payload through `upsert_job_offer`.",
+   "R3": "The system shall not mark a source as failed when its only mapping failures are per-payload `ValueError` exceptions.",
+   "R4": "The system shall expose the number of payloads skipped by per-payload `ValueError` in `SyncResult` through a `skipped` field.",
+   "R5": "The system shall expose the number of payloads skipped by per-payload `ValueError` in one attempted source through a `SourceRun.skipped` field.",
+   "R6": "The system shall expose the total number of payloads skipped across a collection run through a `CollectionResult.skipped` property.",
+   "R7": "WHEN `sync_source` returns without raising for a source, the system shall set the source status to `active`, including when every payload was skipped.",
+   "R8": "WHEN the `api_url` derivation of a connector raises `ValueError`, the system shall propagate the `ValueError` out of `sync_source`.",
+   "R9": "WHEN the validation of a `GenericApiConfig` or a `GenericHtmlConfig` raises `ValueError`, the system shall propagate the `ValueError` out of `sync_source`.",
+   "R10": "WHEN `JobConnector.parse` raises `ValueError`, the system shall propagate the `ValueError` out of `sync_source`.",
+   "R11": "WHEN the transport raises `ConnectorError`, the system shall propagate the `ConnectorError` out of `sync_source`.",
+   "R12": "WHEN `sync_source` raises `ValueError` or `ConnectorError`, the system shall set the source status to `error`.",
+   "R13": "WHEN `sync_source` raises `ValueError` or `ConnectorError`, the system shall roll back every uncommitted `JobOffer` change of that source.",
+   "R14": "WHEN `sync_source` skips at least one payload, the system shall log one warning that names the source and reports the skipped count, using `%s` placeholders."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Add `skipped: int` to `SyncResult` and make `sync_source` skip a",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4"
+    ]
+   },
+   "T2": {
+    "title": "Add the module `logger` to `sync.py` and emit exactly one warning",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R14"
+    ]
+   },
+   "T3": {
+    "title": "Keep the fatal paths fatal by leaving `build_connector`, `api_url`,",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R8",
+     "R9",
+     "R10",
+     "R11"
+    ]
+   },
+   "T4": {
+    "title": "Add `skipped: int` to `SourceRun`, populate it from `result.skipped` on",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R5",
+     "R6",
+     "R7"
+    ]
+   },
+   "T5": {
+    "title": "Keep the fatal `ValueError`/`ConnectorError` paths failing the whole",
+    "depends_on": [
+     "T4"
+    ],
+    "refs": [
+     "R12",
+     "R13"
+    ]
+   },
+   "T6": {
+    "title": "Rewrite the superseded tests that encode `connector-framework` R37:",
+    "depends_on": [
+     "T1",
+     "T4"
+    ],
+    "refs": [
+     "R1",
+     "R3",
+     "R5",
+     "R7"
+    ]
+   },
+   "T7": {
+    "title": "Update the existing `SourceRun` equality/outcome assertions",
+    "depends_on": [
+     "T4"
+    ],
+    "refs": [
+     "R5"
+    ]
+   },
+   "T8": {
+    "title": "Run `harness/init.sh`, confirm every new and rewritten test passes,",
+    "depends_on": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T7"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R14"
+    ]
+   }
+  }
+ }
+}

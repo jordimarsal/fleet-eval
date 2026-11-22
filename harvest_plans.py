@@ -32,13 +32,17 @@ HERE = Path(__file__).resolve().parent
 OUT_CORPUS = HERE / "corpus" / "plans"
 OUT_PROMPTS = HERE / "prompts" / "P"
 
-MAX_PER_REPO = 3
-MAX_TASKS = 12
-FILES_MIN, FILES_MAX = 3, 15
+MAX_PER_REPO = 6
+MAX_TASKS = 36
+FILES_MIN, FILES_MAX = 3, 18
 REQ_MIN = 2
 TASK_MIN = 3
 TREE_CAP = 400
 COMMIT_MAX = 6
+DIGEST_FILES = 8      # fitxers font més grans: contingut al digest
+DIGEST_LINES = 60     # línies per fitxer al digest
+DIGEST_BYTES = 4000   # cap per fitxer (60 línies de minified poden ser enormes)
+MINIFIED = re.compile(r"\.min\.(js|css)$|\.bundle\.", re.I)
 
 TREE_NOISE = re.compile(
     r"(^|/)(node_modules|\.venv|venv|__pycache__|dist|build|\.git)/"
@@ -73,6 +77,9 @@ GATES
 
 --- REPOSITORY FILE TREE (before implementation{tree_note}) ---
 {tree}
+
+--- KEY SOURCE FILES (before implementation, excerpts) ---
+{digest}
 
 Write ONLY the plan (the three sections). No prose outside them."""
 
@@ -143,6 +150,43 @@ def tree_at(repo: Path, ref: str) -> list[str]:
     return paths[:TREE_CAP]
 
 
+SOURCE_EXT = (".py", ".ts", ".mjs", ".js", ".astro", ".sh", ".java",
+              ".css", ".scss", ".html", ".svelte", ".vue")
+
+
+def digest_at(repo: Path, ref: str, tree: list[str]) -> str:
+    """Digest determinista i CEC (requirement-blind): contingut (cap DIGEST_LINES)
+    dels DIGEST_FILES fitxers font més grans de l'arbre. Mai depèn dels requisits:
+    si el digest filtrés per paraules dels requisits, filtraria cap als fitxers de
+    la veritat i el file recall deixaria de mesurar res."""
+    r = run(repo, "ls-tree", "-r", "-l", ref)
+    sizes: dict[str, int] = {}
+    for line in r.stdout.splitlines():
+        m = re.match(r"^\d+\s+blob\s+[0-9a-f]+\s+(\d+)\t(.+)$", line)
+        if m:
+            sizes[m.group(2)] = int(m.group(1))
+    src = sorted((p for p in tree
+                  if p.lower().endswith(SOURCE_EXT) and p in sizes and sizes[p] > 0
+                  and not MINIFIED.search(p)),
+                 key=lambda p: -sizes[p])
+    parts = []
+    for p in src[:DIGEST_FILES]:
+        r = run(repo, "show", f"{ref}:{p}")
+        if r.returncode != 0:
+            continue
+        lines: list[str] = []
+        total = 0
+        for line in r.stdout.splitlines()[:DIGEST_LINES]:
+            b = len(line.encode("utf-8", "replace")) + 1
+            if total + b > DIGEST_BYTES:
+                break
+            lines.append(line)
+            total += b
+        parts.append(f"--- {p} (first {len(lines)} lines of {sizes[p]} bytes) ---\n"
+                     + "\n".join(lines))
+    return "\n".join(parts) if parts else "(no source files could be read)"
+
+
 def harvest_repo(repo_dir: Path, out: list[dict], state: dict) -> None:
     repo = repo_dir.resolve()
     name = repo.name
@@ -192,9 +236,11 @@ def harvest_repo(repo_dir: Path, out: list[dict], state: dict) -> None:
         task_id = f"P{len(out) + 1:02d}_{name}_{feature}"
         req_txt = "\n\n".join(f"{rid}: {s}" for rid, s in reqs)
         title = commits[-1][2]
+        digest = digest_at(repo, pre, tree)
         prompt = PROMPT.format(requirements=req_txt, title=title,
                                tree="\n".join(tree),
-                               tree_note="" if len(paths_tree(tree)) < TREE_CAP else ", truncated")
+                               tree_note="" if len(tree) < TREE_CAP else ", truncated",
+                               digest=digest)
         OUT_PROMPTS.mkdir(parents=True, exist_ok=True)
         OUT_CORPUS.mkdir(parents=True, exist_ok=True)
         (OUT_PROMPTS / f"{task_id}.md").write_text(prompt, encoding="utf-8")
@@ -216,10 +262,6 @@ def harvest_repo(repo_dir: Path, out: list[dict], state: dict) -> None:
         (OUT_CORPUS / f"{task_id}.json").write_text(
             json.dumps(truth, indent=1, ensure_ascii=False), encoding="utf-8")
         out.append(truth)
-
-
-def paths_tree(tree: list[str]) -> list[str]:
-    return tree
 
 
 def main() -> int:

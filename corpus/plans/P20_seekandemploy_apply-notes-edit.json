@@ -1,0 +1,104 @@
+{
+ "task_id": "P20_seekandemploy_apply-notes-edit",
+ "repo": "seekandemploy",
+ "feature": "apply-notes-edit",
+ "title": "chore(session): close apply-notes-edit as done (25/25) after completion gate",
+ "pre_ref": "d889fc6d0d5ec83383368bbe23206bad64bd2a36~1",
+ "post_ref": "d639c63240d1b064d2669e1b3577f12b4fcd119b",
+ "commits": [
+  "d889fc6d0d5ec83383368bbe23206bad64bd2a36",
+  "068a760496575a0a36c01aebba405ca10ad4bfb3",
+  "d639c63240d1b064d2669e1b3577f12b4fcd119b"
+ ],
+ "truth": {
+  "files": [
+   "README.md",
+   "harness/feature_list.json",
+   "harness/progress/current.md",
+   "harness/progress/history.md",
+   "harness/specs/apply-notes-edit/APPROVAL.md",
+   "harness/specs/apply-notes-edit/design.md",
+   "harness/specs/apply-notes-edit/requirements.md",
+   "harness/specs/apply-notes-edit/tasks.md",
+   "src/seekandemploy/cli.py",
+   "tests/test_applications_cli.py"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6",
+   "R7",
+   "R8"
+  ],
+  "req_statements": {
+   "R1": "WHEN `seekandemploy apply notes <id> --set <text>` runs against an existing application id, the system shall persist `<text>` as that application's `notes` field.",
+   "R2": "WHEN `seekandemploy apply notes <id> --clear` runs against an existing application id, the system shall persist NULL as that application's `notes` field.",
+   "R3": "WHEN a notes edit succeeds, the system shall print to stdout the application line in the tracker-glance format (`[<id>] <status> <company> - <title>`) followed by the report path (`report: <path>`).",
+   "R4": "WHEN a notes edit succeeds, the system shall regenerate the static HTML snapshot from the current database contents at the path given by `--out` (default `applications.html`).",
+   "R5": "WHEN notes are edited, the system shall not append any row to `application_event`.",
+   "R6": "WHEN notes are edited, the system shall not alter the application's status, company, title, url, salary expectation, salary currency, applied date, or source job-offer link.",
+   "R7": "WHEN `apply notes` receives an id with no matching application, the system shall print `error: application <id> not found` to stderr and exit with code 1, leaving the HTML snapshot untouched.",
+   "R8": "The system shall accept `--set <text>` and `--clear` only individually, requiring exactly one per invocation, and shall answer an invocation with both flags or with neither as a usage error with exit code 2."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Add the `notes` subcommand to the tracker CLI: `_cmd_notes`",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R6",
+     "R8"
+    ]
+   },
+   "T2": {
+    "title": "Write the CLI tests: set persists text and regenerates the report;",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8"
+    ]
+   },
+   "T3": {
+    "title": "Document the command in the README's \"Tracking applications\" CLI",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R2"
+    ]
+   },
+   "T4": {
+    "title": "Verify: `harness/init.sh` fully green; traceability R1–R8 mapped to",
+    "depends_on": [
+     "T2",
+     "T3"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8"
+    ]
+   }
+  }
+ }
+}

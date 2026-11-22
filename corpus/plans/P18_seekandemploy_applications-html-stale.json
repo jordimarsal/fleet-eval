@@ -1,0 +1,91 @@
+{
+ "task_id": "P18_seekandemploy_applications-html-stale",
+ "repo": "seekandemploy",
+ "feature": "applications-html-stale",
+ "title": "docs(progress): applications-html-stale completion notes",
+ "pre_ref": "a2d9ab8924dd1d7caae298ae323105946effc927~1",
+ "post_ref": "a9aca896260120eecfb2a40ae7b977c25abfe2ae",
+ "commits": [
+  "a2d9ab8924dd1d7caae298ae323105946effc927",
+  "a9aca896260120eecfb2a40ae7b977c25abfe2ae"
+ ],
+ "truth": {
+  "files": [
+   "applications.html",
+   "harness/feature_list.json",
+   "harness/logs/applications-html-stale/batch-1.log",
+   "harness/logs/applications-html-stale/batch-2.log",
+   "harness/progress/current.md",
+   "harness/progress/impl_applications-html-stale.md",
+   "harness/specs/applications-html-stale/APPROVAL.md",
+   "harness/specs/applications-html-stale/design.md",
+   "harness/specs/applications-html-stale/requirements.md",
+   "harness/specs/applications-html-stale/tasks.md",
+   "harness/specs/applications-html-stale/traceability.txt",
+   "src/seekandemploy/applications_report.py",
+   "src/seekandemploy/cli.py",
+   "src/seekandemploy/models.py",
+   "src/seekandemploy/repository.py",
+   "tests/test_applications_cli.py",
+   "tests/test_applications_report.py",
+   "tests/test_repository_stale.py"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5"
+  ],
+  "req_statements": {
+   "R1": "QUAN el snapshot es renderitza, EL SISTEMA HA DE marcar cada fila d'aplicació **oberta** amb més de `STALE_DAYS` dies de silenci de **proces** (classe visual `stale` i dies destacats).",
+   "R2": "LA capçalera de la secció Active HA DE comptar `N live · M stale >21d`, amb els mates nombres que `apply list --stale 21` perquè comparteixen constant i criteri.",
+   "R3": "QUAN el darrer event d'una aplicació és una nota de write-off, EL SISTEMA HA DE mostrar el chip `written off` a la seva fila.",
+   "R4": "QUAN es registra un write-off, EL SISTEMA HA DE no resetejar el rellotge de staleness: el darrer moviment de **proces** ignora les notes write-off (la comptabilitat no és activitat de la companyia).",
+   "R5": "EL SISTEMA HA DE tenir `STALE_DAYS` com a única constant compartida per al llindar (CLI informe, HTML i filtre), i una única funció de dies de silenci de proces per a report, CLI i filtre."
+  },
+  "tasks": {
+   "T1": {
+    "title": "`models.py`: `STALE_DAYS`, `WRITE_OFF_DETAIL_PREFIX`,",
+    "depends_on": [],
+    "refs": [
+     "R4",
+     "R5"
+    ]
+   },
+   "T2": {
+    "title": "`cli.py` `_days_silent` fa servir `days_since_process_movement`;",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R4",
+     "R5"
+    ]
+   },
+   "T3": {
+    "title": "`applications_report.py`: files `class=\"stale\"` amb dies destacats,",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R5"
+    ]
+   },
+   "T4": {
+    "title": "Gate complet + snapshot regenerat en viu sobre la BD real perquè",
+    "depends_on": [
+     "T1",
+     "T2",
+     "T3"
+    ],
+    "refs": [
+     "R2"
+    ]
+   }
+  }
+ }
+}

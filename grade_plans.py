@@ -28,7 +28,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 CORPUS = HERE / "corpus" / "plans"
-W_FILE, W_COV, W_BREAK = 0.55, 0.30, 0.15
+W_FILE, W_COV, W_BREAK = 0.85, 0.10, 0.05   # v2: file_f1 és l'únic discriminatiu
+                                            # (v1 0.55/0.30/0.15: coverage i breakdown
+                                            # eren constants per a tothom)
 
 SEC = re.compile(r"^(FILES|TASKS|GATES)\s*$", re.MULTILINE)
 
@@ -151,10 +153,10 @@ def main() -> int:
     per_task = []
     for tj in tasks:
         d = json.loads(tj.read_text(encoding="utf-8"))
-        # l'arbre pre el reconstruim del propi prompt (secció FILE TREE)
+        # l'arbre pre el reconstruim del propi prompt (secció FILE TREE, abans del digest)
         prompt = (HERE / "prompts" / "P" / f"{d['task_id']}.md").read_text(encoding="utf-8")
-        m = re.search(r"FILE TREE[^\n]*---\n(.*?)\n?--- Write ONLY", prompt, re.S) \
-            or re.search(r"REPOSITORY FILE TREE[^\n]*\n(.*?)$", prompt, re.S)
+        m = re.search(r"REPOSITORY FILE TREE[^\n]*\n(.*?)\n--- KEY SOURCE FILES",
+                      prompt, re.S)
         tree = [l.strip() for l in (m.group(1).splitlines() if m else []) if l.strip()]
         r = grade_one(d, answers / f"{d['task_id']}.md", tree)
         per_task.append(r)

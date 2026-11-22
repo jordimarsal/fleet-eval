@@ -1,0 +1,72 @@
+{
+ "task_id": "P14_mussol_interpreter_filter_sort",
+ "repo": "mussol",
+ "feature": "interpreter_filter_sort",
+ "title": "close(interpreter_filter_sort): traceability table and R1 coverage",
+ "pre_ref": "57c7cc8edf0535ce4f6cf3fa9ab54e9ba8ca903f~1",
+ "post_ref": "407cdc6d42302b243174f6eae356252f16ab00ee",
+ "commits": [
+  "57c7cc8edf0535ce4f6cf3fa9ab54e9ba8ca903f",
+  "407cdc6d42302b243174f6eae356252f16ab00ee"
+ ],
+ "truth": {
+  "files": [
+   "README.md",
+   "harness/feature_list.json",
+   "harness/progress/current.md",
+   "harness/progress/history.md",
+   "harness/progress/impl_interpreter_filter_sort.md",
+   "harness/specs/interpreter_filter_sort/APPROVAL",
+   "tests/test_download_service.py",
+   "tests/test_tagger.py"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5"
+  ],
+  "req_statements": {
+   "R1": "Each library record shall persist an interpreter (artist), resolved from the catalogue lookup, from the tags already embedded in the audio file, or from the title pattern, in that order.",
+   "R2": "Each item exposed over `GET /library` shall carry its interpreter, and the card shall show it.",
+   "R3": "The panel shall allow filtering the list by interpreter with a text query.",
+   "R4": "The panel shall allow sorting by title, interpreter or date added, with an ascending/descending direction.",
+   "R5": "Filtering and sorting shall survive the polling refreshes."
+  },
+  "tasks": {
+   "T1": {
+    "title": "artist column, tagger read_artist and service resolution plus tests",
+    "depends_on": [],
+    "refs": [
+     "R1"
+    ]
+   },
+   "T2": {
+    "title": "DTO artist, card line, controls and filter/sort state plus tests",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R2",
+     "R3",
+     "R4",
+     "R5"
+    ]
+   },
+   "T3": {
+    "title": "Run full gates green (uv run pytest tests, ruff check, ruff format --check, mypy --strict, harness/init.sh)",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5"
+    ]
+   }
+  }
+ }
+}

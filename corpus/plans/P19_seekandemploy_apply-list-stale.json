@@ -1,0 +1,78 @@
+{
+ "task_id": "P19_seekandemploy_apply-list-stale",
+ "repo": "seekandemploy",
+ "feature": "apply-list-stale",
+ "title": "feat(cli): apply list --stale DAYS mechanizes the live-process count",
+ "pre_ref": "f44c90ecb28528a7e7413475590d109296359433~1",
+ "post_ref": "f44c90ecb28528a7e7413475590d109296359433",
+ "commits": [
+  "f44c90ecb28528a7e7413475590d109296359433"
+ ],
+ "truth": {
+  "files": [
+   "harness/feature_list.json",
+   "harness/logs/apply-list-stale/batch-1.log",
+   "harness/logs/apply-list-stale/batch-2.log",
+   "harness/progress/current.md",
+   "harness/progress/impl_apply-list-stale.md",
+   "harness/specs/apply-list-stale/APPROVAL.md",
+   "harness/specs/apply-list-stale/design.md",
+   "harness/specs/apply-list-stale/requirements.md",
+   "harness/specs/apply-list-stale/tasks.md",
+   "harness/specs/apply-list-stale/traceability.txt",
+   "src/seekandemploy/applications_report.py",
+   "src/seekandemploy/cli.py",
+   "src/seekandemploy/models.py",
+   "src/seekandemploy/repository.py",
+   "src/seekandemploy/web/routes_applications.py",
+   "tests/test_applications_cli.py",
+   "tests/test_repository_stale.py"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5"
+  ],
+  "req_statements": {
+   "R1": "QUAN `apply list --stale DAYS` s'executa, EL SISTEMA HA DE llistar només les aplicacions **obertes** amb **més de DAYS dies** des del darrer moviment (el més tardà entre `applied_at` i l'últim event), ordenades per antiguitat descendent, cada fila amb els dies visibles.",
+   "R2": "EL SISTEMA HA DE tancar el llistat amb el recompte: `stale: X of N open applications (> DAYS days since the last event)` i `live: Y`.",
+   "R3": "EL SISTEMA HA DE comptar des del **darrer moviment**, no des de la data d'aplicació: un event recent (per exemple el `note` d'un follow-up enviat) reseteja el rellotge de l'aplicació.",
+   "R4": "EL SISTEMA HA DE excloure les aplicacions tancades (rejected, withdrawn) del llistat i del total N, i `--stale` HA DE ser incompatible amb `--all` (missatge d'error i exit 2).",
+   "R5": "EL SISTEMA HA DE no mutar res: cap event nou, cap regeneració del snapshot, cap línia `report:` a la sortida."
+  },
+  "tasks": {
+   "T1": {
+    "title": "`stale_open_applications(applications, *, days, today)` a",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R4"
+    ]
+   },
+   "T2": {
+    "title": "Flag `--stale DAYS` a `apply list` (`cli.py`): files amb `(Xd)`,",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R4",
+     "R5"
+    ]
+   },
+   "T3": {
+    "title": "Gate complet + execució en viu sobre la BD real perquè l'humà vegi",
+    "depends_on": [
+     "T1",
+     "T2"
+    ],
+    "refs": [
+     "R2"
+    ]
+   }
+  }
+ }
+}

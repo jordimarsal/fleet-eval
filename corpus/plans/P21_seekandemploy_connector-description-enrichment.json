@@ -1,0 +1,90 @@
+{
+ "task_id": "P21_seekandemploy_connector-description-enrichment",
+ "repo": "seekandemploy",
+ "feature": "connector-description-enrichment",
+ "title": "feat(connectors): real descriptions for workable and smartrecruiters",
+ "pre_ref": "dd7517035663774a574d2793cdd144338e6c6ec3~1",
+ "post_ref": "dd7517035663774a574d2793cdd144338e6c6ec3",
+ "commits": [
+  "dd7517035663774a574d2793cdd144338e6c6ec3"
+ ],
+ "truth": {
+  "files": [
+   "harness/feature_list.json",
+   "harness/logs/connector-description-enrichment/batch-1.log",
+   "harness/logs/connector-description-enrichment/batch-2.log",
+   "harness/progress/current.md",
+   "harness/progress/impl_connector-description-enrichment.md",
+   "harness/specs/connector-description-enrichment/APPROVAL.md",
+   "harness/specs/connector-description-enrichment/design.md",
+   "harness/specs/connector-description-enrichment/requirements.md",
+   "harness/specs/connector-description-enrichment/tasks.md",
+   "harness/specs/connector-description-enrichment/traceability.txt",
+   "src/seekandemploy/connectors/base.py",
+   "src/seekandemploy/connectors/smartrecruiters.py",
+   "src/seekandemploy/connectors/sync.py",
+   "src/seekandemploy/connectors/workable.py",
+   "tests/test_connectors_smartrecruiters.py",
+   "tests/test_connectors_sync.py",
+   "tests/test_connectors_workable.py"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6"
+  ],
+  "req_statements": {
+   "R1": "QUAN el connector de Workable sincronitza una font, EL SISTEMA HA DE persistir una descripció no buida per a cada oferta publicada el shortcode de la qual aparegui al payload d'enriquiment v1.",
+   "R2": "EL SISTEMA HA DE fer com a màxim **una** petició d'enriquiment per font i cicle de Workable, independentment del nombre d'ofertes de la font.",
+   "R3": "QUAN la petició d'enriquiment d'una font de Workable falla, EL SISTEMA HA DE completar el cicle amb el llistat intacte (descripcions NULL), registrar un warning i no avortar la resta de fonts.",
+   "R4": "QUAN el connector de SmartRecruiters sincronitza una oferta, EL SISTEMA HA DE persistir la descripció extreta de `jobAd.sections.jobDescription.text` del detall del posting.",
+   "R5": "QUAN el detall d'una oferta de SmartRecruiters falla, EL SISTEMA HA DE desar l'oferta sense descripció, registrar un warning i continuar amb la resta d'ofertes de la font.",
+   "R6": "EL SISTEMA HA DE no introduir al catàleg cap oferta que el llistat autoritatiu de Workable no reporti (les ofertes tancades del payload v1 no han d'arribar a `job_offer`)."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Contracte nou a `JobConnector` (`enrichment_url`, `parse_enrichment`) amb",
+    "depends_on": [],
+    "refs": [
+     "R2",
+     "R3"
+    ]
+   },
+   "T2": {
+    "title": "Workable: `enrichment_url` (widget v1 `details=true`) i `parse_enrichment`",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R6"
+    ]
+   },
+   "T3": {
+    "title": "SmartRecruiters: `detail_url_for` (detall del posting) i `parse_detail`",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R4",
+     "R5"
+    ]
+   },
+   "T4": {
+    "title": "Verificació en viu: un `collect` real ha de deixar workable i smartrecruiters",
+    "depends_on": [
+     "T1",
+     "T2",
+     "T3"
+    ],
+    "refs": [
+     "R1",
+     "R4"
+    ]
+   }
+  }
+ }
+}

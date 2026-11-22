@@ -1,0 +1,216 @@
+{
+ "task_id": "P23_seekandemploy_scoring-pending-count",
+ "repo": "seekandemploy",
+ "feature": "scoring-pending-count",
+ "title": "fix(scoring-pending-count): derive the idle scoring fragment from the database",
+ "pre_ref": "a129549562a9f1625b632ae0bd0e59a5fc5414f7~1",
+ "post_ref": "a129549562a9f1625b632ae0bd0e59a5fc5414f7",
+ "commits": [
+  "a129549562a9f1625b632ae0bd0e59a5fc5414f7"
+ ],
+ "truth": {
+  "files": [
+   "harness/feature_list.json",
+   "harness/progress/current.md",
+   "harness/progress/history.md",
+   "harness/progress/impl_scoring-pending-count.md",
+   "harness/progress/review_scoring-pending-count.md",
+   "harness/specs/scoring-pending-count/design.md",
+   "harness/specs/scoring-pending-count/requirements.md",
+   "harness/specs/scoring-pending-count/tasks.md",
+   "src/seekandemploy/repository.py",
+   "src/seekandemploy/web/catalogs.py",
+   "src/seekandemploy/web/models.py",
+   "src/seekandemploy/web/routes_scoring.py",
+   "src/seekandemploy/web/templates/partials/scoring_progress.html",
+   "tests/test_repository.py",
+   "tests/test_web_i18n.py",
+   "tests/test_web_models.py",
+   "tests/test_web_scoring_progress.py"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6",
+   "R7",
+   "R8",
+   "R9",
+   "R10",
+   "R11",
+   "R12",
+   "R13",
+   "R14",
+   "R15",
+   "R16",
+   "R17"
+  ],
+  "req_statements": {
+   "R1": "The `seekandemploy.repository` module shall expose `count_unscored_matches` with the signature `count_unscored_matches(session: Session) -> int`.",
+   "R2": "WHEN the database contains `n` `Match` rows whose `score` is NULL, `count_unscored_matches` shall return `n`.  ---  ## Fragment running state",
+   "R3": "WHILE the store snapshot is present with `running=True` and `total > 0`, the `GET /scoring/progress` fragment shall contain the HTML `<progress>` element with `value=\"{done}\"` and `max=\"{total}\"` and the localized running text.",
+   "R4": "WHILE the store snapshot has `running=True`, the system shall not issue the unscored-match count query when rendering `GET /scoring/progress`.  ---  ## Fragment idle state",
+   "R5": "WHEN the store snapshot is absent and the database contains at least one `Match` row whose `score` is NULL, the fragment shall contain the localized pending text carrying the number of unscored matches.",
+   "R6": "WHEN the store snapshot is absent and the database contains no `Match` row whose `score` is NULL, the fragment shall contain the localized up-to-date text.",
+   "R7": "WHEN the store snapshot has `running=False` and the database contains at least one `Match` row whose `score` is NULL, the fragment shall contain the localized pending text carrying the number of unscored matches.",
+   "R8": "WHEN the store snapshot has `running=False` and the database contains no `Match` row whose `score` is NULL, the fragment shall contain the localized up-to-date text.",
+   "R9": "WHEN the store snapshot has `running=False`, the fragment shall append the localized last-pass summary — carrying the snapshot's scored count, the snapshot's failed-profile count, and the database-derived pending count — after the pending or up-to-date text, on the same line.",
+   "R10": "WHILE no scoring pass is running (the store snapshot is absent or has `running=False`), the pending count displayed by the fragment shall equal the number of `Match` rows whose `score` is NULL in the database.",
+   "R11": "WHILE no scoring pass is running, the fragment shall contain no `<progress>` element.",
+   "R12": "WHEN the store snapshot is absent, the fragment shall contain no last-pass summary.  ---  ## Localized strings",
+   "R13": "The system shall define the `scoring_progress_pending` and `scoring_progress_up_to_date` strings in both the English and the Spanish catalog.",
+   "R14": "The `scoring_progress_pending` string shall carry the `{pending}` placeholder in both the English and the Spanish catalog.",
+   "R15": "The idle fragment shall be rendered in the locale resolved for the request.",
+   "R16": "The system shall keep the existing scoring-progress strings (`scoring_progress_running`, `scoring_progress_summary`, `scoring_progress_nothing`) defined in both the English and the Spanish catalog.  ---  ## Schema stability",
+   "R17": "The system shall not add a database migration or schema change for this feature."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Add `count_unscored_matches(session: Session) -> int` to",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R2"
+    ]
+   },
+   "T2": {
+    "title": "Add the repository tests in `tests/test_repository.py`:",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R2"
+    ]
+   },
+   "T3": {
+    "title": "Add `scoring_progress_pending` and `scoring_progress_up_to_date` to",
+    "depends_on": [],
+    "refs": [
+     "R13",
+     "R14",
+     "R16"
+    ]
+   },
+   "T4": {
+    "title": "Extend `tests/test_web_i18n.py::test_scoring_progress_catalog_keys_exist_in_both_locales`",
+    "depends_on": [
+     "T3"
+    ],
+    "refs": [
+     "R13",
+     "R14",
+     "R16"
+    ]
+   },
+   "T5": {
+    "title": "Rework the fragment DTO in `src/seekandemploy/web/models.py`: new",
+    "depends_on": [],
+    "refs": [
+     "R9",
+     "R10",
+     "R12"
+    ]
+   },
+   "T6": {
+    "title": "Rewrite `tests/test_web_models.py::test_scoring_progress_fragment_defaults_and_pending`",
+    "depends_on": [
+     "T5"
+    ],
+    "refs": [
+     "R9",
+     "R10",
+     "R12"
+    ]
+   },
+   "T7": {
+    "title": "Update `src/seekandemploy/web/routes_scoring.py`: add",
+    "depends_on": [
+     "T1",
+     "T5"
+    ],
+    "refs": [
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R12"
+    ]
+   },
+   "T8": {
+    "title": "Rewrite `src/seekandemploy/web/templates/partials/scoring_progress.html`",
+    "depends_on": [
+     "T3",
+     "T5"
+    ],
+    "refs": [
+     "R3",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12"
+    ]
+   },
+   "T9": {
+    "title": "Rewrite and extend the fragment tests in",
+    "depends_on": [
+     "T2",
+     "T7",
+     "T8"
+    ],
+    "refs": [
+     "R3",
+     "R5",
+     "R6",
+     "R7",
+     "R8",
+     "R9",
+     "R10",
+     "R11",
+     "R12"
+    ]
+   },
+   "T10": {
+    "title": "Add `test_scoring_progress_running_pass_does_not_query_the_database`",
+    "depends_on": [
+     "T7"
+    ],
+    "refs": [
+     "R4"
+    ]
+   },
+   "T11": {
+    "title": "Add the idle Spanish localization test",
+    "depends_on": [
+     "T3",
+     "T7",
+     "T8"
+    ],
+    "refs": [
+     "R15"
+    ]
+   },
+   "T12": {
+    "title": "Verify: `ruff check --fix --show-fixes .`, `black .`,",
+    "depends_on": [
+     "T9",
+     "T10",
+     "T11"
+    ],
+    "refs": [
+     "R17"
+    ]
+   }
+  }
+ }
+}

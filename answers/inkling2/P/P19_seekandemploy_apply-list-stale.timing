@@ -1,0 +1,1 @@
+model=inkling2 wall=43.9s gen=36tok/s predicted_n=891 prompt_n=11407 content_chars=1286 reasoning_chars=1940 budget=8000 attempts=1

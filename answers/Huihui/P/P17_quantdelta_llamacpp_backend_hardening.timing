@@ -1,0 +1,1 @@
+model=Huihui wall=10.0s gen=75tok/s predicted_n=474 prompt_n=5032 content_chars=1771 reasoning_chars=0 budget=8000 attempts=1

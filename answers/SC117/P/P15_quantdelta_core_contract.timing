@@ -1,0 +1,1 @@
+model=SC117 wall=2.3s gen=169tok/s predicted_n=279 prompt_n=4240 content_chars=1044 reasoning_chars=0 budget=8000 attempts=1

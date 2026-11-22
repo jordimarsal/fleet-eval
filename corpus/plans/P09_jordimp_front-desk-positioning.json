@@ -1,0 +1,143 @@
+{
+ "task_id": "P09_jordimp_front-desk-positioning",
+ "repo": "jordimp",
+ "feature": "front-desk-positioning",
+ "title": "Merge feature/f11-front-desk-positioning: reposition positioning copy (F11)",
+ "pre_ref": "e6b37adba68358a7c3a473121f82b2ba0e748508~1",
+ "post_ref": "e6b37adba68358a7c3a473121f82b2ba0e748508",
+ "commits": [
+  "e6b37adba68358a7c3a473121f82b2ba0e748508"
+ ],
+ "truth": {
+  "files": [
+   "src/data/content.spec.ts",
+   "src/data/content.ts",
+   "src/data/types.ts",
+   "src/lib/__snapshots__/llms-endpoint.spec.ts.snap",
+   "src/lib/llms-endpoint.spec.ts",
+   "src/pages/[lang]/departments/[dept].astro",
+   "tests/departments.spec.ts",
+   "tests/fixtures/parity.json",
+   "tests/home.spec.ts"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6",
+   "R7",
+   "R8",
+   "R9",
+   "R10",
+   "R11",
+   "R12",
+   "R13",
+   "R14",
+   "R15",
+   "R16",
+   "R17"
+  ],
+  "req_statements": {
+   "R1": "The system shall set `HOME.kicker` to exactly `SENIOR BACKEND ENGINEER — SYSTEMS YOU CAN AUDIT` (en), `INGENIERO BACKEND SENIOR — SISTEMAS QUE SE PUEDEN AUDITAR` (es) and `ENGINYER BACKEND SÈNIOR — SISTEMES QUE ES PODEN AUDITAR` (ca).",
+   "R2": "The system shall set `HOME.h1` to `One company. One engineer. <mark>Specs before code.</mark>` (en), `Una empresa. Un ingeniero. <mark>Specs antes que código.</mark>` (es) and `Una empresa. Un enginyer. <mark>Specs abans de codi.</mark>` (ca), preserving the single `<mark>` element in every locale.",
+   "R3": "The system shall set `HOME.stand` to `Jordimp & Co. is the working name of one engineer: backend systems, event pipelines and applied AI, designed, built and audited by the same pair of hands since <b>2017</b>. Currently inside a telco platform team. Walk-ins: roles, repos, or a short spec-first engagement.` (en), its faithful Spanish translation `Jordimp & Co. es el nombre de trabajo de un solo ingeniero: sistemas backend, pipelines de eventos e IA aplicada, diseñados, construidos y auditados por el mismo par de manos desde <b>2017</b>. Ahora, dentro de un equipo de plataforma telco. Entrada libre: roles, repos o un encargo corto con spec primero.` (es) and the MILLORES §2 Catalan text adapted to the markup `Jordimp & Co. és el nom de feina d’un sol enginyer: sistemes backend, pipelines d’esdeveniments i IA aplicada, dissenyats, construïts i auditats pel mateix parell de mans des del <b>2017</b>. Ara, dins d’un equip de plataforma telco. Entrada lliure: rols, repos, o un encàrrec curt amb spec primer.` (ca) — each preserving the `<b>2017</b>` element.",
+   "R4": "The system shall expose a new typed `offer` block on `FrontdeskPageContent` (`src/data/types.ts`) whose English strings are exactly:  - `offer.openTitle.en = 'Open for'` - `offer.openItems.en = ['Senior / staff backend roles — platform, events, or applied AI with measurable retrieval.', 'Short spec-first engagements (4–8 weeks). If it can’t be written down, it doesn’t start.', 'Questions about a floor or a repo. No tracking, no funnel.']` - `offer.notOpenTitle.en = 'Not open for'` - `offer.notOpenItems.en = ['Vibe-coded MVPs, “add ChatGPT to our app”, or unbounded retainers.']` - `offer.firmLine.en = 'Jordimp & Co. is how the work is done — currently inside a telco platform team, not a staffing firm.'` - `offer.howLine.en = 'How it works — 01 Brief · 02 Spec · 03 Build (tests first) · 04 Audit.'` - `offer.deskLine.en = 'Desk attended in English, Español or Català.'`  with `openTitle`, `notOpenTitle`, `firmLine`, `howLine`, `deskLine` localized and non-empty in `es` and `ca`, and `openItems`/`notOpenItems` holding the same number of non-empty items in all three locales (3 open items, 1 not-open item).",
+   "R5": "The system shall set `FRONTDESK_PAGE.cta` to exactly `WALK-INS WELCOME — ROLE, REPO OR A SPEC-FIRST ENGAGEMENT.` (en), `ENTRADA LIBRE — ROL, REPO O ENCARGO CON SPEC.` (es) and `ENTRADA LLIURE — ROL, REPO O ENCÀRREC AMB SPEC.` (ca).",
+   "R6": "The system shall set `DEPTS.frontdesk.line` to exactly `WALK-INS WELCOME — ROLES, REPOS OR A SPEC-FIRST ENGAGEMENT.` (en), `ENTRADA LIBRE — ROLES, REPOS O UN ENCARGO CON SPEC PRIMERO.` (es) and `ENTRADA LLIURE — ROLS, REPOS O UN ENCÀRREC AMB SPEC PRIMER.` (ca).",
+   "R7": "The system shall set `DEPTS.frontdesk.intro` to the offer (not a biography), exactly `The desk takes three things: senior or staff backend roles, short spec-first engagements, and questions about a floor or a repo. Bring the problem in your own words — if it can’t be written down, it doesn’t start.` (en), `El mostrador acepta tres cosas: roles backend senior o staff, encargos cortos con spec primero y preguntas sobre una planta o un repo. Trae el problema con tus palabras — si no se puede escribir, no se empieza.` (es) and `El mostrador accepta tres coses: rols backend sènior o staff, encàrrecs curts amb spec primer i preguntes sobre una planta o un repo. Porta el problema amb les teves paraules — si no es pot escriure, no comença.` (ca).",
+   "R8": "The system shall set `FOOTER.line` to exactly `Jordimp & Co. is the working name of one engineer — currently inside a telco platform team. Walk-ins: roles, repos, or a short spec-first engagement.` (en), `Jordimp & Co. es el nombre de trabajo de un solo ingeniero — ahora dentro de un equipo de plataforma telco. Entrada libre: roles, repos o un encargo corto con spec primero.` (es) and `Jordimp & Co. és el nom de feina d’un sol enginyer — ara dins d’un equip de plataforma telco. Entrada lliure: rols, repos o un encàrrec curt amb spec primer.` (ca).",
+   "R9": "The system shall set `PAGES.home.description` to the plain-text form of R3 — no `<b>`/`<mark>` markup — exactly `Jordimp & Co. is the working name of one engineer: backend systems, event pipelines and applied AI, designed, built and audited by the same pair of hands since 2017. Currently inside a telco platform team. Walk-ins: roles, repos, or a short spec-first engagement.` (en), its faithful Spanish translation (es) and the MILLORES §2 Catalan translation (ca).",
+   "R10": "The system shall set `PAGES.frontdesk.description` to exactly `Walk-ins welcome: senior or staff backend roles, short spec-first engagements, and questions about a floor or a repo — no tracking, no funnel. Jordimp & Co. is how the work is done, not a staffing firm.` (en), with faithful `es` and `ca` translations.",
+   "R11": "The system shall append the conflict-of-interest line `Personal study of the Open Gateway telemetry problem. Not Telefónica code. Not production traffic.` to `DEPTS.telemetry.intro.en` (preceded by a single space so the field ends with that exact sentence), and its localized equivalents to the `es` and `ca` fields — so the rendered telemetry intro and the llms endpoints carry the disclaimer.",
+   "R12": "The system shall not change the four `FRONTDESK_PAGE.how` steps (the `01 — BRIEF` … `04 — AUDIT` `{k,v}` pairs) in any locale.",
+   "R13": "The system shall not change the contact email: `SITE.email` in `src/data/content.ts` and the `email` constant in `src/config.ts` both remain `jordi.marsal@gmail.com`.",
+   "R14": "WHEN the Front Desk department page renders in any locale, the system shall render the `offer` block — the CTA tagline, the `openTitle` heading, each `openItems` item, the `notOpenTitle` heading, each `notOpenItems` item, and `firmLine`/`howLine`/`deskLine` — with the localized strings from R4 and R5.",
+   "R15": "WHEN visible copy changes, the system shall regenerate the committed parity oracle (`tests/fixtures/parity.json`) from the built site with `npm run build && node scripts/distill-parity.mjs`, and the resulting `git diff` shall touch only the `title`/`description`/`h1`/`mainText` of the three home routes, the three Front Desk routes, the three Telemetry routes and the splash `description` — with `_meta.counts` unchanged at `{ \"localeRoutes\": 63, \"pages\": 65 }`.",
+   "R16": "WHEN `llms.txt` and `llms-full.txt` are generated, the system shall emit the updated Front Desk `line`/`intro` and the updated Telemetry `intro` from `src/data/content.ts`, with the committed llms unit snapshot updated to match.",
+   "R17": "The system shall not modify `src/styles/site.css` or any other stylesheet — the offer block is rendered with the existing `.section`, `.section-title`, `.dept-line`, `.prose`, `.oncall` classes."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Reposition the home hero copy (kicker, H1, standfirst)",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R2",
+     "R3"
+    ]
+   },
+   "T2": {
+    "title": "Add the Front Desk commercial block and rewrite the floor line/intro",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R14",
+     "R16"
+    ]
+   },
+   "T3": {
+    "title": "Align footer line and page descriptions with the new subtitle",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R8",
+     "R9",
+     "R10"
+    ]
+   },
+   "T4": {
+    "title": "Add the F2 telemetry conflict-of-interest line",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R11",
+     "R16"
+    ]
+   },
+   "T5": {
+    "title": "Pin the negative invariants (how steps, email, no restyle)",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R12",
+     "R13",
+     "R17"
+    ]
+   },
+   "T6": {
+    "title": "Regenerate the parity oracle and inspect the diff",
+    "depends_on": [
+     "T1",
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "refs": [
+     "R15"
+    ]
+   },
+   "T7": {
+    "title": "Full gate and closure",
+    "depends_on": [
+     "T5",
+     "T6"
+    ],
+    "refs": [
+     "R15",
+     "R16",
+     "R17"
+    ]
+   }
+  }
+ }
+}

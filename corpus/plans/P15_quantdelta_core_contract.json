@@ -1,0 +1,164 @@
+{
+ "task_id": "P15_quantdelta_core_contract",
+ "repo": "quantdelta",
+ "feature": "core_contract",
+ "title": "docs: add the model field notes and the fleet link",
+ "pre_ref": "b5b7936d82dad761ac8e3cfbc8a36495ad4ef955~1",
+ "post_ref": "b5b7936d82dad761ac8e3cfbc8a36495ad4ef955",
+ "commits": [
+  "b5b7936d82dad761ac8e3cfbc8a36495ad4ef955"
+ ],
+ "truth": {
+  "files": [
+   "AGENTS.md",
+   "docs/fleet.md",
+   "docs/model-field-notes.md"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6",
+   "R7",
+   "R8",
+   "R9",
+   "R10",
+   "R11",
+   "R12"
+  ],
+  "req_statements": {
+   "R1": "The system shall expose Task, Score, TaskDelta, RunRecord and Report as frozen value types whose attributes cannot be reassigned after creation.",
+   "R2": "When a domain type is constructed with invalid data, the system shall raise an InvalidDataError naming the offending field.",
+   "R3": "When a RunRecord is serialized to JSON and parsed back, the system shall produce an equal instance with identical attribute values.",
+   "R4": "When RunRecords are written as JSONL lines and read back, the system shall reconstruct every record unchanged.",
+   "R5": "The system shall not load httpx, subprocess, numpy or typer into sys.modules when quantdelta.core is imported.",
+   "R6": "The system shall not use engine or file-format vocabulary such as gguf, llama or kv cache in any name, field or error message under src/quantdelta/core/.",
+   "R7": "Each RunRecord shall carry the identity of the model or agent under test, the backend name and version, the exact command, the seed, timestamps, per-task scores for that side only, and resource metrics.",
+   "R8": "When a Report is built from RunRecords, the system shall complete without network access or disk access.",
+   "R9": "The system shall define the Scorer port so that scoring depends only on record contents and never on a concrete backend implementation.",
+   "R10": "The system shall define the Backend port with exactly the methods a runner needs to execute tasks and report resources, and no engine-specific method.",
+   "R11": "The system shall expose stable public field names for Task, Score, TaskDelta, RunRecord and Report as pinned by a snapshot test.",
+   "R12": "Every serialized RunRecord and Report shall carry a schema_version field with a stable value so old JSONL files remain readable after format changes."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Create the src/quantdelta/core/ package skeleton: __init__.py exporting the errors only, and errors.py defining CoreError and InvalidDataError(field, reason) whose str() names the field; add tests/unit/core/test_errors.py covering attributes and message format.",
+    "depends_on": [],
+    "refs": [
+     "R2"
+    ]
+   },
+   "T2": {
+    "title": "Add Task and Score to models.py per design section 3 (frozen types, unknown-field rejection, read-only MappingProxyType view on Task.payload); extend tests/unit/core/test_models.py with construction, default and rejection tables including mutation attempts.",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R2"
+    ]
+   },
+   "T3": {
+    "title": "Add the TaskOutput and ResourceMetrics value types to models.py; extend test_models.py with their validation and immutability cases.",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R1",
+     "R10"
+    ]
+   },
+   "T4": {
+    "title": "Add RunRecord to models.py with cross-field validators (unique task ids, scores key set equal to task ids, finished_at >= started_at, UTC timestamps, hash/command/metric bounds); extend test_models.py accordingly.",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R7"
+    ]
+   },
+   "T5": {
+    "title": "Add TaskDelta and Report to models.py (delta equality, ci pairing and ordering, unique delta task ids, self-contained report fields); extend test_models.py including building a Report from two RunRecords purely in memory.",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R8"
+    ]
+   },
+   "T6": {
+    "title": "Create ports.py defining the Scorer and Backend protocols exactly as design section 3; add protocol-surface checks plus mypy-strict fake conformers to tests/unit/core/test_public_api.py.",
+    "depends_on": [
+     "T2",
+     "T3",
+     "T4"
+    ],
+    "refs": [
+     "R9",
+     "R10"
+    ]
+   },
+   "T7": {
+    "title": "Create serialization.py with single-document JSON helpers for every type; add lossless round-trip tests for all seven value types to tests/unit/core/test_serialization.py.",
+    "depends_on": [
+     "T5"
+    ],
+    "refs": [
+     "R3"
+    ]
+   },
+   "T8": {
+    "title": "Extend serialization.py with to_jsonl/parse_jsonl (one document per line, blank lines skipped, malformed line raises InvalidDataError(field=\"<root>\") carrying the 1-based line number, unsupported schema_version rejected); extend test_serialization.py with JSONL round-trip cases.",
+    "depends_on": [
+     "T7"
+    ],
+    "refs": [
+     "R4",
+     "R12"
+    ]
+   },
+   "T9": {
+    "title": "Finalize src/quantdelta/core/__init__.py exporting the full public surface (types, ports, errors, serializers); add export-surface assertions to test_public_api.py.",
+    "depends_on": [
+     "T6",
+     "T7",
+     "T8"
+    ],
+    "refs": [
+     "R11"
+    ]
+   },
+   "T10": {
+    "title": "Create tests/unit/core/test_import_boundary.py: an isolated-interpreter check that importing quantdelta.core loads none of httpx, subprocess, numpy or typer, plus a source scan of src/quantdelta/core/ for gguf/llama/kv-cache vocabulary.",
+    "depends_on": [
+     "T9"
+    ],
+    "refs": [
+     "R5",
+     "R6"
+    ]
+   },
+   "T11": {
+    "title": "Add snapshot tests to test_public_api.py pinning the public field names of all seven value types, the stable schema_version value and the protocol method surfaces.",
+    "depends_on": [
+     "T9"
+    ],
+    "refs": [
+     "R11",
+     "R12"
+    ]
+   },
+   "T12": {
+    "title": "Write docs/decisions/core-contract-shared-core-boundary.md and docs/decisions/core-contract-data-model-pydantic.md from design sections 7-8 (Context, Decision, Consequences, Rejected); add a test in test_public_api.py asserting both decision files exist with those sections.",
+    "depends_on": [],
+    "refs": []
+   }
+  }
+ }
+}

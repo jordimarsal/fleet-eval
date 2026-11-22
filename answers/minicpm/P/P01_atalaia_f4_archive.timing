@@ -1,0 +1,1 @@
+model=minicpm wall=3.9s gen=188tok/s predicted_n=605 prompt_n=5770 content_chars=2010 reasoning_chars=0 budget=8000 attempts=1

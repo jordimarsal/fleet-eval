@@ -1,0 +1,62 @@
+{
+ "task_id": "P11_jordimp_harness-skills-highlight",
+ "repo": "jordimp",
+ "feature": "harness-skills-highlight",
+ "title": "feat(content): harness entry ships standalone skills (F17)",
+ "pre_ref": "1ace968048dd68fd478a33d1b347d036c15a3bfd~1",
+ "post_ref": "1ace968048dd68fd478a33d1b347d036c15a3bfd",
+ "commits": [
+  "1ace968048dd68fd478a33d1b347d036c15a3bfd"
+ ],
+ "truth": {
+  "files": [
+   "src/data/content.spec.ts",
+   "src/data/content.ts",
+   "tests/fixtures/parity.json"
+  ],
+  "requirements": [
+   "R1",
+   "R2",
+   "R3",
+   "R4"
+  ],
+  "req_statements": {
+   "R1": "WHEN the `harness-standard` project entry renders its `highlights` in any of the three languages, the system SHALL include a highlight stating that the harness process ships as standalone skills installable with `npx skills add jordimarsal/harness`.  Verification: content spec asserts that for slug `harness-standard`, `highlights.en`, `highlights.es` and `highlights.ca` each contain a line matching `/npx skills add jordimarsal\\/harness/`.",
+   "R2": "The `harness-standard` entry SHALL include a metric with value `6` and label `skills` (same word in en, es and ca).  Verification: content spec asserts `metrics` of `harness-standard` contains `{ value: '6', label: { en: 'skills', es: 'skills', ca: 'skills' } }`.",
+   "R3": "The system shall not modify the `harness-standard` slug, `name`, `github` URL, `dept`, `tier`, or any field of any other project entry.  Verification: existing content-spec assertions (department project lists, positive tooling list, thesis-tier list) stay green without modification; the feature diff touches only `highlights` and `metrics` of the `harness-standard` entry.",
+   "R4": "The added copy SHALL claim skills installability only; it shall not state or imply publication on the Anthropic skills registry.  Verification: content spec asserts the added highlight lines contain neither `Anthropic` nor `registry`; reviewer confirms wording by inspection."
+  },
+  "tasks": {
+   "T1": {
+    "title": "Add the red assertions to `src/data/content.spec.ts` — new `describe('harness entry ships standalone skills')` asserting: for slug `harness-standard`, `highlights.en/es/ca` each contain a line matching `/npx skills add jordimarsal\\/harness/`; `metrics` contains `{ value: '6', label: { en: 'skills', es: 'skills', ca: 'skills' } }`; and the matching highlight lines contain neither `Anthropic` nor `registry` (claim boundary). `npx vitest run` must fail ONLY on these",
+    "depends_on": [],
+    "refs": [
+     "R1",
+     "R2",
+     "R4"
+    ]
+   },
+   "T2": {
+    "title": "Edit the `harness-standard` entry in `src/data/content.ts` per design §Copy — append the trilingual highlight bullet and the skills metric; change nothing else in the entry or the file. `npx vitest run` fully green",
+    "depends_on": [
+     "T1"
+    ],
+    "refs": [
+     "R1",
+     "R2",
+     "R3"
+    ]
+   },
+   "T3": {
+    "title": "Full verification battery — `harness/init.sh`, `npx vitest run`, `npm run check`, `npm run build`; then grep the built output for the install command in the rendered harness page(s) under `dist/**`",
+    "depends_on": [
+     "T2"
+    ],
+    "refs": [
+     "R3",
+     "R4"
+    ]
+   }
+  }
+ }
+}
