@@ -1,0 +1,24 @@
+{
+  "task_id": "P19_seekandemploy_apply-list-stale",
+  "repo": "seekandemploy",
+  "pre_ref": "f44c90ecb28528a7e7413475590d109296359433~1",
+  "post_ref": "f44c90ecb28528a7e7413475590d109296359433",
+  "executor": "gemma4",
+  "files_delivered": [
+    "src/seekandemploy/cli.py",
+    "src/seekandemploy/repository.py"
+  ],
+  "n_written": 2,
+  "test_files": [
+    "tests/test_applications_cli.py",
+    "tests/test_repository_stale.py"
+  ],
+  "verds": 6,
+  "total": 30,
+  "total_run": 30,
+  "baseline_verds": 30,
+  "score": 0.2,
+  "wall_s": 31.4,
+  "retry": "",
+  "test_output_tail": "/test_applications_cli.py::test_show_error_codes_match_the_house_convention\nFAILED tests/test_applications_cli.py::test_delete_requires_yes - SystemExit: 2\nFAILED tests/test_applications_cli.py::test_unknown_ids_answer_exit_code_1 - ...\nFAILED tests/test_applications_cli.py::test_html_command_regenerates_snapshot\nFAILED tests/test_applications_cli.py::test_apply_notes_set_persists_text_and_regenerates_report\nFAILED tests/test_applications_cli.py::test_apply_notes_set_prints_application_line_and_report_path\nFAILED tests/test_applications_cli.py::test_apply_notes_clear_persists_null\nFAILED tests/test_applications_cli.py::test_apply_notes_edit_appends_no_event_and_changes_nothing_but_notes\nFAILED tests/test_applications_cli.py::test_apply_notes_unknown_id_exits_1_without_regenerating_report\nFAILED tests/test_applications_cli.py::test_apply_notes_out_writes_snapshot_to_custom_path\nFAILED tests/test_applications_cli.py::test_mutation_and_rebuild_regenerate_snapshot_without_ids\nFAILED tests/test_applications_cli.py::test_apply_list_stale_reports_only_applications_silent_beyond_the_threshold\nFAILED tests/test_applications_cli.py::test_apply_list_stale_counts_from_the_last_event_not_the_applied_date\nFAILED tests/test_applications_cli.py::test_apply_list_stale_excludes_closed_applications\nFAILED tests/test_applications_cli.py::test_apply_list_stale_rejects_the_all_combination\nFAILED tests/test_applications_cli.py::test_apply_list_stale_is_read_only - S...\n24 failed, 6 passed in 5.24s\n"
+}

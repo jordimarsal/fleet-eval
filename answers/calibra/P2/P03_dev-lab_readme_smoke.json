@@ -1,0 +1,23 @@
+{
+  "task_id": "P03_dev-lab_readme_smoke",
+  "repo": "dev-lab",
+  "pre_ref": "59ecddf0663c3f931df887b32c318168945be88d~1",
+  "post_ref": "ff02a9a1f4603695a45e8e4366729b18cb6cb874",
+  "executor": "qwen36",
+  "files_delivered": [
+    "README.md",
+    "tests/build_smoke.test.js",
+    "tests/readme.test.js"
+  ],
+  "n_written": 3,
+  "test_files": [
+    "tests/build_smoke.test.js",
+    "tests/readme.test.js"
+  ],
+  "verds": 1,
+  "total": 2,
+  "score": 0.5,
+  "wall_s": 7.9,
+  "retry": "",
+  "test_output_tail": "TAP version 13\n# Subtest: R2: python3 build.py --check passa dins la suite (smoke)\nok 1 - R2: python3 build.py --check passa dins la suite (smoke)\n  ---\n  duration_ms: 55.717844\n  type: 'test'\n  ...\n# Subtest: R1: README.md existeix i explica què és, com arrencar i on és el contingut\nnot ok 2 - R1: README.md existeix i explica què és, com arrencar i on és el contingut\n  ---\n  duration_ms: 0.574205\n  type: 'test'\n  location: '/tmp/opencode/P2-sandbox/dev-lab/tests/readme.test.js:11:1'\n  failureType: 'testCodeFailure'\n  error: 'falta la comanda/referència \"grader/grader.py\"'\n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: true\n  actual: false\n  operator: '=='\n  stack: |-\n    TestContext.<anonymous> (file:///tmp/opencode/P2-sandbox/dev-lab/tests/readme.test.js:19:12)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.start (node:internal/test_runner/test:944:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 1\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 79.020813\n"
+}

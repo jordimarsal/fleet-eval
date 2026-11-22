@@ -1,0 +1,6 @@
+{
+  "task_id": "P04_dev-lab_reproducible_build",
+  "verds": 7,
+  "total": 7,
+  "tail": "data\n  ---\n  duration_ms: 290.078684\n  type: 'test'\n  ...\n# Subtest: R6: --check valida sense escriure cap output\nok 6 - R6: --check valida sense escriure cap output\n  ---\n  duration_ms: 47.49241\n  type: 'test'\n  ...\n# Subtest: R5: index.html com\u00e8s sense data de generaci\u00f3 al footer\nok 7 - R5: index.html com\u00e8s sense data de generaci\u00f3 al footer\n  ---\n  duration_ms: 0.272612\n  type: 'test'\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 7\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 499.138988\n"
+}

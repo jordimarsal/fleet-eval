@@ -2,3 +2,6 @@ __pycache__/
 _work_*/
 _probe_*/
 *.pyc
+answers/**/*.prompt.md
+answers/**/*.timing.txt
+answers/**/*.retry.md

@@ -1,0 +1,26 @@
+{
+  "task_id": "P06_jordimp_cmd-code-copy",
+  "repo": "jordimp",
+  "pre_ref": "56c3ecdbabbfdf51cf93f7b71f125230985a5161~1",
+  "post_ref": "56c3ecdbabbfdf51cf93f7b71f125230985a5161",
+  "executor": "qwen36",
+  "files_delivered": [
+    "src/components/site/CmdLine.astro",
+    "src/components/site/DeptCard.astro",
+    "src/lib/cmd-code.spec.ts",
+    "src/lib/cmd-code.ts",
+    "src/pages/[lang]/projects/[slug].astro",
+    "src/styles/site.css"
+  ],
+  "n_written": 6,
+  "test_files": [
+    "src/lib/cmd-code.spec.ts",
+    "tests/fixtures/parity.json"
+  ],
+  "verds": 2,
+  "total": 6,
+  "score": 0.3333,
+  "wall_s": 8.8,
+  "retry": "",
+  "test_output_tail": "\n RUN  v5.0.1 /tmp/opencode/P2-sandbox/jordimp\n\n ❯ src/lib/cmd-code.spec.ts (6 tests | 4 failed) 5ms\n   ❯ splitCmdLine (6)\n     × exposes the exact install command as CMD 3ms\n     × splits a mid-line occurrence into before/cmd/after 1ms\n     ✓ returns null when the line has no command 0ms\n     × handles the command at line start (before is empty) 0ms\n     × handles the command at line end (after is empty) 0ms\n     ✓ does not mutate the input 0ms\n\n Test Files  1 failed (1)\n      Tests  4 failed | 2 passed (6)\n   Start at  18:01:41\n   Duration  88ms (transform 54%, import 19%, tests 19%, worker 8%)\n\n"
+}

@@ -1,0 +1,24 @@
+{
+  "task_id": "P06_jordimp_cmd-code-copy",
+  "repo": "jordimp",
+  "pre_ref": "56c3ecdbabbfdf51cf93f7b71f125230985a5161~1",
+  "post_ref": "56c3ecdbabbfdf51cf93f7b71f125230985a5161",
+  "executor": "inkling2",
+  "files_delivered": [
+    "src/components/site/CmdLine.astro",
+    "src/lib/cmd-code.ts"
+  ],
+  "n_written": 2,
+  "test_files": [
+    "src/lib/cmd-code.spec.ts",
+    "tests/fixtures/parity.json"
+  ],
+  "verds": 6,
+  "total": 6,
+  "total_run": 6,
+  "baseline_verds": 6,
+  "score": 1.0,
+  "wall_s": 81.0,
+  "retry": "",
+  "test_output_tail": "\n RUN  v5.0.1 /tmp/opencode/P2-sandbox/jordimp\n\n ✓ src/lib/cmd-code.spec.ts (6 tests) 2ms\n\n Test Files  1 passed (1)\n      Tests  6 passed (6)\n   Start at  19:27:07\n   Duration  64ms (transform 56%, import 25%, tests 10%, worker 10%)\n\n"
+}

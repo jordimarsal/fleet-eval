@@ -1,0 +1,24 @@
+{
+  "task_id": "P19_seekandemploy_apply-list-stale",
+  "repo": "seekandemploy",
+  "pre_ref": "f44c90ecb28528a7e7413475590d109296359433~1",
+  "post_ref": "f44c90ecb28528a7e7413475590d109296359433",
+  "executor": "gemma4",
+  "files_delivered": [
+    "src/seekandemploy/cli.py",
+    "tests/test_applications_cli.py"
+  ],
+  "n_written": 2,
+  "test_files": [
+    "tests/test_applications_cli.py",
+    "tests/test_repository_stale.py"
+  ],
+  "verds": 0,
+  "total": 30,
+  "total_run": 2,
+  "baseline_verds": 30,
+  "score": 0.0,
+  "wall_s": 34.1,
+  "retry": "",
+  "test_output_tail": "\n=========================== short test summary info ============================\nERROR tests/test_applications_cli.py\nERROR tests/test_repository_stale.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!\n2 errors in 0.20s\n"
+}

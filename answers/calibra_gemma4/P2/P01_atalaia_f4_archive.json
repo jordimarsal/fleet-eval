@@ -1,0 +1,28 @@
+{
+  "task_id": "P01_atalaia_f4_archive",
+  "repo": "atalaia",
+  "pre_ref": "576dc29b52bcb828d9fa3fbd06adecb4a81c7e7e~1",
+  "post_ref": "3135d1e38c7f04110bb1e6924b42ddf50ff532a7",
+  "executor": "gemma4",
+  "files_delivered": [
+    "src/atalaia/api.py",
+    "src/atalaia/archive.py",
+    "web/app.js",
+    "web/index.html",
+    "web/style.css"
+  ],
+  "n_written": 5,
+  "test_files": [
+    "tests/test_api_archive.py",
+    "tests/test_archive.py",
+    "tests/test_web.py"
+  ],
+  "verds": 6,
+  "total": 20,
+  "total_run": 20,
+  "baseline_verds": 20,
+  "score": 0.3,
+  "wall_s": 40.7,
+  "retry": "",
+  "test_output_tail": "rletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/test_api_archive.py::test_list_includes_archived_flag_false_by_default\nFAILED tests/test_api_archive.py::test_archive_and_unarchive_roundtrip - Runt...\nFAILED tests/test_api_archive.py::test_unarchive_non_archived_is_idempotent\nFAILED tests/test_api_archive.py::test_unknown_id_404 - RuntimeError: Directo...\nFAILED tests/test_api_archive.py::test_archive_survives_new_client_instance\nFAILED tests/test_archive.py::test_save_and_load_roundtrip - TypeError: JSONE...\nFAILED tests/test_archive.py::test_archive_is_idempotent - TypeError: JSONEnc...\nFAILED tests/test_archive.py::test_unarchive_removes_only_target - TypeError:...\nFAILED tests/test_web.py::test_index_served - RuntimeError: Directory '/tmp/o...\nFAILED tests/test_web.py::test_static_assets_served - RuntimeError: Directory...\nFAILED tests/test_web.py::test_docs_disabled - RuntimeError: Directory '/tmp/...\nFAILED tests/test_web.py::test_static_revalidates - RuntimeError: Directory '...\nFAILED tests/test_web.py::test_action_ui_present - assert 'item.actions' in '...\nFAILED tests/test_web.py::test_archive_ui_present - assert 'item.archived ? \"...\n14 failed, 6 passed, 1 warning in 0.15s\n"
+}

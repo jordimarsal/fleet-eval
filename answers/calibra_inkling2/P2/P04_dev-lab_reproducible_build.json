@@ -1,0 +1,22 @@
+{
+  "task_id": "P04_dev-lab_reproducible_build",
+  "repo": "dev-lab",
+  "pre_ref": "8edb3914e8b66b26f55a26c101d23c0c315389f5~1",
+  "post_ref": "8edb3914e8b66b26f55a26c101d23c0c315389f5",
+  "executor": "inkling2",
+  "files_delivered": [
+    "build.py"
+  ],
+  "n_written": 1,
+  "test_files": [
+    "tests/build.test.js"
+  ],
+  "verds": 0,
+  "total": 7,
+  "total_run": 7,
+  "baseline_verds": 7,
+  "score": 0.0,
+  "wall_s": 246.1,
+  "retry": "",
+  "test_output_tail": "  operator: '=='\n  stack: |-\n    TestContext.<anonymous> (file:///tmp/opencode/P2-sandbox/dev-lab/tests/build.test.js:128:12)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: R5: index.html comès sense data de generació al footer\nnot ok 7 - R5: index.html comès sense data de generació al footer\n  ---\n  duration_ms: 0.251423\n  type: 'test'\n  location: '/tmp/opencode/P2-sandbox/dev-lab/tests/build.test.js:139:1'\n  failureType: 'testCodeFailure'\n  error: 'footer comès sense data'\n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: true\n  actual: false\n  operator: '=='\n  stack: |-\n    TestContext.<anonymous> (file:///tmp/opencode/P2-sandbox/dev-lab/tests/build.test.js:142:10)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n1..7\n# tests 7\n# suites 0\n# pass 0\n# fail 7\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 144.125674\n"
+}

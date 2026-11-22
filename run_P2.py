@@ -107,34 +107,44 @@ def digest_at(repo: Path, ref: str) -> str:
     return "\n".join(parts) if parts else "(no source files)"
 
 
-def ensure_executor_server() -> None:
-    """Para qualsevol servidor i engega l'executor (qwen36) una vegada."""
+def ensure_executor_server(executor: str | None = None) -> None:
+    """Para qualsevol servidor i engega l'executor una vegada."""
     import subprocess as sp
+    executor = executor or EXECUTOR
     O.stop_server()
-    gguf = O.MODELS / O.FLEET[EXECUTOR]
+    gguf = O.MODELS / O.FLEET[executor]
     args = O.build_args(gguf)
     if CTX:
         args += ["-c", str(CTX)]
-    log = HERE / "logs" / f"P2.{EXECUTOR}.server.log"
+    log = HERE / "logs" / f"P2.{executor}.server.log"
     log.parent.mkdir(exist_ok=True)
     fh = open(log, "w")
     sp.Popen(args, stdout=fh, stderr=sp.STDOUT, start_new_session=True)
     if not O.wait_healthy():
-        raise RuntimeError(f"executor {EXECUTOR} never healthy (see {log})")
-    print(f"executor {EXECUTOR} healthy", flush=True)
+        raise RuntimeError(f"executor {executor} never healthy (see {log})")
+    print(f"executor {executor} healthy", flush=True)
 
 
-def _dispatch(prompt: str, out_path: Path, api_model: str, port: int = 8999) -> str:
-    """Crida llm_dispatch.py (script CLI) i retorna el content."""
-    pf = out_path.with_suffix(".prompt.md")
+def _dispatch(prompt: str, out_path: Path, api_model: str, port: int = 8999,
+              max_tokens: int | None = None, budget_suffix: str = "") -> str:
+    """Crida llm_dispatch.py (script CLI) i retorna el content.
+
+    max_tokens: sostre dur (sense escalat) per a l'execucio incremental.
+    budget_suffix: etiqueta per als fitxers .prompt/.timing (p.ex. step03).
+    """
+    sfx = f".{budget_suffix}" if budget_suffix else ""
+    pf = out_path.with_name(out_path.stem + sfx + ".prompt.md")
     pf.write_text(prompt, encoding="utf-8")
-    r = subprocess.run([sys.executable, str(HERE / "llm_dispatch.py"),
-                        str(pf), str(out_path), api_model, str(port)],
-                       capture_output=True, text=True, timeout=900)
+    cmd = [sys.executable, str(HERE / "llm_dispatch.py"),
+           str(pf), str(out_path), api_model, str(port)]
+    if max_tokens:
+        cmd.append(str(max_tokens))
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
     if r.returncode != 0:
         raise RuntimeError(f"dispatch failed: {r.stderr[-500:]}")
     # la línia de timing és a stdout; el content, al fitxer
-    out_path.with_suffix(".timing.txt").write_text(r.stdout.strip(), encoding="utf-8")
+    out_path.with_name(out_path.stem + sfx + ".timing.txt").write_text(
+        r.stdout.strip(), encoding="utf-8")
     return out_path.read_text(encoding="utf-8") if out_path.exists() else ""
 
 

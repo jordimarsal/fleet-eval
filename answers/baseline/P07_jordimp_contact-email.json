@@ -1,0 +1,6 @@
+{
+  "task_id": "P07_jordimp_contact-email",
+  "verds": 122,
+  "total": 122,
+  "tail": "\n RUN  v5.0.1 /tmp/opencode/P2-sandbox/jordimp\n\n \u2713 src/lib/llms.spec.ts (20 tests) 7ms\n \u2713 src/lib/links.spec.ts (19 tests) 3ms\n \u2713 src/config.spec.ts (2 tests) 2ms\n \u2713 src/lib/seo.spec.ts (17 tests) 5ms\n \u2713 src/data/content.spec.ts (49 tests) 17ms\n \u2713 src/lib/llms-endpoint.spec.ts (15 tests) 5ms\n\n Test Files  6 passed (6)\n      Tests  122 passed (122)\n   Start at  18:52:20\n   Duration  154ms (transform 75%, import 14%, tests 9%, worker 2%)\n\n"
+}

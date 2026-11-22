@@ -1,0 +1,24 @@
+{
+  "task_id": "P03_dev-lab_readme_smoke",
+  "repo": "dev-lab",
+  "executor": "gemma4",
+  "planner_slug": "calibra_gemma4",
+  "mode": "incremental",
+  "n_steps": 3,
+  "per_step_budget": 8000,
+  "steps": [
+    "T1: `README.md` humà a l'arrel (català: què és, com arrencar amb `harness/init.sh`/`python3 build.py`/`index.html`/`proves.html`, mapa de contingut, per a agents → `AGENTS.md`) + `tests/readme.test.js` (R1)",
+    "T2: `tests/build_smoke.test.js` — spawneja `python3 build.py --check` dins `npm test` i assert exit 0 (R2)",
+    "T3: Tancament — `harness/progress/impl_readme_smoke.md` (taula R→test→fitxer), portes verdes (`npm test` + `build.py --check` + traçabilitat) i logs `harness/logs/readme_smoke/batch-{1,2}.log`"
+  ],
+  "verds_final": 2,
+  "baseline_total": 2,
+  "score": 1.0,
+  "progress": [
+    2,
+    2,
+    2
+  ],
+  "files_applied": 4,
+  "monotone": true
+}

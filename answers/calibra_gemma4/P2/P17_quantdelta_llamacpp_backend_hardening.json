@@ -1,0 +1,32 @@
+{
+  "task_id": "P17_quantdelta_llamacpp_backend_hardening",
+  "repo": "quantdelta",
+  "pre_ref": "76754016bdc6234755fe7b6c2f8ba4e8d9bf22d1~1",
+  "post_ref": "76754016bdc6234755fe7b6c2f8ba4e8d9bf22d1",
+  "executor": "gemma4",
+  "files_delivered": [
+    "src/quantdelta/backends/llamacpp/backend.py",
+    "src/quantdelta/backends/llamacpp/config.py",
+    "src/quantdelta/backends/llamacpp/errors.py",
+    "src/quantdelta/backends/llamacpp/manifest.py"
+  ],
+  "n_written": 4,
+  "test_files": [
+    "tests/unit/backends/llamacpp/conftest.py",
+    "tests/unit/backends/llamacpp/test_boundary.py",
+    "tests/unit/backends/llamacpp/test_concurrency.py",
+    "tests/unit/backends/llamacpp/test_config.py",
+    "tests/unit/backends/llamacpp/test_manifest.py",
+    "tests/unit/backends/llamacpp/test_metrics.py",
+    "tests/unit/backends/llamacpp/test_run.py",
+    "tests/unit/backends/llamacpp/test_stub_server.py"
+  ],
+  "verds": 0,
+  "total": 130,
+  "total_run": 0,
+  "baseline_verds": 130,
+  "score": 0.0,
+  "wall_s": 67.5,
+  "retry": "",
+  "test_output_tail": "\n[stderr]\nImportError while loading conftest '/tmp/opencode/P2-sandbox/quantdelta/tests/unit/backends/llamacpp/conftest.py'.\ntests/unit/backends/llamacpp/conftest.py:21: in <module>\n    from quantdelta.backends.llamacpp.config import LlamaCppConfig\nsrc/quantdelta/backends/llamacpp/__init__.py:5: in <module>\n    from quantdelta.backends.llamacpp.errors import (\nE   ImportError: cannot import name 'LlamaCppError' from 'quantdelta.backends.llamacpp.errors' (/tmp/opencode/P2-sandbox/quantdelta/src/quantdelta/backends/llamacpp/errors.py)\n"
+}

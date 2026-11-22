@@ -48,18 +48,24 @@ def main(argv: list[str]) -> int:
         print(__doc__, file=sys.stderr)
         return 2
     prompt_path, out_path, api_model, port = argv[1], argv[2], argv[3], argv[4]
+    # argv[5] opcional: sostre dur de max_tokens per a aquest dispatch (sense
+    # escalat). Serveix per a l'execucio incremental de P2, on el pressupost per
+    # pas es justament el que ha de fer fallar un pla mal descompost.
+    budgets = BUDGETS
+    if len(argv) >= 6 and argv[5].isdigit() and int(argv[5]) > 0:
+        budgets = (int(argv[5]),)
     prompt = Path(prompt_path).read_text(encoding="utf-8")
     body = {
         "model": api_model,
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": BUDGETS[0],
+        "max_tokens": budgets[0],
         "tool_choice": "none",
         "stream": False,
         "chat_template_kwargs": {"enable_thinking": False},
     }
 
     content, reasoning, t, wall, attempts = "", "", {}, 0.0, 0
-    for budget in BUDGETS:
+    for budget in budgets:
         body["max_tokens"] = budget
         req = urllib.request.Request(
             f"http://127.0.0.1:{port}/v1/chat/completions",
@@ -79,7 +85,7 @@ def main(argv: list[str]) -> int:
             break
         # content buit amb raonament = el pressupost s'ha cremat pensant: escala.
         print(f"  [dispatch] content buit amb budget {budget}: escalo a "
-              f"{BUDGETS[attempts] if attempts < len(BUDGETS) else 'res'}",
+              f"{budgets[attempts] if attempts < len(budgets) else 'res'}",
               file=sys.stderr, flush=True)
 
     Path(out_path).write_text(content, encoding="utf-8")

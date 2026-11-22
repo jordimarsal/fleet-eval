@@ -1,0 +1,6 @@
+{
+  "task_id": "P01_atalaia_f4_archive",
+  "verds": 20,
+  "total": 20,
+  "tail": "=========== warnings summary ===============================\n.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  /tmp/opencode/P2-sandbox/atalaia/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n20 passed, 1 warning in 0.51s\n"
+}

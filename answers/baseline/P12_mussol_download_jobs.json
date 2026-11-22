@@ -1,0 +1,6 @@
+{
+  "task_id": "P12_mussol_download_jobs",
+  "verds": 0,
+  "total": 5,
+  "tail": "all `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nERROR tests/test_api.py\nERROR tests/test_download_service.py\nERROR tests/test_job_store.py\nERROR tests/test_launcher.py\nERROR tests/test_web.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 5 errors during collection !!!!!!!!!!!!!!!!!!!!\n1 warning, 5 errors in 0.18s\n"
+}

@@ -1,0 +1,30 @@
+{
+  "task_id": "P07_jordimp_contact-email",
+  "repo": "jordimp",
+  "pre_ref": "18b74fcaafa302827dbc819018ab4389b0d1cf97~1",
+  "post_ref": "67a26c6955506638e2bd3b6be0eb5bcf42c11fbe",
+  "executor": "qwen36",
+  "files_delivered": [
+    "src/config.ts",
+    "src/data/content.ts"
+  ],
+  "n_written": 2,
+  "test_files": [
+    "src/config.spec.ts",
+    "src/data/content.spec.ts",
+    "src/lib/__snapshots__/llms-endpoint.spec.ts.snap",
+    "src/lib/links.spec.ts",
+    "src/lib/llms-endpoint.spec.ts",
+    "src/lib/llms.spec.ts",
+    "src/lib/seo.spec.ts",
+    "tests/departments.spec.ts",
+    "tests/fixtures/parity.json",
+    "tests/home.spec.ts"
+  ],
+  "verds": 3,
+  "total": 54,
+  "score": 0.0556,
+  "wall_s": 5.7,
+  "retry": "",
+  "test_output_tail": "\n     × keeps exactly 4 experience entries 1ms\n     × keeps five thesis skill piles and drops the toolbelt technology 0ms\n     × adds exactly one outcome line to the three non-Telefónica jobs 0ms\n   ❯ shared strings (1)\n     × localizes ticker, ui and footer strings in en, es and ca 0ms\n   ❯ case extras (1)\n     × keys build logs and field notes to real project slugs 0ms\n   ❯ project() (2)\n     × returns the matching project by slug 0ms\n     × throws on unknown slug 1ms\n   ❯ operations notes (F0) (2)\n     × localizes the roots and toolbelt notes 0ms\n     × names the displaced technology in the toolbelt note 0ms\n   ❯ curated floor copy (3)\n     × reports 2 research projects and 3 tooling projects 0ms\n     × names exactly the floor projects in each department description 0ms\n     × states 11 projects and the three tiers 0ms\n   ❯ people page org roles (R23) (1)\n     × pins the org gag roles in three locales 0ms\n   ❯ article data (rag-eval-article) (5)\n     × pins the exact English title and localized title/description/lead 0ms\n     × defines exactly the five sections in the fixed order with trilingual copy 0ms\n     × keeps the English body between 800 and 1200 words 0ms\n     × carries the committed floor facts and frames 0.409 honestly 0ms\n     × registers the essay route in PAGES under the departments nav 0ms\n\n Test Files  3 failed | 3 passed (6)\n      Tests  51 failed | 56 passed (107)\n   Start at  18:01:47\n   Duration  216ms (transform 65%, import 19%, tests 13%, worker 4%)\n\n"
+}

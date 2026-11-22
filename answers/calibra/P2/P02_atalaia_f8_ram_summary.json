@@ -1,0 +1,20 @@
+{
+  "task_id": "P02_atalaia_f8_ram_summary",
+  "repo": "atalaia",
+  "pre_ref": "b94ecda5e2cdc6c961f1ae302af0fb117a4597e1~1",
+  "post_ref": "a3ef66a74e86e0f3b5cb1e6cf2ce03050fca6fa2",
+  "executor": "qwen36",
+  "files_delivered": [],
+  "n_written": 0,
+  "test_files": [
+    "tests/test_api_system.py",
+    "tests/test_detectors.py",
+    "tests/test_web.py"
+  ],
+  "verds": 0,
+  "total": 1,
+  "score": 0.0,
+  "wall_s": 69.7,
+  "retry": "retry_no_files",
+  "test_output_tail": "\n=============================== warnings summary ===============================\n.venv/lib/python3.14/site-packages/fastapi/testclient.py:1\n  /tmp/opencode/P2-sandbox/atalaia/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nERROR tests/test_detectors.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 warning, 1 error in 0.18s\n"
+}

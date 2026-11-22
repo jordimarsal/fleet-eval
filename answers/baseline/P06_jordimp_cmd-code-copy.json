@@ -1,0 +1,6 @@
+{
+  "task_id": "P06_jordimp_cmd-code-copy",
+  "verds": 6,
+  "total": 6,
+  "tail": "\n RUN  v5.0.1 /tmp/opencode/P2-sandbox/jordimp\n\n \u2713 src/lib/cmd-code.spec.ts (6 tests) 2ms\n\n Test Files  1 passed (1)\n      Tests  6 passed (6)\n   Start at  18:52:19\n   Duration  65ms (transform 57%, import 24%, tests 10%, worker 9%)\n\n"
+}

@@ -1,0 +1,26 @@
+{
+  "task_id": "P01_atalaia_f4_archive",
+  "repo": "atalaia",
+  "executor": "qwen38",
+  "planner_slug": "Huihui",
+  "mode": "incremental",
+  "n_steps": 4,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: Implement archive state persistence module",
+    "T2: Add archive/unarchive API endpoints and payload enrichment",
+    "T3: Update UI for tabs, counts, and actions",
+    "T4: Verify no modification of scanned project trees"
+  ],
+  "verds_final": 17,
+  "baseline_total": 20,
+  "score": 0.85,
+  "progress": [
+    15,
+    17,
+    17,
+    17
+  ],
+  "files_applied": 3,
+  "monotone": true
+}
