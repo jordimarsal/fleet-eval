@@ -1,0 +1,268 @@
+"""P2: el pla es mesura pel seu efecte — executor fix + tests reals de la feature.
+
+  PLANNER (model sota test) → pla → EXECUTOR FIX (qwen36) → codi → TESTS REALS → % verds
+
+Calibració (run_P2.py calibra): dona a l'executor els plans HUMANS (tasks.md) —
+si el pla humà passa els tests amb l'executor, l'executor és instrument vàlid.
+"""
+from __future__ import annotations
+
+import json
+import re
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+import llm_dispatch as D
+import orchestrate as O
+import P2_sandbox as S
+
+HERE = Path(__file__).resolve().parent
+CORPUS = HERE / "corpus" / "plans"
+ANSWERS = HERE / "answers"
+PROMPTS = HERE / "prompts" / "P2"
+
+EXECUTOR = "qwen36"          # executor fix per a tota la bateria
+CTX = 32768                  # prompt dels tests + digest; més que prou
+
+EXEC_PROMPT = """You are an implementer working from a plan. Write the EXACT files the plan asks for.
+
+--- PLAN ---
+{plan}
+
+--- REPOSITORY FILE TREE (before implementation) ---
+{tree}
+
+--- KEY SOURCE FILES (before implementation, excerpts) ---
+{digest}
+
+Output ONLY the files, each in this format:
+
+=== FILE: relative/path.ext ===
+<file contents>
+=== END FILE ===
+
+No prose outside the file blocks. Do not invent extra files beyond what the plan asks."""
+
+
+def load_task(task_id: str) -> dict:
+    for f in sorted(CORPUS.glob("P*.json")):
+        d = json.loads(f.read_text(encoding="utf-8"))
+        if d["task_id"] == task_id:
+            return d
+    raise FileNotFoundError(task_id)
+
+
+def _pre_tests(repo: Path, ref: str) -> set[str]:
+    r = subprocess.run(["git", "ls-tree", "-r", "--name-only", ref],
+                       cwd=str(repo), capture_output=True, text=True)
+    return {p for p in r.stdout.splitlines()
+            if S.TEST_PAT.search(p) or S.FIXTURE_PAT.search(p)}
+
+
+def human_plan(d: dict) -> str:
+    """Pla humà: el tasks.md de la spec (checklist T1..Tn amb refs)."""
+    spec = Path.home() / "Documents/CV/projects" / d["repo"] / "harness" / "specs" / d["feature"] / "tasks.md"
+    if spec.exists():
+        return spec.read_text(encoding="utf-8")
+    # fallback: reconstrueix del corpus
+    return "\n".join(f"- {t}" for t in d.get("tasks", []))
+
+
+def tree_at(repo: Path, ref: str) -> str:
+    r = subprocess.run(["git", "ls-tree", "-r", "--name-only", ref],
+                       cwd=str(repo), capture_output=True, text=True)
+    paths = [p for p in r.stdout.splitlines() if p and not re.search(r"node_modules|\.git/", p)]
+    return "\n".join(paths[:400])
+
+
+def digest_at(repo: Path, ref: str) -> str:
+    r = subprocess.run(["git", "ls-tree", "-r", "-l", ref],
+                       cwd=str(repo), capture_output=True, text=True)
+    sizes = {}
+    for line in r.stdout.splitlines():
+        m = re.match(r"^\d+\s+blob\s+[0-9a-f]+\s+(\d+)\t(.+)$", line)
+        if m:
+            sizes[m.group(2)] = int(m.group(1))
+    src = sorted((p for p in sizes if p.endswith((".py", ".ts", ".astro", ".js", ".mjs"))
+                  and sizes[p] > 0 and not re.search(r"\.min\.|\.bundle\.", p)),
+                 key=lambda p: -sizes[p])
+    parts = []
+    for p in src[:8]:
+        r2 = subprocess.run(["git", "show", f"{ref}:{p}"], cwd=str(repo),
+                            capture_output=True, text=True)
+        if r2.returncode != 0:
+            continue
+        lines = []
+        total = 0
+        for line in r2.stdout.splitlines()[:60]:
+            b = len(line.encode("utf-8", "replace")) + 1
+            if total + b > 4000:
+                break
+            lines.append(line)
+            total += b
+        parts.append(f"--- {p} ---\n" + "\n".join(lines))
+    return "\n".join(parts) if parts else "(no source files)"
+
+
+def ensure_executor_server() -> None:
+    """Para qualsevol servidor i engega l'executor (qwen36) una vegada."""
+    import subprocess as sp
+    O.stop_server()
+    gguf = O.MODELS / O.FLEET[EXECUTOR]
+    args = O.build_args(gguf)
+    if CTX:
+        args += ["-c", str(CTX)]
+    log = HERE / "logs" / f"P2.{EXECUTOR}.server.log"
+    log.parent.mkdir(exist_ok=True)
+    fh = open(log, "w")
+    sp.Popen(args, stdout=fh, stderr=sp.STDOUT, start_new_session=True)
+    if not O.wait_healthy():
+        raise RuntimeError(f"executor {EXECUTOR} never healthy (see {log})")
+    print(f"executor {EXECUTOR} healthy", flush=True)
+
+
+def _dispatch(prompt: str, out_path: Path, api_model: str, port: int = 8999) -> str:
+    """Crida llm_dispatch.py (script CLI) i retorna el content."""
+    pf = out_path.with_suffix(".prompt.md")
+    pf.write_text(prompt, encoding="utf-8")
+    r = subprocess.run([sys.executable, str(HERE / "llm_dispatch.py"),
+                        str(pf), str(out_path), api_model, str(port)],
+                       capture_output=True, text=True, timeout=900)
+    if r.returncode != 0:
+        raise RuntimeError(f"dispatch failed: {r.stderr[-500:]}")
+    # la línia de timing és a stdout; el content, al fitxer
+    out_path.with_suffix(".timing.txt").write_text(r.stdout.strip(), encoding="utf-8")
+    return out_path.read_text(encoding="utf-8") if out_path.exists() else ""
+
+
+def run_one(task_id: str, plan_text: str, slug: str = "calibra") -> dict:
+    d = load_task(task_id)
+    repo = Path.home() / "Documents/CV/projects" / d["repo"]
+    t0 = time.time()
+
+    # 1. sandbox al pre_ref
+    wt = S.ensure_worktree(d["repo"], d["pre_ref"])
+    S.install_deps(wt)
+
+    # 2. executor
+    prompt = EXEC_PROMPT.format(plan=plan_text, tree=tree_at(repo, d["pre_ref"]),
+                                digest=digest_at(repo, d["pre_ref"]))
+    out_md = ANSWERS / slug / "P2" / f"{task_id}.executor.md"
+    out_md.parent.mkdir(parents=True, exist_ok=True)
+    content = _dispatch(prompt, out_md, EXECUTOR)
+    files = S.parse_executor_files(content)
+    n_written = S.apply_files(wt, files)
+
+    # 3. tests del post_ref (copiem tots per fixtures, executem només els TOCADES/NOUS)
+    all_tests = S.copy_tests(wt, repo, d["post_ref"])
+    r = subprocess.run(["git", "diff", "--name-only", d["pre_ref"], d["post_ref"]],
+                       cwd=str(repo), capture_output=True, text=True)
+    changed = set(r.stdout.splitlines())
+    feature_tests = [p for p in all_tests
+                     if p in changed or (S.TEST_PAT.search(p) and p not in _pre_tests(repo, d["pre_ref"]))]
+    if not feature_tests:  # fallback: els tocats
+        feature_tests = [p for p in all_tests if p in changed]
+
+    # 4. córrer tests de la feature
+    verds, total, out = S.run_tests(wt, feature_tests, d["repo"])
+    score = (verds / total) if total else 0.0
+
+    rec = {
+        "task_id": task_id, "repo": d["repo"], "pre_ref": d["pre_ref"],
+        "post_ref": d["post_ref"], "executor": EXECUTOR,
+        "files_delivered": sorted(files), "n_written": n_written,
+        "test_files": feature_tests, "verds": verds, "total": total,
+        "score": round(score, 4), "wall_s": round(time.time() - t0, 1),
+        "test_output_tail": out[-1500:],
+    }
+    out_dir = ANSWERS / slug / "P2"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / f"{task_id}.json").write_text(json.dumps(rec, ensure_ascii=False, indent=2),
+                                             encoding="utf-8")
+    return rec
+
+
+def model_plan(task_id: str, planner_slug: str) -> str | None:
+    """Pla del model: el FILES/TASKS/GATES que el planner va produir a P1 (.md)."""
+    for ext in (".md", ".json"):
+        f = ANSWERS / planner_slug / "P" / f"{task_id}{ext}"
+        if not f.exists():
+            continue
+        if ext == ".md":
+            return f.read_text(encoding="utf-8") or None
+        d = json.loads(f.read_text(encoding="utf-8"))
+        plan = d.get("plan") or d.get("content") or d.get("text") or ""
+        if not plan:
+            plan = d.get("plan_md") or d.get("answer") or ""
+        if plan:
+            return plan
+    return None
+
+
+def main() -> int:
+    args = sys.argv[1:]
+    mode = args[0] if args else "calibra"
+    # slugs: a calibra n'hi ha cap (plans humans); a run, els planners
+    slugs = args[1:] if mode == "run" else []
+    if mode == "run" and not slugs:
+        slugs = [s for s, f in O.FLEET.items() if (HERE / "answers" / s / "P").exists()]
+
+    # tasques amb tests reals (nous/tocats vs pre_ref)
+    with_tests = []
+    for f in sorted(CORPUS.glob("P*.json")):
+        d = json.loads(f.read_text(encoding="utf-8"))
+        repo = Path.home() / "Documents/CV/projects" / d["repo"]
+        r = subprocess.run(["git", "diff", "--name-only", d["pre_ref"], d["post_ref"]],
+                           cwd=str(repo), capture_output=True, text=True)
+        changed = r.stdout.splitlines()
+        pre_t = _pre_tests(repo, d["pre_ref"])
+        has_test = any((S.TEST_PAT.search(p) or S.FIXTURE_PAT.search(p)) and p not in pre_t
+                       for p in changed)
+        if has_test:
+            with_tests.append(d["task_id"])
+
+    print(f"P2[{mode}]: {len(with_tests)} tasques amb tests reals", flush=True)
+    ensure_executor_server()
+    try:
+        targets = [("calibra", None)] if mode == "calibra" else [(s, s) for s in slugs]
+        for slug, planner in targets:
+            n_done = n_skip = 0
+            for tid in with_tests:
+                out = ANSWERS / slug / "P2" / f"{tid}.json"
+                if out.exists():
+                    n_skip += 1
+                    continue
+                d = load_task(tid)
+                if mode == "calibra":
+                    plan = human_plan(d)
+                else:
+                    plan = model_plan(tid, planner)
+                    if plan is None:
+                        continue
+                rec = run_one(tid, plan, slug)
+                n_done += 1
+                print(f"  [{slug}] {tid:44s} verds={rec['verds']}/{rec['total']} "
+                      f"score={rec['score']} files={rec['n_written']} wall={rec['wall_s']}s",
+                      flush=True)
+            # resum per slug
+            rows = [json.loads(f.read_text(encoding="utf-8"))
+                    for f in sorted((ANSWERS / slug / "P2").glob("*.json"))]
+            if rows:
+                tv = sum(r["verds"] for r in rows)
+                tt = sum(r["total"] for r in rows)
+                print(f"\n=== P2[{mode}] {slug} ===", flush=True)
+                print(f"executor={EXECUTOR} · tests verds: {tv}/{tt} "
+                      f"({(tv/tt if tt else 0):.1%}) · {len(rows)} tasques "
+                      f"(nous={n_done} skip={n_skip})", flush=True)
+                for r in sorted(rows, key=lambda x: -x["score"]):
+                    print(f"  {r['task_id']:46s} {r['verds']:2d}/{r['total']:2d}  {r['score']:.2f}",
+                          flush=True)
+    finally:
+        O.stop_server()
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

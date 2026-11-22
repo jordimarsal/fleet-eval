@@ -62,16 +62,40 @@ I l'*input* és el repo ANTERIOR (requirements aprovats + arbre de fitxers al
 commit pare). **Contaminació zero**: repos privats locals, cap model de la
 flota pot haver-se memoritzat la solució.
 
-- Corpus: `python3 harvest_plans.py` (filtres: feature completa amb 1-6 commits,
-  3-15 fitxers canviats, ≥2 requisits, ≥3 tasques) → 12 tasques de 6 repos.
-- Runner: `python3 run_P.py [slug ...]`; grader: `grade_plans.py`.
-- P score = **0.55 × file_f1** (recall+precision del llistat FILES contra els
-  fitxers reals, matching tolerant per tail/basename) **+ 0.30 × coverage**
-  (requisits mapats a tasques) **+ 0.15 × breakdown** (TASKS parsejable, cap
-  dependència penjant, GATES amb tests). Tot mecànic: no LLM judge.
+- Corpus v2: `python3 harvest_plans.py` (filtres: feature completa amb 1-6
+  commits, 3-18 fitxers canviats, ≥2 requisits, ≥3 tasques; **digest de codi**
+  requirement-blind: 60 línies/4 KB dels 8 fitxers font més grans, sense
+  minified) → 23 tasques de 6 repos, prompts ~22 KB (~5.5k tokens).
+- Runner: `python3 run_P.py [slug ...] [--ctx N]`; grader: `grade_plans.py`.
+- P score v2 = **0.85 × file_f1** + 0.10 × coverage + 0.05 × breakdown
+  (v1 0.55/0.30/0.15: coverage i breakdown eren constants per a tothom — brk
+  1.00 a totes les files, cov 0.92-1.00 — i comprimeixen la dispersió).
+  file_f1 = recall+precision del llistat FILES contra els fitxers reals.
+- Veredicte v1 (12 tasques, arbre sol): NO discrimina — rang 0.044 vs SEM
+  0.087. v2 (digest + re-ponderació): rang 0.084 vs SEM 0.051 (ratio 1.65)
+  i el control 4B cau al fons. Encara fi: veure P2.
 - Limitació declarada: el pla real és UN camí vàlid — la nota mesura resultats
   (fitxers/requisits), no prosa. I el code-by-lang de ggufbench segueix sent la
   font per al worker per idioma (fleet-eval és python-only a A/B/E).
+
+## P2 battery (2026-11-22) — the plan measured by its EFFECT
+
+P1 mesure file-recall (endevinabilitat de paths). P2 mesura l'habilitat real:
+**si un pla d'aquest model és executable per algú altre**.
+
+```
+PLANNER (model sota test) → pla → EXECUTOR FIX (qwen36) → codi → TESTS REALS → % verds
+```
+
+- Executor fix = qwen36 (mai veu els requisits, només el pla + repo).
+- Tests reals: els que el commit de la feature va afegir/tocar (19/23 tasques).
+- Sandbox: `P2_sandbox.py` (worktree al pre_ref, deps uv/npm, còpia de tests
+  del post_ref, execució dels tests nous/tocats).
+- Runner: `python3 run_P2.py calibra` (plans humans `tasks.md` → valida
+  l'executor) o `python3 run_P2.py run` (plans dels models → la bateria).
+- Per què dispersa: la conversió pla→codi→tests AMPLIFICA diferències (un pla
+  vague → executor inventa → tests vermells). I com que la nota ja no és
+  file-recall, l'input es pot enriquir sense esbiaixar-la.
 
 ## Results (2026-11-15; +2 models 2026-11-22)
 
