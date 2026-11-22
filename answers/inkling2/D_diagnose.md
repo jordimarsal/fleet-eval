@@ -1,0 +1,11 @@
+Root cause: tests are sharing one mutable episode tree instead of keeping isolated runs: the shared `BW_DEBRIEF_ROOT`+ project name (`demo`) collapses otherwise independent fixtures into one resume target, and the minute-resolution `exec*` directory made several runs map onto the same log.
+
+First fault — `cli.py::_debrief_sink()` reads `settings.debrief_root` even when every test sets up its own temporary `project.root`; it calls `find_open_episode(base, "demo", feature)`, which treats all those references as “unfinished” work for one physical feature rather than distinguishing separate unrelated fixture projects. Thus a test can reconstruct/resume an earlier terminal sink; `hook new file -> no existing -> DebriefSink` later observes that old file again, `DebriefSink.__init__`/`_resume` sets `Finished=True` because the stale log’s finished result line exists, and `step()` immediately raises. The temp roots in those tests do not matter—the artifact base is outside them, where CI avoids the issue by never setting the variable.
+
+Secondfault is coarse fresh naming:
+```python
+exec_id = f"exec{datetime.now(UTC):%Y%m%dT%H%MZ}"
+```
+and using only `feature + exec id` means multiple invocations within the measured minute with the same feature reach identically named parents. That makes any leakage likely in full runs while single-test runs behave cleanly.
+
+Minimal fix (two parts): leave resume behaviour intact for **one** live episode—that semantic belongs to debrief storage—but make intended instances distinct. Give each run its own scope identity inside `_debrief_sink()` (workspace/project path or explicit campaign/run marker carried through `cli` → sink lookup/creation), so independent fixtures can’t resolve into one shared open episode; use a noncolliding timestamp when creating new paths rather than minute precision alone (subsecond component plus unique token) *without* changing existing-log continuation behavior. Also add an isolated autouse fixture that removes or replaces `BW_DEBRIEF_ROOT` per test with a dedicated directory under `tmp_path` unless an intentional integration case tests central sharing.

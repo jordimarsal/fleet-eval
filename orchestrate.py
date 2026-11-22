@@ -30,6 +30,12 @@ FLEET = {
     "SC117": "Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-APEX-I-Compact.gguf",
     "Huihui": "Huihui-Qwen3.8-27B-abliterated-UD-Q3_K_XL.gguf",
     "qwen4b": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf",   # floor control
+    # 2026-11-22: Inkling 2 Mini (Thinking Machines, 26.2B MoE looped, 3.4B actiu).
+    # Layout inkling2_loop: el GGUF arrel d'unsloth és "inkling2" (layout d'Unsloth) i
+    # no el llegeix llama.cpp mainline; el fitxer equivalent és Mainline_Support/ (tensors
+    # idèntics, layout que llegeix upstream, PR #32694 + #32704).
+    "inkling2": "Inkling-2-Mini-UD-Q4_K_M.gguf",
+    "inkling2unc": "Inkling-2-Mini-Uncensored-AD-Q4_K.gguf",
 }
 PORT = 8999
 

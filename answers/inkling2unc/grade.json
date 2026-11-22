@@ -1,0 +1,62 @@
+{
+  "model": "inkling2unc",
+  "A": {
+    "blocks": 0,
+    "chars": 0,
+    "passed": 0,
+    "failed": 0,
+    "syntax_ok": false,
+    "applied": false,
+    "why": "no fenced python block"
+  },
+  "B": {
+    "blocks": 1,
+    "chars": 1920,
+    "passed": 10,
+    "failed": 0,
+    "syntax_ok": true,
+    "applied": true
+  },
+  "C": {
+    "found": [
+      "D1_mutable_default",
+      "D2_bare_except",
+      "D3_injection",
+      "D4_leak",
+      "D5_off_by_one",
+      "D7_transaction"
+    ],
+    "missing": [
+      "D6_falsy_id"
+    ],
+    "recall": 0.86,
+    "numbered_items": 7,
+    "false_positives_est": 1,
+    "functions_named": [
+      "batch_update",
+      "get_user",
+      "save_user"
+    ]
+  },
+  "D": {
+    "root_causes": {
+      "minute_collision": true,
+      "shared_root": true,
+      "resume_finished": true,
+      "find_open_none": true
+    },
+    "root_score": 4,
+    "fixes": {
+      "unique_path": false,
+      "never_resume_closed": true,
+      "hermetic_tests": true
+    },
+    "fix_score": 2,
+    "words": 323,
+    "over_300_words": true,
+    "names_exec_id_collision": true,
+    "names_env_pollution": true,
+    "total": 6,
+    "max": 7
+  }
+}

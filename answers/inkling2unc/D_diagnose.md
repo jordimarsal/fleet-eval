@@ -1,0 +1,12 @@
+Root cause: cross-test state leakage through the developer shell’s global `BW_DEBRIEF_ROOT` — all tests share one central evidence tree and the same `demo` project/feature names, so their logs collide; a sink resumed by an earlier invocation (or left at multiple timestamps inside the minute-grained `exec…T%H%MZ` bucket) carries its prior `finished=True` into later ones, failing every time more than one episode runs per process. CI is green because it has no such override and falls back to per-test `tmp_path` artifacts. Notably the debug path proves another run’s log was selected even though the caller believes it owns a fresh temp project.
+
+The interaction that breaks:
+- `cli.py::_debrief_sink` chooses `base = settings.debrief_root or …` unconditionally from the environment;
+- it then calls `find_open_episode(base, project_name, feature_name)` purely on `(project, feature)`, ignoring which project/run instance this test drives;
+- files are skipped only when they contain the substring `"result:"` anywhere, while `DebriefSink.__init__` re-reads any file handed to it and sets `self._finished=True` if it sees a `result:` line — hence “constructed finished” yet reused across tests.
+
+Minimal fix, two parts:
+1. In the test fixture/conftest (the real leak), isolate evidence: point `BW_DEBRIEF_ROOT`/`settings.debrief_root` at the per-test `tmp_path` artifacts dir for each test (e.g. `monkeypatch.setenv("BW_DEBRIEF_ROOT", str(tmp_path / "artifacts"))` or an equivalent autouse fixture). Nothing in production needs to change merely because of this dev shell override.
+2. Harden `find_open_episode()` minimally: glob for unreadable/stale collisions is not enough—match the episode by exact filename under its own exec directory (`base/project/exec_id/*.log`) instead of scanning stale siblings whose `run:` header belongs to another project, and do not return a file that contains a real `result:` *line* (match with a regex anchored to line start rather than a substring) before resuming; otherwise let `_debrief_sink` create a fresh exec directory. If any ambiguity remains, treat the result as finished and never resume it into a new run.
+
+Do not rewrite modules; don’t add persistence checks inside `step()`. Just make tests isolated and make resume confirmation precise.

@@ -1,0 +1,14 @@
+{
+  "src_lines": 435,
+  "blocks": 1,
+  "chars": 14319,
+  "syntax_ok": true,
+  "symbols_kept": 16,
+  "symbols_missing": [],
+  "placeholder": false,
+  "lines": 414,
+  "line_ratio": 0.952,
+  "added_symbol": true,
+  "modified_applied": true,
+  "model": "inkling2unc"
+}
