@@ -69,9 +69,10 @@ def run_tests(wt: Path, files: list[str], repo_name: str) -> tuple[int, int, str
     """Córrer els tests donats. Retorna (verds, total, output)."""
     if not files:
         return 0, 0, "(no test files)"
-    # separem per runner (sense snapshots ni fixtures com a tests executables)
+    # separem per runner (sense snapshots, fixtures ni conftest com a tests executables)
     runnable = [f for f in files
-                if not f.endswith(".snap") and not f.endswith(".json")]
+                if not f.endswith(".snap") and not f.endswith(".json")
+                and not f.endswith("conftest.py")]
     py = [f for f in runnable if f.endswith(".py")]
     js = [f for f in runnable if not f.endswith(".py")]
     verds = total = 0
@@ -118,13 +119,29 @@ def run_tests(wt: Path, files: list[str], repo_name: str) -> tuple[int, int, str
 
 
 def parse_executor_files(text: str) -> dict[str, str]:
-    """Parseja la sortida de l'executor: === FILE: path === ... === END FILE ==="""
+    """Parseja la sortida de l'executor.
+
+    Suporta dos formats (els models varien):
+      A) === FILE: path === \\n <contingut> \\n === END FILE ===   (el demanat)
+      B) === FILE: path === \\n ```lang \\n <contingut> \\n ``` \\n següent FILE
+         (el que realment emeten: sense END, amb fences markdown)
+    També neteja fences de ``` que emboliquin el contingut.
+    """
     files: dict[str, str] = {}
-    for m in re.finditer(r"=== FILE:\s*(.+?)\s*===\s*\n(.*?)\n=== END FILE ===", text, re.S):
-        path = m.group(1).strip().lstrip("/")
-        content = m.group(2)
-        if path and not path.startswith(".."):
-            files[path] = content
+    # separa per marcadors de FILE (o END FILE com a tall)
+    parts = re.split(r"===\s*FILE:\s*(.+?)\s*===", text)
+    # parts[0] = prosa abans del primer FILE; després (path, body, path, body, ...)
+    for i in range(1, len(parts), 2):
+        path = parts[i].strip().lstrip("/")
+        body = parts[i + 1] if i + 1 < len(parts) else ""
+        # talla al següent END FILE si hi és
+        body = re.split(r"===\s*END FILE\s*===", body)[0]
+        # treu fences markdown ``` al voltant del contingut
+        body = body.strip()
+        body = re.sub(r"^```[\w]*\n", "", body)
+        body = re.sub(r"\n```$", "", body)
+        if path and not path.startswith("..") and body:
+            files[path] = body
     return files
 
 

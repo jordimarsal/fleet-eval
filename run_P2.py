@@ -23,10 +23,10 @@ CORPUS = HERE / "corpus" / "plans"
 ANSWERS = HERE / "answers"
 PROMPTS = HERE / "prompts" / "P2"
 
-EXECUTOR = "qwen36"          # executor fix per a tota la bateria
+EXECUTOR = "qwen36"          # executor fix per a tota la bateria (configurable: --executor X)
 CTX = 32768                  # prompt dels tests + digest; més que prou
 
-EXEC_PROMPT = """You are an implementer working from a plan. Write the EXACT files the plan asks for.
+EXEC_PROMPT = """You are an implementer working from a plan. Implement it so the provided tests pass.
 
 --- PLAN ---
 {plan}
@@ -34,16 +34,20 @@ EXEC_PROMPT = """You are an implementer working from a plan. Write the EXACT fil
 --- REPOSITORY FILE TREE (before implementation) ---
 {tree}
 
---- KEY SOURCE FILES (before implementation, excerpts) ---
+--- EXISTING SOURCE FILES (before implementation, excerpts) ---
 {digest}
 
-Output ONLY the files, each in this format:
+--- TESTS THE RESULT MUST PASS (read carefully: they define the exact API) ---
+{tests}
+
+Output ONLY the files the plan asks for, each in this format:
 
 === FILE: relative/path.ext ===
 <file contents>
 === END FILE ===
 
-No prose outside the file blocks. Do not invent extra files beyond what the plan asks."""
+Write the implementation files (not the tests — they already exist). No prose
+outside the file blocks. Do not invent extra files beyond what the plan asks."""
 
 
 def load_task(task_id: str) -> dict:
@@ -146,24 +150,47 @@ def run_one(task_id: str, plan_text: str, slug: str = "calibra") -> dict:
     wt = S.ensure_worktree(d["repo"], d["pre_ref"])
     S.install_deps(wt)
 
-    # 2. executor
-    prompt = EXEC_PROMPT.format(plan=plan_text, tree=tree_at(repo, d["pre_ref"]),
-                                digest=digest_at(repo, d["pre_ref"]))
-    out_md = ANSWERS / slug / "P2" / f"{task_id}.executor.md"
-    out_md.parent.mkdir(parents=True, exist_ok=True)
-    content = _dispatch(prompt, out_md, EXECUTOR)
-    files = S.parse_executor_files(content)
-    n_written = S.apply_files(wt, files)
-
-    # 3. tests del post_ref (copiem tots per fixtures, executem només els TOCADES/NOUS)
+    # 2. tests de la feature: els copiem JA (l'executor els veurà) i els executarem
     all_tests = S.copy_tests(wt, repo, d["post_ref"])
     r = subprocess.run(["git", "diff", "--name-only", d["pre_ref"], d["post_ref"]],
                        cwd=str(repo), capture_output=True, text=True)
     changed = set(r.stdout.splitlines())
+    pre_t = _pre_tests(repo, d["pre_ref"])
     feature_tests = [p for p in all_tests
-                     if p in changed or (S.TEST_PAT.search(p) and p not in _pre_tests(repo, d["pre_ref"]))]
-    if not feature_tests:  # fallback: els tocats
+                     if p not in pre_t or p in changed]
+    if not feature_tests:
         feature_tests = [p for p in all_tests if p in changed]
+    # contingut dels tests (contracte exacte de l'API) — cap de 8k chars per fitxer
+    tests_txt_parts = []
+    for p in feature_tests:
+        if p.endswith((".snap", ".json")):
+            continue
+        f = wt / p
+        if f.exists():
+            txt = f.read_text(encoding="utf-8", errors="replace")
+            tests_txt_parts.append(f"--- {p} ---\n{txt[:8000]}")
+    tests_txt = "\n\n".join(tests_txt_parts) or "(no tests)"
+
+    # 3. executor (amb els tests al davant)
+    prompt = EXEC_PROMPT.format(plan=plan_text, tree=tree_at(repo, d["pre_ref"]),
+                                digest=digest_at(repo, d["pre_ref"]), tests=tests_txt)
+    out_md = ANSWERS / slug / "P2" / f"{task_id}.executor.md"
+    out_md.parent.mkdir(parents=True, exist_ok=True)
+    content = _dispatch(prompt, out_md, EXECUTOR)
+    files = S.parse_executor_files(content)
+    retry_note = ""
+    if not files:
+        # el model es va encallar en prosa/raonament sense lliurar cap fitxer:
+        # reintenta amb ordre directe (mateix cost que un buit, evita un 0 fals)
+        content = _dispatch(
+            prompt + "\n\nIMPORTANT: Do NOT analyze or explain. Your FIRST line must be "
+                     "'=== FILE: <path> ==='. Emit the file contents now.",
+            out_md.with_name(out_md.stem + ".retry.md"), EXECUTOR)
+        files = S.parse_executor_files(content)
+        retry_note = "retry_no_files"
+    n_written = S.apply_files(wt, files)
+    # els tests són sagrats: si l'executor n'ha lliurat de propis, els re-copiem
+    S.copy_tests(wt, repo, d["post_ref"])
 
     # 4. córrer tests de la feature
     verds, total, out = S.run_tests(wt, feature_tests, d["repo"])
@@ -175,7 +202,7 @@ def run_one(task_id: str, plan_text: str, slug: str = "calibra") -> dict:
         "files_delivered": sorted(files), "n_written": n_written,
         "test_files": feature_tests, "verds": verds, "total": total,
         "score": round(score, 4), "wall_s": round(time.time() - t0, 1),
-        "test_output_tail": out[-1500:],
+        "retry": retry_note, "test_output_tail": out[-1500:],
     }
     out_dir = ANSWERS / slug / "P2"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -202,7 +229,13 @@ def model_plan(task_id: str, planner_slug: str) -> str | None:
 
 
 def main() -> int:
+    global EXECUTOR
     args = sys.argv[1:]
+    # --executor <slug>: model que fa d'executor (default qwen36)
+    if "--executor" in args:
+        i = args.index("--executor")
+        EXECUTOR = args[i + 1]
+        del args[i:i + 2]
     mode = args[0] if args else "calibra"
     # slugs: a calibra n'hi ha cap (plans humans); a run, els planners
     slugs = args[1:] if mode == "run" else []
@@ -226,7 +259,8 @@ def main() -> int:
     print(f"P2[{mode}]: {len(with_tests)} tasques amb tests reals", flush=True)
     ensure_executor_server()
     try:
-        targets = [("calibra", None)] if mode == "calibra" else [(s, s) for s in slugs]
+        targets = ([(f"calibra_{EXECUTOR}", None)] if mode == "calibra"
+               else [(s, s) for s in slugs])
         for slug, planner in targets:
             n_done = n_skip = 0
             for tid in with_tests:
