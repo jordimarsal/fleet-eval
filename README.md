@@ -27,15 +27,25 @@ score 10/10 (A, B), the buggy file fails 5 tests (B), the diff passes
 
 - Identical prompts for every model; full untruncated files as context
   (784–3835 prompt tokens — no OOM risk, nothing truncated).
-- `tool_choice: none`, `enable_thinking: false`, `max_tokens: 8000`
+- `tool_choice: none`, `enable_thinking: false`, budget inicial `max_tokens: 8000`
   (the dispatch driver settings).
+- **Escalació de pressupost (2026-11-22):** si la resposta torna amb content BUIT
+  i raonament no buit, el model s'ha menjar el sostre pensant — això no mesura
+  capacitat sinó el pressupost. El driver (`llm_dispatch.py`) reintentà
+  automàticament amb 16000 i després 24000 fins que lliuri content; el
+  pressupost efectiu i els intents viatgen a la línia de timing (`budget=`,
+  `attempts=`) i la nota queda al receipt. Un 0 amb `attempts=3` SÍ que és un
+  resultat genuí. Precendent: el qwen38 amb 8000 va lliurar buit a 3 de 4
+  tasques i amb 16000 va puntuar A 10/10 B 10/10 — el 0 era l'artefacte, no el
+  model (README finding 3, ara ferit al driver i no a mà).
 - **One engine at a time** — llama.cpp and Strata share VRAM.
 - Grading is mechanical: pytest for A/B, keyword-recall over the seeded defect
   list for C/D, symbol + line-ratio + functional probe for E. No LLM judge.
-- A delivery failure (empty content, prose instead of a file) scores 0 and is
-  flagged; it is never reinterpreted as a capability result.
+- A delivery failure at the LAST budget step (still empty at 24000, or prose
+  instead of a file) scores 0 and is flagged; it is never reinterpreted as a
+  capability result.
 
-## Results (2026-11-15)
+## Results (2026-11-15; +2 models 2026-11-22)
 
 | model | A impl | B fix | C rev | D diag | E compl | E func | wall | t/s |
 |---|---|---|---|---|---|---|---|---|
@@ -47,6 +57,15 @@ score 10/10 (A, B), the buggy file fails 5 tests (B), the diff passes
 | qwen36 | 7/10 | 6/10 | 0.71 | 4/7 | 1.03 | 5/5 | 10.7s | **201** |
 | qwen4b | 7/10 | 6/10 | 0.71 | 3/7 | 1.05 | 5/5 | 9.4s | 188 |
 | qwen38 | 9/10 | 0/10 ⚠ | 0.57 | **7/7** | 1.03 | 5/5 | 28.7s | 97 |
+| **inkling2** ★ | **10/10**¹ | **10/10** | **1.00** | 6/7 | 0.95 | 5/5 | 673s¹ | 36 |
+| **inkling2unc** ★ | **10/10**¹ | **10/10** | 0.86 | 6/7 | 0.95 | 5/5 | 587s¹ | 36 |
+
+¹ **escalat de pressupost**: la A va lliurar buit a 8000 (el model es menja el sostre
+raonant, ~26k chars de thinking) i va puntuar 10/10 amb 16000 (`attempts=2`). El wall de
+la A inclou els dos intents. És el primer model al qual la regla d'escalat del driver
+s'aplica i confirma el precedent del qwen38: el 0 inicial mesurava el pressupost, no el
+model. La C d'inkling2 (1.00, els 8 defectes) és la millor revisió mai mesurada aquí, i
+la B 10/10 empata el màxim de la flota.
 
 - **C** = defect recall over 7 seeded defects (nobody found all 7);
   *fp* = estimated false positives.
@@ -79,8 +98,8 @@ score 10/10 (A, B), the buggy file fails 5 tests (B), the diff passes
 
 | use | model | evidence |
 |---|---|---|
-| **Implement code** | **gemma4** (1st) → minicpm / Huihui / SC117 | only model acing A **and** B; 9/10 group behind it |
-| **Review / diagnose** | **Strata** (reference) → gemma4 | perfect B + 7/7 D; slow (74 t/s) so not an implementer |
+| **Implement code** | **gemma4 / inkling2** (1st) → minicpm / Huihui / SC117 | A+B 10/10 (inkling2 amb budget 16000, vegeu la nota ¹); 9/10 group behind it |
+| **Review / diagnose** | **Strata** (reference) → gemma4 → **inkling2** | perfect B + 7/7 D (Strata); inkling2: C 1.00, la millor revisió de la flota |
 | **Speed / tools / short text** | qwen36, qwen4b | 201/188 t/s but 7/10 A, 3-4/7 D — never code with edge cases |
 | **Daily model, vision** | qwen38 | only with thinking ON + ≥16k budget for code |
 

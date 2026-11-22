@@ -1,1 +1,2 @@
-model=inkling2 wall=221.2s gen=37tok/s predicted_n=8000 prompt_n=1859 content_chars=0 reasoning_chars=38067
+  [dispatch] content buit amb budget 8000: escalo a 16000
+model=inkling2 wall=422.5s gen=36tok/s predicted_n=7183 prompt_n=4 content_chars=5175 reasoning_chars=26177 budget=16000 attempts=2
