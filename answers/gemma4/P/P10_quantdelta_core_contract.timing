@@ -1,0 +1,1 @@
+model=gemma4 wall=0.8s gen=129tok/s predicted_n=67 prompt_n=877 content_chars=260 reasoning_chars=0 budget=8000 attempts=1
