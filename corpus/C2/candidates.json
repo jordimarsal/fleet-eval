@@ -15,7 +15,8 @@
     "del": 5
    }
   ],
-  "total_lines": 20
+  "total_lines": 20,
+  "public": true
  },
  {
   "repo": "dev-lab",
@@ -33,7 +34,8 @@
     "del": 4
    }
   ],
-  "total_lines": 20
+  "total_lines": 20,
+  "public": true
  },
  {
   "repo": "dev-lab",
@@ -46,7 +48,8 @@
     "del": 1
    }
   ],
-  "total_lines": 2
+  "total_lines": 2,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -59,7 +62,8 @@
     "del": 3
    }
   ],
-  "total_lines": 6
+  "total_lines": 6,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -82,7 +86,8 @@
     "del": 0
    }
   ],
-  "total_lines": 46
+  "total_lines": 46,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -100,7 +105,8 @@
     "del": 1
    }
   ],
-  "total_lines": 6
+  "total_lines": 6,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -113,7 +119,8 @@
     "del": 13
    }
   ],
-  "total_lines": 17
+  "total_lines": 17,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -126,7 +133,8 @@
     "del": 5
    }
   ],
-  "total_lines": 24
+  "total_lines": 24,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -144,7 +152,8 @@
     "del": 0
    }
   ],
-  "total_lines": 24
+  "total_lines": 24,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -162,7 +171,8 @@
     "del": 1
    }
   ],
-  "total_lines": 18
+  "total_lines": 18,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -180,7 +190,8 @@
     "del": 0
    }
   ],
-  "total_lines": 27
+  "total_lines": 27,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -193,7 +204,8 @@
     "del": 12
    }
   ],
-  "total_lines": 72
+  "total_lines": 72,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -211,7 +223,8 @@
     "del": 0
    }
   ],
-  "total_lines": 18
+  "total_lines": 18,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -229,7 +242,8 @@
     "del": 2
    }
   ],
-  "total_lines": 30
+  "total_lines": 30,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -252,7 +266,8 @@
     "del": 1
    }
   ],
-  "total_lines": 58
+  "total_lines": 58,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -265,7 +280,8 @@
     "del": 2
    }
   ],
-  "total_lines": 5
+  "total_lines": 5,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -283,7 +299,8 @@
     "del": 0
    }
   ],
-  "total_lines": 15
+  "total_lines": 15,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -301,7 +318,8 @@
     "del": 0
    }
   ],
-  "total_lines": 16
+  "total_lines": 16,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -319,7 +337,8 @@
     "del": 0
    }
   ],
-  "total_lines": 58
+  "total_lines": 58,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -332,7 +351,8 @@
     "del": 4
    }
   ],
-  "total_lines": 13
+  "total_lines": 13,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -350,7 +370,8 @@
     "del": 2
    }
   ],
-  "total_lines": 11
+  "total_lines": 11,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -363,7 +384,8 @@
     "del": 0
    }
   ],
-  "total_lines": 3
+  "total_lines": 3,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -376,7 +398,8 @@
     "del": 0
    }
   ],
-  "total_lines": 1
+  "total_lines": 1,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -394,7 +417,8 @@
     "del": 0
    }
   ],
-  "total_lines": 3
+  "total_lines": 3,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -417,7 +441,8 @@
     "del": 1
    }
   ],
-  "total_lines": 14
+  "total_lines": 14,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -430,7 +455,8 @@
     "del": 4
    }
   ],
-  "total_lines": 17
+  "total_lines": 17,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -443,7 +469,8 @@
     "del": 4
    }
   ],
-  "total_lines": 18
+  "total_lines": 18,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -456,7 +483,8 @@
     "del": 2
    }
   ],
-  "total_lines": 4
+  "total_lines": 4,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -474,7 +502,8 @@
     "del": 0
    }
   ],
-  "total_lines": 34
+  "total_lines": 34,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -492,7 +521,8 @@
     "del": 0
    }
   ],
-  "total_lines": 45
+  "total_lines": 45,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -515,7 +545,8 @@
     "del": 1
    }
   ],
-  "total_lines": 24
+  "total_lines": 24,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -533,7 +564,8 @@
     "del": 0
    }
   ],
-  "total_lines": 44
+  "total_lines": 44,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -556,7 +588,8 @@
     "del": 0
    }
   ],
-  "total_lines": 62
+  "total_lines": 62,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -574,7 +607,8 @@
     "del": 0
    }
   ],
-  "total_lines": 27
+  "total_lines": 27,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -587,7 +621,8 @@
     "del": 11
    }
   ],
-  "total_lines": 24
+  "total_lines": 24,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -610,7 +645,8 @@
     "del": 0
    }
   ],
-  "total_lines": 68
+  "total_lines": 68,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -628,7 +664,8 @@
     "del": 0
    }
   ],
-  "total_lines": 32
+  "total_lines": 32,
+  "public": true
  },
  {
   "repo": "ggufbench",
@@ -646,7 +683,8 @@
     "del": 1
    }
   ],
-  "total_lines": 26
+  "total_lines": 26,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -659,7 +697,8 @@
     "del": 1
    }
   ],
-  "total_lines": 27
+  "total_lines": 27,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -677,7 +716,8 @@
     "del": 2
    }
   ],
-  "total_lines": 8
+  "total_lines": 8,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -690,7 +730,8 @@
     "del": 2
    }
   ],
-  "total_lines": 11
+  "total_lines": 11,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -708,7 +749,8 @@
     "del": 2
    }
   ],
-  "total_lines": 12
+  "total_lines": 12,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -721,7 +763,8 @@
     "del": 3
    }
   ],
-  "total_lines": 6
+  "total_lines": 6,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -739,7 +782,8 @@
     "del": 3
    }
   ],
-  "total_lines": 12
+  "total_lines": 12,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -757,7 +801,8 @@
     "del": 2
    }
   ],
-  "total_lines": 24
+  "total_lines": 24,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -770,7 +815,8 @@
     "del": 3
    }
   ],
-  "total_lines": 6
+  "total_lines": 6,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -788,7 +834,8 @@
     "del": 15
    }
   ],
-  "total_lines": 42
+  "total_lines": 42,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -806,7 +853,8 @@
     "del": 6
    }
   ],
-  "total_lines": 18
+  "total_lines": 18,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -829,7 +877,8 @@
     "del": 2
    }
   ],
-  "total_lines": 8
+  "total_lines": 8,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -847,7 +896,8 @@
     "del": 3
    }
   ],
-  "total_lines": 36
+  "total_lines": 36,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -870,7 +920,8 @@
     "del": 2
    }
   ],
-  "total_lines": 38
+  "total_lines": 38,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -883,7 +934,8 @@
     "del": 2
    }
   ],
-  "total_lines": 16
+  "total_lines": 16,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -901,7 +953,8 @@
     "del": 3
    }
   ],
-  "total_lines": 18
+  "total_lines": 18,
+  "public": true
  },
  {
   "repo": "jordimp",
@@ -914,7 +967,8 @@
     "del": 4
    }
   ],
-  "total_lines": 14
+  "total_lines": 14,
+  "public": true
  },
  {
   "repo": "mussol",
@@ -937,7 +991,8 @@
     "del": 0
    }
   ],
-  "total_lines": 13
+  "total_lines": 13,
+  "public": true
  },
  {
   "repo": "quantdelta",
@@ -950,7 +1005,8 @@
     "del": 1
    }
   ],
-  "total_lines": 13
+  "total_lines": 13,
+  "public": true
  },
  {
   "repo": "quantdelta",
@@ -968,7 +1024,8 @@
     "del": 3
    }
   ],
-  "total_lines": 33
+  "total_lines": 33,
+  "public": true
  },
  {
   "repo": "quantdelta",
@@ -986,7 +1043,8 @@
     "del": 2
    }
   ],
-  "total_lines": 77
+  "total_lines": 77,
+  "public": true
  },
  {
   "repo": "seekandemploy",
@@ -999,7 +1057,8 @@
     "del": 1
    }
   ],
-  "total_lines": 5
+  "total_lines": 5,
+  "public": true
  },
  {
   "repo": "seekandemploy",
@@ -1012,6 +1071,5561 @@
     "del": 2
    }
   ],
-  "total_lines": 3
+  "total_lines": 3,
+  "public": true
+ },
+ {
+  "repo": "buildwright",
+  "hash": "cc682d8f5a5d",
+  "message": "fix(runtime): errors de escriptura (OSError, p.ex. fitxers 0444 loop-owned) tornen com a ERROR feedback al worker en lloc de crashar el graf — el lock de feature_list va blocar un intent i el PermissionError sense gestio va tombar la S1 de farga-tui",
+  "files": [
+   {
+    "path": "src/buildwright/runtime.py",
+    "ins": 15,
+    "del": 3
+   },
+   {
+    "path": "tests/test_runtime.py",
+    "ins": 23,
+    "del": 0
+   }
+  ],
+  "total_lines": 41,
+  "public": true
+ },
+ {
+  "repo": "buildwright",
+  "hash": "136727c6cef3",
+  "message": "fix(lint): ruff net al feature economics (I001, F401, RUF022, RUF100)",
+  "files": [
+   {
+    "path": "src/buildwright/cli.py",
+    "ins": 7,
+    "del": 0
+   },
+   {
+    "path": "src/buildwright/economics.py",
+    "ins": 2,
+    "del": 3
+   },
+   {
+    "path": "tests/test_economics.py",
+    "ins": 0,
+    "del": 1
+   }
+  ],
+  "total_lines": 13,
+  "public": true
+ },
+ {
+  "repo": "buildwright",
+  "hash": "e80189f95f4f",
+  "message": "fix: FURB188 removeprefix (ruff fleet check)",
+  "files": [
+   {
+    "path": "src/buildwright/runtime.py",
+    "ins": 1,
+    "del": 3
+   }
+  ],
+  "total_lines": 4,
+  "public": true
+ },
+ {
+  "repo": "buildwright",
+  "hash": "9ac7feaeb8b9",
+  "message": "fix: treu import re orfe (TASK_RE eliminat al fix sonar)",
+  "files": [
+   {
+    "path": "src/buildwright/runtime.py",
+    "ins": 0,
+    "del": 1
+   }
+  ],
+  "total_lines": 1,
+  "public": true
+ },
+ {
+  "repo": "buildwright",
+  "hash": "da61940aeff6",
+  "message": "fix(sonar): parse de tasks.md sense regex (S8786)",
+  "files": [
+   {
+    "path": "src/buildwright/runtime.py",
+    "ins": 21,
+    "del": 6
+   }
+  ],
+  "total_lines": 27,
+  "public": true
+ },
+ {
+  "repo": "buildwright",
+  "hash": "d9cffdab84a2",
+  "message": "fix(loop): trace gate also checks the feature being completed",
+  "files": [
+   {
+    "path": "CHANGELOG.md",
+    "ins": 11,
+    "del": 0
+   },
+   {
+    "path": "src/buildwright/loop.py",
+    "ins": 27,
+    "del": 3
+   },
+   {
+    "path": "tests/test_loop.py",
+    "ins": 16,
+    "del": 0
+   }
+  ],
+  "total_lines": 57,
+  "public": true
+ },
+ {
+  "repo": "codebaserag",
+  "hash": "8725e99fe848",
+  "message": "fix(ci): type the report dict for mypy strict; create Pages site out-of-band",
+  "files": [
+   {
+    "path": "scripts/sonar-quality.py",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 5,
+  "public": true
+ },
+ {
+  "repo": "codebaserag",
+  "hash": "c7108ee08198",
+  "message": "fix(config): make dotenv loading opt-in via CODERAG_ENV_FILE",
+  "files": [
+   {
+    "path": "src/coderag/config.py",
+    "ins": 34,
+    "del": 2
+   },
+   {
+    "path": "tests/test_ingest.py",
+    "ins": 18,
+    "del": 0
+   }
+  ],
+  "total_lines": 54,
+  "public": true
+ },
+ {
+  "repo": "codebaserag",
+  "hash": "241580cddcaf",
+  "message": "fix(deploy): loopback-only published ports, fail-closed db credentials, pinnable installer",
+  "files": [
+   {
+    "path": "docker-compose.yml",
+    "ins": 15,
+    "del": 10
+   },
+   {
+    "path": "install.sh",
+    "ins": 17,
+    "del": 3
+   },
+   {
+    "path": "scripts/start-llamacpp.sh",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 50,
+  "public": true
+ },
+ {
+  "repo": "codebaserag",
+  "hash": "9bada0e90639",
+  "message": "fix(retrieval): support revision-pinned reranker models, warn when unbound",
+  "files": [
+   {
+    "path": "src/coderag/retrieval/reranker.py",
+    "ins": 23,
+    "del": 1
+   },
+   {
+    "path": "tests/test_retriever.py",
+    "ins": 12,
+    "del": 0
+   }
+  ],
+  "total_lines": 36,
+  "public": true
+ },
+ {
+  "repo": "codebaserag",
+  "hash": "2ba522ac53ff",
+  "message": "fix(generation): protect grounding verdict from model-controlled payload keys",
+  "files": [
+   {
+    "path": "src/coderag/generation/generator.py",
+    "ins": 10,
+    "del": 1
+   },
+   {
+    "path": "tests/test_generator.py",
+    "ins": 24,
+    "del": 0
+   }
+  ],
+  "total_lines": 35,
+  "public": true
+ },
+ {
+  "repo": "codebaserag",
+  "hash": "fd1eb4e98fb7",
+  "message": "fix(retrieval): clamp top_k and candidate_k inside Retriever",
+  "files": [
+   {
+    "path": "src/coderag/retrieval/retriever.py",
+    "ins": 10,
+    "del": 3
+   },
+   {
+    "path": "tests/test_retriever.py",
+    "ins": 25,
+    "del": 0
+   }
+  ],
+  "total_lines": 38,
+  "public": true
+ },
+ {
+  "repo": "codebaserag",
+  "hash": "0815a66c79e5",
+  "message": "fix(api): bound public request scalars (top_k, question length, strategy)",
+  "files": [
+   {
+    "path": "src/coderag/api/models.py",
+    "ins": 18,
+    "del": 7
+   },
+   {
+    "path": "tests/test_api.py",
+    "ins": 24,
+    "del": 0
+   }
+  ],
+  "total_lines": 49,
+  "public": true
+ },
+ {
+  "repo": "codebaserag",
+  "hash": "2dc39c39c3bc",
+  "message": "fix(api): pin /ingest to the operator-configured repo scope",
+  "files": [
+   {
+    "path": "src/coderag/api/app.py",
+    "ins": 13,
+    "del": 2
+   },
+   {
+    "path": "src/coderag/api/models.py",
+    "ins": 3,
+    "del": 1
+   },
+   {
+    "path": "tests/test_api.py",
+    "ins": 14,
+    "del": 0
+   }
+  ],
+  "total_lines": 33,
+  "public": true
+ },
+ {
+  "repo": "codebaserag",
+  "hash": "ee9a83319db8",
+  "message": "fix(install): uv tool install --from expects package name (codebaserag), not executable (coderag)",
+  "files": [
+   {
+    "path": "install.sh",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": true
+ },
+ {
+  "repo": "debrief-mcp",
+  "hash": "8b18f61f7517",
+  "message": "fix(mcp_server): SIGINT handler exits immediately, no shutdown traceback",
+  "files": [
+   {
+    "path": "src/debrief/mcp_server.py",
+    "ins": 13,
+    "del": 7
+   }
+  ],
+  "total_lines": 20,
+  "public": true
+ },
+ {
+  "repo": "debrief-mcp",
+  "hash": "1e495d870085",
+  "message": "fix(mcp_server): clean shutdown on SIGINT instead of traceback",
+  "files": [
+   {
+    "path": "src/debrief/mcp_server.py",
+    "ins": 7,
+    "del": 1
+   }
+  ],
+  "total_lines": 8,
+  "public": true
+ },
+ {
+  "repo": "harness",
+  "hash": "94d22e7ca999",
+  "message": "fix(tools): mypy strict clean (TypedDict + guards + signatures) + exempt regex sense backtracking",
+  "files": [
+   {
+    "path": "templates/tools/check-traceability.py",
+    "ins": 23,
+    "del": 5
+   },
+   {
+    "path": "templates/tools/validate-feature-list.py",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 32,
+  "public": true
+ },
+ {
+  "repo": "harness",
+  "hash": "288a4c2d528d",
+  "message": "fix(sonarqube): native scanner path missing exported credentials",
+  "files": [
+   {
+    "path": "templates/modules/sonarqube/sonar-review.sh",
+    "ins": 4,
+    "del": 1
+   }
+  ],
+  "total_lines": 5,
+  "public": true
+ },
+ {
+  "repo": "harness",
+  "hash": "aab91fb55e37",
+  "message": "fix(tests): replace ls with find in backup-path assertion (SC2012)",
+  "files": [
+   {
+    "path": "tests/test-install.sh",
+    "ins": 2,
+    "del": 1
+   }
+  ],
+  "total_lines": 3,
+  "public": true
+ },
+ {
+  "repo": "harness",
+  "hash": "5e2000a60806",
+  "message": "fix(check-traceability): support path::name ids; --all gates only done features",
+  "files": [
+   {
+    "path": "templates/tools/check-traceability.py",
+    "ins": 35,
+    "del": 0
+   }
+  ],
+  "total_lines": 35,
+  "public": true
+ },
+ {
+  "repo": "harness",
+  "hash": "c060d9ea6648",
+  "message": "fix(ci): shellcheck SC2004 — drop $ from array index arithmetic (style)",
+  "files": [
+   {
+    "path": "init.sh",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": true
+ },
+ {
+  "repo": "harness",
+  "hash": "30a588985eaa",
+  "message": "fix(tests): stop hardcoding /tmp/opencode in mktemp template",
+  "files": [
+   {
+    "path": "tests/test-install.sh",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": true
+ },
+ {
+  "repo": "harness",
+  "hash": "6f370a9a4190",
+  "message": "fix: remove duplicate pwd -P in assert_inside_project; fix dirname resolution",
+  "files": [
+   {
+    "path": ".gitignore",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "init.sh",
+    "ins": 3,
+    "del": 2
+   },
+   {
+    "path": "tests/test-security.sh",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 8,
+  "public": true
+ },
+ {
+  "repo": "harness",
+  "hash": "f5eb151cfd83",
+  "message": "fix: check-traceability unresolved = not-done rows per protocol v1",
+  "files": [
+   {
+    "path": "templates/tools/check-traceability.py",
+    "ins": 19,
+    "del": 11
+   },
+   {
+    "path": "tests/test-install.sh",
+    "ins": 26,
+    "del": 0
+   }
+  ],
+  "total_lines": 56,
+  "public": true
+ },
+ {
+  "repo": "harness",
+  "hash": "5787e6080b3a",
+  "message": "fix: portable init.sh (indexed array, tmp+mv sed), preserve file perms, dead code and doc cleanup",
+  "files": [
+   {
+    "path": "init.sh",
+    "ins": 3,
+    "del": 3
+   },
+   {
+    "path": "templates/modules/performance-benchmarks/bench.sh",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "templates/modules/project-scanner/scan.py",
+    "ins": 0,
+    "del": 4
+   }
+  ],
+  "total_lines": 12,
+  "public": true
+ },
+ {
+  "repo": "interview-simulator",
+  "hash": "d0753e644b5b",
+  "message": "fix(quality): remaining word-break occurrences and NOSONAR the loopback TTS server",
+  "files": [
+   {
+    "path": "css/interview.css",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "scripts/piper/server.py",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 10,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "a6aca8f63511",
+  "message": "fix: runFull survives a mid-demo failure without wedging the UI",
+  "files": [
+   {
+    "path": "dashboard/src/components/DemoControl.test.tsx",
+    "ins": 15,
+    "del": 2
+   },
+   {
+    "path": "dashboard/src/components/DemoControl.tsx",
+    "ins": 14,
+    "del": 9
+   }
+  ],
+  "total_lines": 40,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "d693fcb28609",
+  "message": "fix: type annotations in dashboard tests to keep tsc build green",
+  "files": [
+   {
+    "path": "dashboard/src/demo/runFullDemo.test.ts",
+    "ins": 3,
+    "del": 1
+   },
+   {
+    "path": "dashboard/src/stream/store.test.ts",
+    "ins": 2,
+    "del": 1
+   }
+  ],
+  "total_lines": 7,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "9e700102ac3b",
+  "message": "fix: sample-cap coverage and guarded frame parsing",
+  "files": [
+   {
+    "path": "dashboard/src/stream/series.test.ts",
+    "ins": 9,
+    "del": 0
+   },
+   {
+    "path": "dashboard/src/stream/sseClient.ts",
+    "ins": 8,
+    "del": 1
+   }
+  ],
+  "total_lines": 18,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "988b9a60c6ef",
+  "message": "fix: cast native EventSource to EventSourceLike at the connectStream boundary",
+  "files": [
+   {
+    "path": "dashboard/src/stream/sseClient.ts",
+    "ins": 2,
+    "del": 1
+   }
+  ],
+  "total_lines": 3,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "c9c023a32ac3",
+  "message": "fix: controller listener deregistration, eviction logging, order-independent pin",
+  "files": [
+   {
+    "path": "telemetry-hub/src/main/java/com/jordimarcal/telemetry/hub/infrastructure/readapi/MetricsStreamController.java",
+    "ins": 8,
+    "del": 4
+   },
+   {
+    "path": "telemetry-hub/src/test/java/com/jordimarcal/telemetry/hub/infrastructure/readapi/MetricsStreamControllerTest.java",
+    "ins": 5,
+    "del": 4
+   }
+  ],
+  "total_lines": 21,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "35322f3c4a6e",
+  "message": "fix: heartbeat frame constructs only, no seq advance nor publish (R3)",
+  "files": [
+   {
+    "path": "telemetry-hub/src/main/java/com/jordimarcal/telemetry/hub/infrastructure/metrics/InMemoryTelemetryMetrics.java",
+    "ins": 1,
+    "del": 3
+   },
+   {
+    "path": "telemetry-hub/src/test/java/com/jordimarcal/telemetry/hub/infrastructure/metrics/InMemoryTelemetryMetricsTest.java",
+    "ins": 12,
+    "del": 2
+   }
+  ],
+  "total_lines": 18,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "74ba8d1b9ad7",
+  "message": "fix: simulator seed not deterministic across runs (idempotency demo broken)",
+  "files": [
+   {
+    "path": "adapter-gateway/src/main/java/com/jordimarcal/telemetry/gateway/application/PublishTelemetryUseCase.java",
+    "ins": 3,
+    "del": 1
+   }
+  ],
+  "total_lines": 4,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "7d453eff9b24",
+  "message": "fix: dlt recoverer serializer rejects deserialized records on business failures",
+  "files": [
+   {
+    "path": "telemetry-hub/src/main/java/com/jordimarcal/telemetry/hub/infrastructure/config/KafkaConsumerConfig.java",
+    "ins": 17,
+    "del": 6
+   }
+  ],
+  "total_lines": 23,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "e368d84265de",
+  "message": "fix: hub missing spring-boot-starter-flyway (schema never created)",
+  "files": [
+   {
+    "path": "telemetry-hub/pom.xml",
+    "ins": 4,
+    "del": 0
+   }
+  ],
+  "total_lines": 4,
+  "public": true
+ },
+ {
+  "repo": "kafka-adapter-telemetry",
+  "hash": "d95123c2de7c",
+  "message": "fix: gateway missing spring-boot-starter-kafka (full context would not boot)",
+  "files": [
+   {
+    "path": "adapter-gateway/pom.xml",
+    "ins": 4,
+    "del": 0
+   }
+  ],
+  "total_lines": 4,
+  "public": true
+ },
+ {
+  "repo": "redis-toolkit",
+  "hash": "61d6b64ff418",
+  "message": "fix(ratelimit): bound bucket state growth (DoS hardening)",
+  "files": [
+   {
+    "path": "ratelimit-infra/src/main/java/net/jordimp/redistoolkit/ratelimit/infra/memory/InMemoryQuotaStore.java",
+    "ins": 18,
+    "del": 8
+   },
+   {
+    "path": "ratelimit-infra/src/main/java/net/jordimp/redistoolkit/ratelimit/infra/redis/RedisQuotaStore.java",
+    "ins": 8,
+    "del": 1
+   }
+  ],
+  "total_lines": 35,
+  "public": true
+ },
+ {
+  "repo": "shortener",
+  "hash": "fb8f9b0b7dec",
+  "message": "fix(api): sync exception handlers — no async keyword without awaits",
+  "files": [
+   {
+    "path": "scripts/sonar-quality.py",
+    "ins": 1,
+    "del": 4
+   },
+   {
+    "path": "shortener_app/adapters/api/errors.py",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 11,
+  "public": true
+ },
+ {
+  "repo": "shortener",
+  "hash": "5170b751b4e1",
+  "message": "fix(tests): put repo root on pytest pythonpath",
+  "files": [
+   {
+    "path": "pyproject.toml",
+    "ins": 3,
+    "del": 0
+   }
+  ],
+  "total_lines": 3,
+  "public": true
+ },
+ {
+  "repo": "shortener",
+  "hash": "cf96eff5fec1",
+  "message": "fix(deps): declare sqlalchemy[asyncio] extra so greenlet installs on clean environments",
+  "files": [
+   {
+    "path": "requirements.txt",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": true
+ },
+ {
+  "repo": "estol",
+  "hash": "25aa3432b2e5",
+  "message": "fix(build): la versio surt nomes de __init__ (0.7.0, no 0.5.0)",
+  "files": [
+   {
+    "path": "pyproject.toml",
+    "ins": 4,
+    "del": 1
+   },
+   {
+    "path": "src/estol/__init__.py",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 7,
+  "public": true
+ },
+ {
+  "repo": "estol",
+  "hash": "3a8fd79bffed",
+  "message": "fix(bin): projectBaseDir + working dir fora del repo (el scanner escrivia .scannerwork dins)",
+  "files": [
+   {
+    "path": "bin/sonar-scan-fleet",
+    "ins": 5,
+    "del": 2
+   }
+  ],
+  "total_lines": 7,
+  "public": true
+ },
+ {
+  "repo": "estol",
+  "hash": "00390d821983",
+  "message": "fix(bin): log de flota al TMPDIR (no dins dels repos escanejats)",
+  "files": [
+   {
+    "path": "bin/sonar-scan-fleet",
+    "ins": 2,
+    "del": 1
+   }
+  ],
+  "total_lines": 3,
+  "public": true
+ },
+ {
+  "repo": "estol-app",
+  "hash": "9f0fee9824cb",
+  "message": "fix(settings): el diàleg s'obre amb el config desat, no amb el mostreig",
+  "files": [
+   {
+    "path": "app/src/main/java/dev/jordimarsal/estol/MainActivity.kt",
+    "ins": 34,
+    "del": 16
+   },
+   {
+    "path": "app/src/main/java/dev/jordimarsal/estol/Settings.kt",
+    "ins": 6,
+    "del": 3
+   }
+  ],
+  "total_lines": 59,
+  "public": true
+ },
+ {
+  "repo": "estol-app",
+  "hash": "7904c6883177",
+  "message": "fix(sonar): manifest explicit — allowBackup=false + usesCleartextTraffic=false",
+  "files": [
+   {
+    "path": ".scannerwork/.sonar_lock",
+    "ins": 0,
+    "del": 0
+   },
+   {
+    "path": ".scannerwork/report-task.txt",
+    "ins": 6,
+    "del": 0
+   },
+   {
+    "path": "app/src/main/AndroidManifest.xml",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 8,
+  "public": true
+ },
+ {
+  "repo": "reddit-bridge",
+  "hash": "f39bff0e35df",
+  "message": "fix: read saved items from the per-user listing",
+  "files": [
+   {
+    "path": "src/reddit_bridge/client.py",
+    "ins": 16,
+    "del": 1
+   },
+   {
+    "path": "tests/test_client.py",
+    "ins": 16,
+    "del": 0
+   }
+  ],
+  "total_lines": 33,
+  "public": true
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "c3219631c281",
+  "message": "fix(opencode): port del plugin graphify a l'API v2 (causa dels errors «failed to load plugin» des de la migració)",
+  "files": [
+   {
+    "path": ".opencode/opencode.json",
+    "ins": 0,
+    "del": 6
+   },
+   {
+    "path": ".opencode/plugins/graphify.js",
+    "ins": 31,
+    "del": 17
+   },
+   {
+    "path": "opencode.json",
+    "ins": 8,
+    "del": 0
+   }
+  ],
+  "total_lines": 62,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "961071696659",
+  "message": "fix(cloud): opt-in explícit BILLING_ALLOW_MOCK_IN_PRODUCTION per al guard de mock a producció",
+  "files": [
+   {
+    "path": "cloud/src/modules/billing/infrastructure/config/env.ts",
+    "ins": 19,
+    "del": 9
+   },
+   {
+    "path": "cloud/test/unit/modules/billing/infrastructure/config/env.test.ts",
+    "ins": 21,
+    "del": 0
+   }
+  ],
+  "total_lines": 49,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "a613fc0ef88f",
+  "message": "fix(web): e2e hermetics — CLOUD_BASE_URL forçat al mock + port del mock configurable",
+  "files": [
+   {
+    "path": "docs/PENDENTS.md",
+    "ins": 12,
+    "del": 29
+   },
+   {
+    "path": "web/playwright.config.ts",
+    "ins": 14,
+    "del": 5
+   },
+   {
+    "path": "web/tests/e2e/mock-cloud.mjs",
+    "ins": 6,
+    "del": 3
+   }
+  ],
+  "total_lines": 69,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "87b21caccb42",
+  "message": "fix(web): demo — statusOf amb el now del context (test vermell per data real)",
+  "files": [
+   {
+    "path": "web/src/components/demo/demo-global-map.tsx",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "web/src/components/demo/demo-trip.tsx",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "web/src/lib/demo/context.tsx",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "0a9a8ed90250",
+  "message": "fix(backend): residuals menors export/import (deute #9)",
+  "files": [
+   {
+    "path": "backend/src/application/use-cases/trip/import-trip.ts",
+    "ins": 2,
+    "del": 1
+   },
+   {
+    "path": "backend/src/server.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "docs/PENDENTS.md",
+    "ins": 2,
+    "del": 17
+   }
+  ],
+  "total_lines": 24,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b9674313f1f2",
+  "message": "fix(mobile): timeout (AbortController) al cloudClient (00b)",
+  "files": [
+   {
+    "path": "docs/PENDENTS.md",
+    "ins": 8,
+    "del": 4
+   },
+   {
+    "path": "mobile/src/services/__tests__/cloud-client.test.ts",
+    "ins": 29,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/services/cloud-client.ts",
+    "ins": 27,
+    "del": 11
+   }
+  ],
+  "total_lines": 79,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "912c6cc29fd6",
+  "message": "fix(mobile): grace — no destruir la sessió si falta el refresh token desat",
+  "files": [
+   {
+    "path": "mobile/src/services/__tests__/auth-store.test.ts",
+    "ins": 23,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/services/auth-store.ts",
+    "ins": 43,
+    "del": 5
+   }
+  ],
+  "total_lines": 71,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "5e80967d7961",
+  "message": "fix(backend): auth WS accepta el format browser ['bearer', token] — els events en viu no arribaven a cap client (4001 en bucle)",
+  "files": [
+   {
+    "path": "backend/src/interfaces/http/routes/__tests__/ws-routes.test.ts",
+    "ins": 27,
+    "del": 0
+   },
+   {
+    "path": "backend/src/interfaces/http/routes/ws-routes.ts",
+    "ins": 7,
+    "del": 1
+   }
+  ],
+  "total_lines": 35,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "7f2512a7a283",
+  "message": "refactor(frontend2-pla4): link de maps com a àncora nativa estil quiet (fix review T10)",
+  "files": [
+   {
+    "path": "frontend/src/components/trip/routes-panel.tsx",
+    "ins": 6,
+    "del": 5
+   }
+  ],
+  "total_lines": 11,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b7a5e11f207e",
+  "message": "fix(frontend2-pla3): guard del JSON.parse al drop del DayScrubber",
+  "files": [
+   {
+    "path": "frontend/src/components/trip/detail/__tests__/day-scrubber.test.tsx",
+    "ins": 30,
+    "del": 1
+   },
+   {
+    "path": "frontend/src/components/trip/detail/day-scrubber.tsx",
+    "ins": 15,
+    "del": 7
+   }
+  ],
+  "total_lines": 53,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "e99255f54df6",
+  "message": "fix(frontend2-pla2): resiliència per endpoint i per fila a useTripExtras",
+  "files": [
+   {
+    "path": "frontend/src/hooks/__tests__/use-trip-extras.test.tsx",
+    "ins": 30,
+    "del": 0
+   },
+   {
+    "path": "frontend/src/hooks/use-trip-extras.ts",
+    "ins": 13,
+    "del": 8
+   }
+  ],
+  "total_lines": 51,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "3a46041effae",
+  "message": "fix(frontend2-pla2): residus de bateria final (colors crus al detall de viatge)",
+  "files": [
+   {
+    "path": "frontend/src/app/trips/[tripId]/page.tsx",
+    "ins": 17,
+    "del": 17
+   }
+  ],
+  "total_lines": 34,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "8b4ca91e88f8",
+  "message": "fix(frontend2-pla2): fuzzyScore greedy del spike + test de bonus coherent",
+  "files": [
+   {
+    "path": "frontend/src/lib/__tests__/fuzzy-score.test.ts",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "frontend/src/lib/fuzzy-score.ts",
+    "ins": 12,
+    "del": 37
+   }
+  ],
+  "total_lines": 53,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "67cf04d7f610",
+  "message": "fix(frontend): treu la classe btn-icon cruft del ThemeToggle",
+  "files": [
+   {
+    "path": "frontend/src/theme/provider.tsx",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "c18f25c255d6",
+  "message": "fix(frontend): null-narrowing al test de l'entrada de tema del menú",
+  "files": [
+   {
+    "path": "frontend/src/components/layout/__tests__/app-shell.test.tsx",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "8fcf93587e93",
+  "message": "fix(frontend): icones del menú a text-muted + entrada de tema al menú ☰",
+  "files": [
+   {
+    "path": "frontend/src/components/layout/__tests__/app-shell.test.tsx",
+    "ins": 31,
+    "del": 0
+   },
+   {
+    "path": "frontend/src/components/layout/app-shell.tsx",
+    "ins": 17,
+    "del": 7
+   }
+  ],
+  "total_lines": 55,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "eeef267d6deb",
+  "message": "fix(backend): valida el tipus del budget al import de trips",
+  "files": [
+   {
+    "path": "backend/src/application/use-cases/trip/__tests__/import-trip.test.ts",
+    "ins": 11,
+    "del": 0
+   },
+   {
+    "path": "backend/src/application/use-cases/trip/import-trip.ts",
+    "ins": 4,
+    "del": 2
+   }
+  ],
+  "total_lines": 17,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "24a8e6136518",
+  "message": "fix(backend): budget nullable al TripCreateSchema (ajv coerceTypes)",
+  "files": [
+   {
+    "path": "backend/src/interfaces/http/__tests__/trip.test.ts",
+    "ins": 17,
+    "del": 0
+   },
+   {
+    "path": "backend/src/interfaces/http/schemas/trip-schemas.ts",
+    "ins": 3,
+    "del": 1
+   }
+  ],
+  "total_lines": 21,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "fcce0156615b",
+  "message": "fix(frontend): spinners de l'AppShell amb tokens (visibles en tema clar)",
+  "files": [
+   {
+    "path": "frontend/src/components/layout/app-shell.tsx",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "307b255814e8",
+  "message": "fix(frontend): cleanup del MediaQueryList al ThemeProvider",
+  "files": [
+   {
+    "path": "frontend/src/theme/__tests__/provider.test.tsx",
+    "ins": 42,
+    "del": 10
+   },
+   {
+    "path": "frontend/src/theme/provider.tsx",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 57,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "635bd9889131",
+  "message": "fix(mobile): dígits del compte enrere amb el mateix color que «EMBARCAMENT EN»",
+  "files": [
+   {
+    "path": "mobile/src/components/ui/flap-countdown.tsx",
+    "ins": 10,
+    "del": 5
+   }
+  ],
+  "total_lines": 15,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ecb53edcfd7a",
+  "message": "fix(mobile): dígits del compte enrere invisibles en clar (negre sobre fosc)",
+  "files": [
+   {
+    "path": "mobile/src/components/ui/__tests__/flap-countdown.test.tsx",
+    "ins": 13,
+    "del": 4
+   },
+   {
+    "path": "mobile/src/components/ui/flap-countdown.tsx",
+    "ins": 14,
+    "del": 4
+   }
+  ],
+  "total_lines": 35,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "9688c85829a0",
+  "message": "fix(mobile): els dígits del compte enrere no canvien de color en commutar a clar",
+  "files": [
+   {
+    "path": "mobile/src/components/ui/__tests__/flap-countdown.test.tsx",
+    "ins": 17,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/components/ui/flap-countdown.tsx",
+    "ins": 13,
+    "del": 7
+   }
+  ],
+  "total_lines": 37,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "7cfafcd86765",
+  "message": "fix(mobile): restaura l'estil previ del títol «Tiquets del grup» (marge superior, mateixa font displayBold/displayXS)",
+  "files": [
+   {
+    "path": "mobile/src/app/(tabs)/index.tsx",
+    "ins": 1,
+    "del": 2
+   }
+  ],
+  "total_lines": 3,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "2927344d30a1",
+  "message": "fix(mobile): escurça l'etiqueta del toggle immersiu a «Pantalla completa» (massa ample al menú)",
+  "files": [
+   {
+    "path": "packages/shared/src/i18n/messages/common-ui/ca.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "packages/shared/src/i18n/messages/common-ui/en.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "packages/shared/src/i18n/messages/common-ui/es.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "9c37c6a69a8e",
+  "message": "fix(web): variables de next/font al <html> — les fonts self-hosted mai s'aplicaven (--font-ui/--font-display/--font-mono computaven a guaranteed-invalid al :root perquè --font-grotesk/fraunces/plex es definien només al <body>) → tot el web renderitzava amb system-ui, dependent de la màquina (causa del diff visual 0.15 al CI)",
+  "files": [
+   {
+    "path": "web/src/app/layout.tsx",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "eabedba8536a",
+  "message": "fix(web): cookie sessió admin no-secure fora de prod (WebKit la rebutja sobre HTTP) + users search e2e immune a la race d'hidratació de React",
+  "files": [
+   {
+    "path": "web/src/lib/__tests__/admin-auth.test.ts",
+    "ins": 11,
+    "del": 0
+   },
+   {
+    "path": "web/src/lib/admin-auth.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "web/tests/e2e/admin/users.spec.ts",
+    "ins": 15,
+    "del": 2
+   }
+  ],
+  "total_lines": 30,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "e223a16bb047",
+  "message": "fix(frontend): registrar el namespace kit a l'I18nProvider (tsc CI: TS2352 — el catàleg no overlapejava AllMessages des del Pla 1)",
+  "files": [
+   {
+    "path": "frontend/src/i18n/__tests__/kit-namespace.test.tsx",
+    "ins": 48,
+    "del": 0
+   },
+   {
+    "path": "frontend/src/i18n/provider.tsx",
+    "ins": 12,
+    "del": 8
+   }
+  ],
+  "total_lines": 68,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "27ed86a5d719",
+  "message": "fix(mobile): ReactionBar — xips sempre visibles, nombre ocult amb count 0 (ruling controller)",
+  "files": [
+   {
+    "path": "mobile/src/components/ui/__tests__/reaction-bar.test.tsx",
+    "ins": 23,
+    "del": 7
+   },
+   {
+    "path": "mobile/src/components/ui/reaction-bar.tsx",
+    "ins": 5,
+    "del": 4
+   }
+  ],
+  "total_lines": 39,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "0e315ee538ef",
+  "message": "fix(backend): bounds de mida a paid_by/split_between dels schemas d'expense (hardening review final)",
+  "files": [
+   {
+    "path": "backend/src/interfaces/http/schemas/expense-schemas.ts",
+    "ins": 5,
+    "del": 5
+   },
+   {
+    "path": "backend/test/contract/expense-contract.test.ts",
+    "ins": 47,
+    "del": 0
+   }
+  ],
+  "total_lines": 57,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "903aea1e5dda",
+  "message": "fix(mobile): tag de menjar del timeline amb clau kit (copy-pin del test actualitzat)",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/__tests__/timeline.test.tsx",
+    "ins": 4,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/app/trip/[id]/timeline.tsx",
+    "ins": 2,
+    "del": 9
+   }
+  ],
+  "total_lines": 16,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "e1c20141f9ba",
+  "message": "fix(mobile): Sheet — els taps al cos no tanquen (capturen el responder); el backdrop segueix tancant",
+  "files": [
+   {
+    "path": "mobile/src/components/ui/__tests__/sheet.test.tsx",
+    "ins": 44,
+    "del": 2
+   },
+   {
+    "path": "mobile/src/components/ui/sheet.tsx",
+    "ins": 9,
+    "del": 3
+   }
+  ],
+  "total_lines": 58,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "3b39fb78de0e",
+  "message": "fix(mobile): linkBtn del menú amb token accent (estil-pin del test actualitzat)",
+  "files": [
+   {
+    "path": "mobile/src/components/__tests__/home-menu.test.tsx",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/components/home-menu.tsx",
+    "ins": 1,
+    "del": 2
+   }
+  ],
+  "total_lines": 5,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "07a683fbbc72",
+  "message": "fix(mobile): badge de nivell de log amb pairing AA per esquema + comentari CTA amb valors reals",
+  "files": [
+   {
+    "path": "mobile/src/app/settings/__tests__/logs.test.tsx",
+    "ins": 46,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/app/settings/logs.tsx",
+    "ins": 6,
+    "del": 2
+   },
+   {
+    "path": "mobile/src/theme/primary-cta.ts",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 59,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "95acc828cd18",
+  "message": "fix(mobile): Sheet anima l'entrada a cada obertura (visible-toggle), no només al muntatge",
+  "files": [
+   {
+    "path": "mobile/src/components/ui/__tests__/sheet.test.tsx",
+    "ins": 27,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/components/ui/sheet.tsx",
+    "ins": 5,
+    "del": 1
+   }
+  ],
+  "total_lines": 33,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "091107bce3df",
+  "message": "fix(web): família ban coherent — Suspèn/Suspès (ca), Suspend/Suspended (en), Suspende/Restaura (es)",
+  "files": [
+   {
+    "path": "packages/shared/src/i18n/messages/admin/ca.ts",
+    "ins": 4,
+    "del": 4
+   },
+   {
+    "path": "packages/shared/src/i18n/messages/admin/en.ts",
+    "ins": 4,
+    "del": 4
+   },
+   {
+    "path": "packages/shared/src/i18n/messages/admin/es.ts",
+    "ins": 6,
+    "del": 6
+   }
+  ],
+  "total_lines": 28,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6519e0ae732c",
+  "message": "fix(cloud): metrics detailed exclou usuaris esborrats i perPlan inclou plans a 0 actius (LEFT JOIN)",
+  "files": [
+   {
+    "path": "cloud/src/modules/admin/infrastructure/services/sql-metrics-service.ts",
+    "ins": 5,
+    "del": 5
+   },
+   {
+    "path": "cloud/test/integration/modules/admin/infrastructure/sql-metrics-service.test.ts",
+    "ins": 13,
+    "del": 1
+   },
+   {
+    "path": "cloud/test/unit/admin/interfaces/http/admin-routes.test.ts",
+    "ins": 11,
+    "del": 0
+   }
+  ],
+  "total_lines": 35,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "4f8259d92ae8",
+  "message": "fix(web): NOW fix al harness de DemoHome, unit test de joinFeedback i token al botó primari",
+  "files": [
+   {
+    "path": "web/src/components/demo/__tests__/demo-home.test.tsx",
+    "ins": 29,
+    "del": 4
+   },
+   {
+    "path": "web/src/components/demo/demo-home.tsx",
+    "ins": 3,
+    "del": 5
+   },
+   {
+    "path": "web/src/styles/demo.css",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 43,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ac4e3ab258de",
+  "message": "fix(web): trim del email i nom al payload del formulari de contacte",
+  "files": [
+   {
+    "path": "web/src/components/marketing/__tests__/contact-form.test.tsx",
+    "ins": 4,
+    "del": 1
+   },
+   {
+    "path": "web/src/components/marketing/contact-form.tsx",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 9,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "4b24662c4335",
+  "message": "fix(web): CollabDemo — tick 2 als 2600 ms, no 900; test de timing que el captura",
+  "files": [
+   {
+    "path": "web/src/components/marketing/__tests__/collab-demo.test.tsx",
+    "ins": 6,
+    "del": 1
+   },
+   {
+    "path": "web/src/components/marketing/collab-demo.tsx",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 9,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "43c5c032fef9",
+  "message": "fix(web): token d'amplada de bord --border-width-print (l'espai --border-* no genera utilitats a Tailwind 4)",
+  "files": [
+   {
+    "path": "web/src/app/globals.css",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "web/src/styles/motifs.css",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "01f0d9fc8a26",
+  "message": "fix(web): Nav hamburger a 720px exacte i tancament en navegació",
+  "files": [
+   {
+    "path": "web/src/components/ui/__tests__/nav.test.tsx",
+    "ins": 34,
+    "del": 2
+   },
+   {
+    "path": "web/src/components/ui/nav.tsx",
+    "ins": 11,
+    "del": 7
+   }
+  ],
+  "total_lines": 54,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b689e71e1714",
+  "message": "fix(web): RouteMap dibuixat sense artefacte de transició",
+  "files": [
+   {
+    "path": "web/src/components/ui/route-map.tsx",
+    "ins": 10,
+    "del": 4
+   }
+  ],
+  "total_lines": 14,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "725145a119ff",
+  "message": "fix(web): DepartureBoard no fa flip al muntatge inicial; tuple type STATUS_SEQUENCE",
+  "files": [
+   {
+    "path": "web/src/components/ui/__tests__/departure-board.test.tsx",
+    "ins": 8,
+    "del": 0
+   },
+   {
+    "path": "web/src/components/ui/departure-board.tsx",
+    "ins": 13,
+    "del": 3
+   }
+  ],
+  "total_lines": 24,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ce5dbdb53aee",
+  "message": "fix(web): bloc tipogràfic globals.css segons brief (letter-spacing/-0.015em, line-height 1.08)",
+  "files": [
+   {
+    "path": "web/src/app/globals.css",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 5,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "4402cfca0a03",
+  "message": "fix(mobile): handlePut del leader P2P invoca el mirall de despesa enllaçada (bloquejant review)",
+  "files": [
+   {
+    "path": "mobile/src/realtime/__tests__/peer-sync-server.test.ts",
+    "ins": 60,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/realtime/peer-sync-server.ts",
+    "ins": 5,
+    "del": 1
+   }
+  ],
+  "total_lines": 66,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b7f41b43e36d",
+  "message": "fix(mobile): BUG-A — resolveLocalIdBatch híbrid (remote_id o origin_id) evita files òrfenes al pull P2P",
+  "files": [
+   {
+    "path": "mobile/src/sync/__tests__/sync-pull-edge.test.ts",
+    "ins": 49,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/sync/sync-pull.ts",
+    "ins": 13,
+    "del": 5
+   }
+  ],
+  "total_lines": 68,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "7dc07b2bd98b",
+  "message": "fix(mobile): DEL P2P d'una font amb preu esborra la còpia enllaçada del leader (raw sense preu al mirall)",
+  "files": [
+   {
+    "path": "mobile/src/realtime/__tests__/peer-sync-server.test.ts",
+    "ins": 61,
+    "del": 3
+   },
+   {
+    "path": "mobile/src/realtime/peer-sync-server.ts",
+    "ins": 8,
+    "del": 1
+   }
+  ],
+  "total_lines": 73,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "8c12f8ede25c",
+  "message": "fix(mobile): cicle delete→restore al mirall — fila soft-deleted es destrueix i es recrea amb identitat determinista",
+  "files": [
+   {
+    "path": "mobile/src/services/__tests__/linked-expense.test.ts",
+    "ins": 17,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/services/linked-expense.ts",
+    "ins": 26,
+    "del": 19
+   }
+  ],
+  "total_lines": 63,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "20979bbd3d4e",
+  "message": "fix(mobile): grace period de 7 dies al boot — el snapshot restaura la sessio encara que l'access token hagi caducat",
+  "files": [
+   {
+    "path": "mobile/src/services/__tests__/auth-store.test.ts",
+    "ins": 32,
+    "del": 3
+   },
+   {
+    "path": "mobile/src/services/auth-store.ts",
+    "ins": 6,
+    "del": 3
+   }
+  ],
+  "total_lines": 44,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "51f4d9841982",
+  "message": "fix(mobile): header viatge mostra propietari correcte + Stack title trip.name",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/_layout.tsx",
+    "ins": 26,
+    "del": 19
+   }
+  ],
+  "total_lines": 45,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "1227a30aff84",
+  "message": "fix(ci): treu ports 5432 del service postgres (conflicte host)",
+  "files": [
+   {
+    "path": ".gitea/workflows/cloud-deploy.yml",
+    "ins": 0,
+    "del": 1
+   }
+  ],
+  "total_lines": 1,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "41ca71bf2f6d",
+  "message": "fix(mobile): card guest badge + header owner name/avatar (feedback QA)",
+  "files": [
+   {
+    "path": "mobile/src/app/(tabs)/index.tsx",
+    "ins": 2,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/app/trip/[id]/_layout.tsx",
+    "ins": 20,
+    "del": 6
+   }
+  ],
+  "total_lines": 29,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "e33d35311e0a",
+  "message": "fix(mobile): elecció líder P2P case-sensitive (localeCompare invertia Q<a)",
+  "files": [
+   {
+    "path": "mobile/package.json",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/realtime/p2p-sync.ts",
+    "ins": 3,
+    "del": 1
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "efb03dc5d6fb",
+  "message": "fix(mobile): join P2P robust quan joiner queda leader + reconnexió forçada",
+  "files": [
+   {
+    "path": "mobile/package.json",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/components/home-menu.tsx",
+    "ins": 8,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/realtime/p2p-service.ts",
+    "ins": 9,
+    "del": 1
+   }
+  ],
+  "total_lines": 21,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "18c6fe1d299b",
+  "message": "fix(cloud): WS allow private LAN origins (192.168/10/172.16) for P2P",
+  "files": [
+   {
+    "path": "cloud/src/realtime/realtime-plugin.ts",
+    "ins": 18,
+    "del": 1
+   }
+  ],
+  "total_lines": 19,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "0c0e3c6bbd6f",
+  "message": "fix(cloud): WS allow non-http Origin (file://) — RN OkHttp",
+  "files": [
+   {
+    "path": "cloud/src/realtime/realtime-plugin.ts",
+    "ins": 11,
+    "del": 3
+   }
+  ],
+  "total_lines": 14,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "d7486cf69717",
+  "message": "fix(backend): corrigeix imports i tipus a list-trips-orphan-quota.test (tsc CI)",
+  "files": [
+   {
+    "path": "backend/src/application/use-cases/trip/__tests__/list-trips-orphan-quota.test.ts",
+    "ins": 17,
+    "del": 9
+   }
+  ],
+  "total_lines": 26,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6140dad2eca8",
+  "message": "fix(mobile): QuotaUpsellModal mostrava keys raw — useTranslation sense namespace",
+  "files": [
+   {
+    "path": "mobile/src/components/billing/QuotaUpsellModal.tsx",
+    "ins": 14,
+    "del": 12
+   },
+   {
+    "path": "mobile/src/components/billing/__tests__/quota-upsell-modal.test.tsx",
+    "ins": 13,
+    "del": 18
+   }
+  ],
+  "total_lines": 57,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "0f48c0c4e800",
+  "message": "fix(backend): upsert a UserLocalRepositoryDrizzle.save — l'avatar donava 500",
+  "files": [
+   {
+    "path": "backend/src/infrastructure/repositories/__tests__/user-local-repository.test.ts",
+    "ins": 57,
+    "del": 0
+   },
+   {
+    "path": "backend/src/infrastructure/repositories/user-local-repository-drizzle.ts",
+    "ins": 9,
+    "del": 0
+   }
+  ],
+  "total_lines": 66,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "86643be9c6f4",
+  "message": "fix: lint frontend",
+  "files": [
+   {
+    "path": "frontend/src/components/layout/profile-modal.tsx",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "069c1e731f10",
+  "message": "fix: reduce Gradle memory usage (sequential build + 2GB heap)",
+  "files": [
+   {
+    "path": ".gitea/workflows/mobile-deploy.yml",
+    "ins": 3,
+    "del": 1
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "15aee1f86d6f",
+  "message": "fix: remove Gradle config causing /home/jordi expansion error",
+  "files": [
+   {
+    "path": ".gitea/workflows/mobile-deploy.yml",
+    "ins": 8,
+    "del": 18
+   }
+  ],
+  "total_lines": 26,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "3e552b2b6256",
+  "message": "fix: increase Gradle memory and disable lint for CI builds",
+  "files": [
+   {
+    "path": ".gitea/workflows/mobile-deploy.yml",
+    "ins": 12,
+    "del": 1
+   }
+  ],
+  "total_lines": 13,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "42b181b80515",
+  "message": "fix: replace heredoc with node for JSON (Gitea YAML compatibility)",
+  "files": [
+   {
+    "path": ".gitea/workflows/mobile-deploy.yml",
+    "ins": 5,
+    "del": 13
+   }
+  ],
+  "total_lines": 18,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ac472a41c89e",
+  "message": "fix: convert workflow to ASCII (Gitea YAML parser issue)",
+  "files": [
+   {
+    "path": ".gitea/workflows/mobile-deploy.yml",
+    "ins": 22,
+    "del": 22
+   }
+  ],
+  "total_lines": 44,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "03304f1029ff",
+  "message": "fix: rename workflow to trigger UI update",
+  "files": [
+   {
+    "path": ".gitea/workflows/mobile-deploy.yml",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "15eda96c74a7",
+  "message": "fix: mobile workflow - avoid apksigner check in CI",
+  "files": [
+   {
+    "path": ".gitea/workflows/mobile-deploy.yml",
+    "ins": 67,
+    "del": 4
+   }
+  ],
+  "total_lines": 71,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "bad037320d46",
+  "message": "fix(build): default de build-electron.sh al cloud de produccio (4000)",
+  "files": [
+   {
+    "path": "scripts/build-electron.sh",
+    "ins": 5,
+    "del": 2
+   }
+  ],
+  "total_lines": 7,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "0df2788020d5",
+  "message": "fix(cloud): cleanup-smoke-users esborrava de la taula obsoleta 'users'",
+  "files": [
+   {
+    "path": "cloud/scripts/cleanup-smoke-users.sh",
+    "ins": 5,
+    "del": 1
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "fab7c9261b69",
+  "message": "fix(mobile): boot restaura la sessio del snapshot sense esperar el refresh del cloud",
+  "files": [
+   {
+    "path": "mobile/src/services/__tests__/auth-store.test.ts",
+    "ins": 32,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/services/auth-store.ts",
+    "ins": 20,
+    "del": 10
+   }
+  ],
+  "total_lines": 63,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ccf6c346fff5",
+  "message": "fix(mobile): skip chat media creates unconditionally to avoid duplicate POST",
+  "files": [
+   {
+    "path": "mobile/src/sync/__tests__/sync-push.test.ts",
+    "ins": 27,
+    "del": 3
+   },
+   {
+    "path": "mobile/src/sync/sync-push.ts",
+    "ins": 5,
+    "del": 1
+   }
+  ],
+  "total_lines": 36,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "e1402813ed41",
+  "message": "fix(mobile): logout crida removePushTokenOnLogout (Pla 3 Task 8)",
+  "files": [
+   {
+    "path": "mobile/src/services/__tests__/auth-store.test.ts",
+    "ins": 15,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/services/auth-store.ts",
+    "ins": 6,
+    "del": 0
+   }
+  ],
+  "total_lines": 21,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "de52853f5c4d",
+  "message": "fix(mobile): deep links d'estades i visites usen tripId + T00:00 → 09:00 + guard same-day",
+  "files": [
+   {
+    "path": "mobile/src/services/notifications/__tests__/compute-triggers.test.ts",
+    "ins": 30,
+    "del": 3
+   },
+   {
+    "path": "mobile/src/services/notifications/compute-triggers.ts",
+    "ins": 9,
+    "del": 11
+   }
+  ],
+  "total_lines": 53,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6396ca98385c",
+  "message": "fix(mobile): path correcte log-service al test",
+  "files": [
+   {
+    "path": "mobile/src/services/notifications/__tests__/local-scheduler.test.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "cf822417ce94",
+  "message": "fix(mobile): correcció import log-service",
+  "files": [
+   {
+    "path": "mobile/src/services/notifications/__tests__/local-scheduler.test.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "834dd0f54864",
+  "message": "fix(mobile): correccions tests local-scheduler (identifier, path)",
+  "files": [
+   {
+    "path": "mobile/src/services/notifications/__tests__/local-scheduler.test.ts",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "30203b8ee312",
+  "message": "fix: final code review findings - duplicate middleware & coalescing issue",
+  "files": [
+   {
+    "path": "backend/src/infrastructure/services/cloud-notification-forwarder.ts",
+    "ins": 3,
+    "del": 1
+   },
+   {
+    "path": "backend/src/interfaces/http/__tests__/notification-forwarder-calls.test.ts",
+    "ins": 0,
+    "del": 3
+   }
+  ],
+  "total_lines": 7,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6ecf0b2aa9cc",
+  "message": "fix(backend): CloudNotificationForwarder scheduling logic replacement (round 4)",
+  "files": [
+   {
+    "path": "backend/src/infrastructure/services/cloud-notification-forwarder.ts",
+    "ins": 22,
+    "del": 21
+   }
+  ],
+  "total_lines": 43,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "cae07c070eec",
+  "message": "fix(cloud): FcmSender llegeix el body de la resposta un sol cop",
+  "files": [
+   {
+    "path": "cloud/src/modules/notifications/infrastructure/services/fcm-sender.ts",
+    "ins": 3,
+    "del": 11
+   },
+   {
+    "path": "cloud/test/unit/modules/notifications/fcm-sender.test.ts",
+    "ins": 31,
+    "del": 1
+   }
+  ],
+  "total_lines": 46,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "61b7b32c8d6d",
+  "message": "fix(backend): ImportTripUseCase — valida ticket data string abans de persistir (copyExtractedFiles) i test de regressió",
+  "files": [
+   {
+    "path": "backend/src/application/use-cases/trip/__tests__/import-trip.test.ts",
+    "ins": 15,
+    "del": 0
+   },
+   {
+    "path": "backend/src/application/use-cases/trip/import-trip.ts",
+    "ins": 12,
+    "del": 2
+   }
+  ],
+  "total_lines": 29,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b12c18c206e1",
+  "message": "fix(frontend): eslint --max-warnings=0 — scheduleCloudRetry estable via useCallback al boot effect",
+  "files": [
+   {
+    "path": "frontend/src/hooks/use-auth.tsx",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "57eb59ef35bc",
+  "message": "fix(frontend): DatabaseClosedError al re-login — clearAll tancava la connexió Dexie",
+  "files": [
+   {
+    "path": "frontend/src/lib/__tests__/sync-engine.test.ts",
+    "ins": 21,
+    "del": 2
+   },
+   {
+    "path": "frontend/src/lib/sync-engine.ts",
+    "ins": 5,
+    "del": 1
+   }
+  ],
+  "total_lines": 29,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "a0c933f3f860",
+  "message": "fix(mobile): upload d'imatges fallava sempre — validateImageUpload sense Content-Type (regressió bcf9d77 I7)",
+  "files": [
+   {
+    "path": "mobile/src/sync/__tests__/image-sync.test.ts",
+    "ins": 37,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 16,
+    "del": 0
+   }
+  ],
+  "total_lines": 53,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "8de12e681cc2",
+  "message": "fix(backend): quota -1 (il·limitada) ja no dispara quota_exceeded en crear viatges",
+  "files": [
+   {
+    "path": "backend/src/application/services/__tests__/quota-provider.test.ts",
+    "ins": 15,
+    "del": 0
+   },
+   {
+    "path": "backend/src/application/services/quota-provider.ts",
+    "ins": 7,
+    "del": 1
+   },
+   {
+    "path": "docs/PENDENTS.md",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 25,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f93d448b0ff2",
+  "message": "fix(mobile): correccions del code review — espaiat del selector al form de despeses + warn si SecureStore falla al canvi de principal",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/expenses.tsx",
+    "ins": 7,
+    "del": 5
+   },
+   {
+    "path": "mobile/src/components/home-menu.tsx",
+    "ins": 6,
+    "del": 1
+   }
+  ],
+  "total_lines": 19,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6c293e853dfe",
+  "message": "fix(mobile): pull mapeja el snapshot de canvi niuat del price de les entitats",
+  "files": [
+   {
+    "path": "mobile/src/sync/__tests__/sync-pull-edge.test.ts",
+    "ins": 24,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/sync/sync-pull.ts",
+    "ins": 3,
+    "del": 0
+   }
+  ],
+  "total_lines": 27,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "2a4294b20bcc",
+  "message": "fix(mobile): metaspace 1g als daemons gradle/kotlin via expo-build-properties — KSP expo-updates i lintVital feien OOM al release build",
+  "files": [
+   {
+    "path": "mobile/app.config.ts",
+    "ins": 13,
+    "del": 0
+   },
+   {
+    "path": "mobile/package.json",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "pnpm-lock.yaml",
+    "ins": 20,
+    "del": 0
+   }
+  ],
+  "total_lines": 34,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "fa2d8673e779",
+  "message": "fix(ci): buildx --load amb un sol tag + docker tag/push",
+  "files": [
+   {
+    "path": ".gitea/workflows/cloud-deploy.yml",
+    "ins": 4,
+    "del": 2
+   },
+   {
+    "path": ".gitea/workflows/web-deploy.yml",
+    "ins": 4,
+    "del": 2
+   }
+  ],
+  "total_lines": 12,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f40fc42f8d58",
+  "message": "fix(ci): buildx --push en lloc de --load + docker push",
+  "files": [
+   {
+    "path": ".gitea/workflows/cloud-deploy.yml",
+    "ins": 1,
+    "del": 3
+   },
+   {
+    "path": ".gitea/workflows/web-deploy.yml",
+    "ins": 1,
+    "del": 3
+   }
+  ],
+  "total_lines": 8,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f4d781e1bd09",
+  "message": "fix(ci): tsc frontend i tests mobile verds",
+  "files": [
+   {
+    "path": "frontend/src/lib/__tests__/data-service.test.ts",
+    "ins": 11,
+    "del": 4
+   },
+   {
+    "path": "frontend/src/lib/data-service.ts",
+    "ins": 6,
+    "del": 3
+   },
+   {
+    "path": "mobile/src/database/__tests__/sync-log-cursor-migration.test.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 26,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b5206ced233c",
+  "message": "fix(cloud): smoke-test espera status:ok al /health (contracte actual)",
+  "files": [
+   {
+    "path": "cloud/scripts/smoke-test.sh",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "5ba33e344af3",
+  "message": "fix(mobile): eliminar race condition entre reactive reload i operacions manuals",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/checklists.tsx",
+    "ins": 9,
+    "del": 1
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ba46178e66aa",
+  "message": "fix(checklists): Improve query safety and error handling",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/checklists.tsx",
+    "ins": 5,
+    "del": 3
+   }
+  ],
+  "total_lines": 8,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "c640d0218bd3",
+  "message": "Fix checklist UI issues preventing add/delete operations",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/checklists.tsx",
+    "ins": 12,
+    "del": 7
+   }
+  ],
+  "total_lines": 19,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6faae6edb11a",
+  "message": "fix(mobile): revertir actualitzacions d'estat locals, usar loadChecklists",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/checklists.tsx",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b3109458b664",
+  "message": "fix(mobile): revertir filtre deleted_at (WatermelonDB no usa deleted_at)",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/checklists.tsx",
+    "ins": 2,
+    "del": 4
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "43f486604598",
+  "message": "fix(mobile): arreglat afegir/eliminar elements a checklists",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/checklists.tsx",
+    "ins": 7,
+    "del": 5
+   }
+  ],
+  "total_lines": 12,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "9579efd7a133",
+  "message": "fix(pwa): test.fixme 'offline fallback to root page' + sw-utils fallback a offline.html",
+  "files": [
+   {
+    "path": "docs/PENDENTS.md",
+    "ins": 31,
+    "del": 0
+   },
+   {
+    "path": "frontend/e2e/pwa.spec.ts",
+    "ins": 17,
+    "del": 1
+   },
+   {
+    "path": "frontend/src/app/sw-utils.ts",
+    "ins": 16,
+    "del": 6
+   }
+  ],
+  "total_lines": 71,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "53f432de8622",
+  "message": "fix(mobile): binary-codec test redueix 1MB → 256KB per evitar OOM al CI",
+  "files": [
+   {
+    "path": "mobile/src/realtime/__tests__/binary-codec.test.ts",
+    "ins": 5,
+    "del": 1
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f43f045b8c07",
+  "message": "fix(frontend): CSP permet open.er-api.com per als tipus de canvi",
+  "files": [
+   {
+    "path": "frontend/src/__tests__/proxy.test.ts",
+    "ins": 9,
+    "del": 0
+   },
+   {
+    "path": "frontend/src/proxy.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 11,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "90bb00c199f6",
+  "message": "fix(p2p-e2e): setup-cloud.sh — PID erroni + pkill en curt-circuit",
+  "files": [
+   {
+    "path": "scripts/p2p-e2e/setup-cloud.sh",
+    "ins": 38,
+    "del": 12
+   }
+  ],
+  "total_lines": 50,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "4387a7ae4d7c",
+  "message": "fix: el resum de despeses no s'actualitzava amb despeses d'altres finestres",
+  "files": [
+   {
+    "path": "frontend/src/components/trip/__tests__/expenses-panel.test.tsx",
+    "ins": 33,
+    "del": 0
+   },
+   {
+    "path": "frontend/src/components/trip/expenses-panel.tsx",
+    "ins": 6,
+    "del": 0
+   }
+  ],
+  "total_lines": 39,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "89c947a149b9",
+  "message": "fix: lint preexistent a about-modal (set-state-in-effect) que bloquejava el CI",
+  "files": [
+   {
+    "path": "frontend/src/components/layout/about-modal.tsx",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 1,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f3ef0d615b34",
+  "message": "fix: documentar la marca ambiguous (decisió UX) + tests d'invariant de dades",
+  "files": [
+   {
+    "path": "frontend/src/lib/__tests__/currencies.test.ts",
+    "ins": 36,
+    "del": 0
+   },
+   {
+    "path": "frontend/src/lib/currencies.ts",
+    "ins": 6,
+    "del": 2
+   }
+  ],
+  "total_lines": 44,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "2ed8b179bb04",
+  "message": "fix: eslint — set-state-in-effect i neteja del disable innecessari al hook de rates",
+  "files": [
+   {
+    "path": "frontend/src/hooks/use-exchange-rates.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "7ef7ceb37509",
+  "message": "fix: 500s a saved-points — migració 0007 amb timestamp trencat al journal de drizzle",
+  "files": [
+   {
+    "path": "backend/drizzle/meta/_journal.json",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "backend/test/integration/migrations-journal.test.ts",
+    "ins": 30,
+    "del": 0
+   },
+   {
+    "path": "docs/PENDENTS.md",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 33,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "5971f7998135",
+  "message": "fix(calendar): crear visita SEMPRE en importar trip, amb geocoding opcional",
+  "files": [
+   {
+    "path": "backend/src/application/use-cases/calendar/import-calendar.ts",
+    "ins": 20,
+    "del": 14
+   }
+  ],
+  "total_lines": 34,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "8ac5130f7e41",
+  "message": "fix(calendar): trips importats com a 'Nou Viatge' ara s'assignen al propietari autenticat",
+  "files": [
+   {
+    "path": "backend/src/application/dtos/calendar.dto.ts",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "backend/src/application/use-cases/calendar/import-calendar.ts",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "backend/src/interfaces/http/controllers/calendar-controller.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "4633de8d3864",
+  "message": "fix(calendar): solucionar persistencia del calendari seleccionat i creacio de 'Nou Viatge' via import",
+  "files": [
+   {
+    "path": "frontend/src/app/trips/page.tsx",
+    "ins": 1,
+    "del": 3
+   },
+   {
+    "path": "frontend/src/components/calendar/import-calendar-modal.tsx",
+    "ins": 6,
+    "del": 3
+   }
+  ],
+  "total_lines": 13,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "c63bacd70b2f",
+  "message": "fix(calendar): recordar calendari seleccionat al dropdown i permetre importar sense viatges existents",
+  "files": [
+   {
+    "path": "frontend/src/app/trips/page.tsx",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "frontend/src/components/calendar/import-calendar-modal.tsx",
+    "ins": 1,
+    "del": 3
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "889c962a2ea1",
+  "message": "fix(ci-nightly): arregla 3 fallades del nightly CI (run 594)",
+  "files": [
+   {
+    "path": "electron/test/e2e/bootstrap.spec.ts",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "web/lighthouserc.js",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "web/playwright.config.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 8,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b2fd7e611890",
+  "message": "fix(ci): arregla 3 fallades del CI (run 590)",
+  "files": [
+   {
+    "path": "backend/src/interfaces/http/__tests__/calendar.test.ts",
+    "ins": 0,
+    "del": 2
+   },
+   {
+    "path": "frontend/src/components/billing/__tests__/upgrade-cta.test.tsx",
+    "ins": 4,
+    "del": 1
+   },
+   {
+    "path": "web/src/components/dashboard/plan-picker.tsx",
+    "ins": 10,
+    "del": 3
+   }
+  ],
+  "total_lines": 20,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "57be34163f85",
+  "message": "fix(web): cookie de sessió secure només en producció (HTTP LAN)",
+  "files": [
+   {
+    "path": "web/src/lib/auth/session.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "e457fa16ddad",
+  "message": "fix(web): CSRF cookie secure només en producció, sameSite lax",
+  "files": [
+   {
+    "path": "web/src/lib/auth/csrf-constants.ts",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "0a3d44bfdd64",
+  "message": "fix(web): crypto.randomUUID() no disponible en HTTP (context no segur)",
+  "files": [
+   {
+    "path": "web/src/components/auth/device-id.ts",
+    "ins": 6,
+    "del": 1
+   }
+  ],
+  "total_lines": 7,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "487e4c88538b",
+  "message": "fix(web): allowedDevOrigins automàtic amb les IPs LAN per HMR en dev",
+  "files": [
+   {
+    "path": "web/next.config.ts",
+    "ins": 13,
+    "del": 0
+   }
+  ],
+  "total_lines": 13,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "d66ec58aa709",
+  "message": "fix(backend): Google Calendar OAuth state en memòria en lloc de cookie",
+  "files": [
+   {
+    "path": "backend/src/interfaces/http/controllers/calendar-controller.ts",
+    "ins": 14,
+    "del": 5
+   }
+  ],
+  "total_lines": 19,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ab8b7678dfbf",
+  "message": "fix(electron): Passa a Pro obre el cloud al navegador del sistema, no en un popup Electron",
+  "files": [
+   {
+    "path": "electron/main.ts",
+    "ins": 11,
+    "del": 4
+   }
+  ],
+  "total_lines": 15,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "2c67f28c4a21",
+  "message": "fix(electron): build llegeix GOOGLE_CLIENT_ID/SECRET de backend/.env automàticament",
+  "files": [
+   {
+    "path": "scripts/build-electron.sh",
+    "ins": 7,
+    "del": 0
+   }
+  ],
+  "total_lines": 7,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "7d73fb42cbe3",
+  "message": "fix(electron): botó Passa a Pro no obria el cloud dashboard — setWindowOpenHandler només permetia Google OAuth",
+  "files": [
+   {
+    "path": "electron/main.ts",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "dd7f6f90a89a",
+  "message": "fix(frontend): code review C1: doc hardcoded PAID_FEATURES, elimina codi mort, unmount roots, use client",
+  "files": [
+   {
+    "path": "frontend/src/app/trips/page.tsx",
+    "ins": 12,
+    "del": 12
+   },
+   {
+    "path": "frontend/src/hooks/__tests__/use-plan.test.ts",
+    "ins": 18,
+    "del": 10
+   },
+   {
+    "path": "frontend/src/hooks/use-plan.ts",
+    "ins": 9,
+    "del": 0
+   }
+  ],
+  "total_lines": 61,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ad72b329c396",
+  "message": "fix(frontend): tab bar i contingut del Trip ocupen tot l'ample a Electron",
+  "files": [
+   {
+    "path": "frontend/src/app/trips/[tripId]/page.tsx",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "5e546133e286",
+  "message": "fix(frontend): proxy.test.ts no assigna process.env.NODE_ENV (readonly segons @types/node)",
+  "files": [
+   {
+    "path": "frontend/src/__tests__/proxy.test.ts",
+    "ins": 2,
+    "del": 3
+   }
+  ],
+  "total_lines": 5,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "02cea0e025f3",
+  "message": "fix(cloud): /releases/ root ha de ser path absolut per @fastify/static",
+  "files": [
+   {
+    "path": "cloud/src/server/create-server.ts",
+    "ins": 3,
+    "del": 2
+   },
+   {
+    "path": "cloud/test/integration/server/releases-static.test.ts",
+    "ins": 20,
+    "del": 3
+   }
+  ],
+  "total_lines": 28,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "4af755943d1f",
+  "message": "fix(frontend): treure upgrade-insecure-requests del CSP (electron: Failed to fetch)",
+  "files": [
+   {
+    "path": "electron/package.json",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "frontend/src/proxy.ts",
+    "ins": 0,
+    "del": 1
+   }
+  ],
+  "total_lines": 3,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ce736df4499b",
+  "message": "fix(frontend): eslint — apostrofs escapats a app-shell + setState fora de l'efecte",
+  "files": [
+   {
+    "path": "frontend/src/components/layout/app-shell.tsx",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "frontend/src/hooks/use-auth.tsx",
+    "ins": 18,
+    "del": 17
+   }
+  ],
+  "total_lines": 39,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b50e31b54e9f",
+  "message": "test(web): fix proxy.test mock (headers + NextResponse realista)",
+  "files": [
+   {
+    "path": ".gitea/workflows/gen-webkit-snapshots.yml",
+    "ins": 43,
+    "del": 0
+   },
+   {
+    "path": "web/src/__tests__/proxy.test.ts",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 49,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "77c4d881b6b6",
+  "message": "fix(cloud): remove unused escapeAttr function",
+  "files": [
+   {
+    "path": "cloud/src/modules/identity/infrastructure/services/email-templates/verification-email.ts",
+    "ins": 0,
+    "del": 4
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "234adb28fa64",
+  "message": "fix(shared): add STATUS_BY_CODE entries for verification code errors",
+  "files": [
+   {
+    "path": "packages/shared/src/i18n/error-status.ts",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6694eb9b0712",
+  "message": "fix(mobile): use /auth/verify-email-code endpoint for 6-digit code verification",
+  "files": [
+   {
+    "path": "mobile/src/app/(auth)/verify-email.tsx",
+    "ins": 10,
+    "del": 9
+   },
+   {
+    "path": "mobile/src/services/__tests__/cloud-client.test.ts",
+    "ins": 8,
+    "del": 8
+   },
+   {
+    "path": "mobile/src/services/cloud-client.ts",
+    "ins": 4,
+    "del": 4
+   }
+  ],
+  "total_lines": 43,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b9dbf8d5e975",
+  "message": "fix(electron): tsc errors in spawn-backend.ts block the build",
+  "files": [
+   {
+    "path": "electron/spawn-backend.ts",
+    "ins": 18,
+    "del": 16
+   }
+  ],
+  "total_lines": 34,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f7bba23c8157",
+  "message": "fix(p2p-e2e): cloud setup script env vars — JWT_AUDIENCE required, MOCK_WEBHOOK_SECRET >= 32 chars",
+  "files": [
+   {
+    "path": "cloud/.env.example",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "scripts/p2p-e2e/setup-cloud.sh",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "a17d8c03c4f0",
+  "message": "fix(frontend): tsc errors — Eatery missing location, AllMessages type mismatch",
+  "files": [
+   {
+    "path": "frontend/src/components/search/__tests__/search-utils-helpers.test.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "frontend/src/i18n/utils.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "39d8094e406e",
+  "message": "fix(frontend): remove unused resolve import from provider.test.tsx",
+  "files": [
+   {
+    "path": "frontend/src/i18n/__tests__/provider.test.tsx",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "bdf55927a621",
+  "message": "fix(web): rename middleware→proxy export for Next.js 16",
+  "files": [
+   {
+    "path": "web/src/__tests__/proxy.test.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "web/src/middleware.test.ts",
+    "ins": 6,
+    "del": 6
+   },
+   {
+    "path": "web/src/proxy.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 16,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "e53e523f2c95",
+  "message": "fix(web): re-export CSRF_COOKIE, fix middleware→proxy import in second test",
+  "files": [
+   {
+    "path": "web/src/lib/auth/csrf.ts",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "web/src/middleware.test.ts",
+    "ins": 6,
+    "del": 6
+   }
+  ],
+  "total_lines": 13,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "26dfd0da0838",
+  "message": "fix(backend): adapt @fastify/static v10 setHeaders signature",
+  "files": [
+   {
+    "path": "backend/src/server.ts",
+    "ins": 6,
+    "del": 6
+   }
+  ],
+  "total_lines": 12,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6b0f0fcde361",
+  "message": "fix(web): catch fetch rejection in LogoutButton to prevent unhandled error",
+  "files": [
+   {
+    "path": "web/src/components/dashboard/logout-button.tsx",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "a0b5df75b15b",
+  "message": "fix: remove invalid vitest onUnhandledRejection option, use process handlers instead",
+  "files": [
+   {
+    "path": "frontend/vitest.config.ts",
+    "ins": 0,
+    "del": 1
+   }
+  ],
+  "total_lines": 1,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "4c76a99f812d",
+  "message": "fix(frontend): suppress React 19 unhandled window errors in CI",
+  "files": [
+   {
+    "path": "frontend/test/setup.ts",
+    "ins": 12,
+    "del": 3
+   },
+   {
+    "path": "frontend/vitest.config.ts",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 16,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b7f9213614d4",
+  "message": "fix(sync-engine): defer health check from constructor to prevent false offline in CI",
+  "files": [
+   {
+    "path": "frontend/src/lib/sync-engine.ts",
+    "ins": 6,
+    "del": 5
+   }
+  ],
+  "total_lines": 11,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "9a64bb387394",
+  "message": "fix(frontend): add window polyfill in test setup to prevent React 19 unhandled errors",
+  "files": [
+   {
+    "path": "frontend/test/setup.ts",
+    "ins": 4,
+    "del": 0
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b8cc85e50ab6",
+  "message": "fix(ui): make Modal children optional to fix createElement type conflict",
+  "files": [
+   {
+    "path": "frontend/src/components/ui/modal.tsx",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "0bd49aad4baf",
+  "message": "fix(frontend): remaining ESLint errors",
+  "files": [
+   {
+    "path": "frontend/src/components/ui/__tests__/modal.test.tsx",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "frontend/src/hooks/__tests__/use-ws.test.tsx",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 8,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "25fb146ea17a",
+  "message": "fix(web): TS + ESLint errors (join page, plans-table import)",
+  "files": [
+   {
+    "path": "web/src/app/join/page.tsx",
+    "ins": 24,
+    "del": 26
+   },
+   {
+    "path": "web/src/components/landing/plans-table.tsx",
+    "ins": 2,
+    "del": 1
+   }
+  ],
+  "total_lines": 53,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "78841ddceeec",
+  "message": "fix: add BILLING_CLAIMS_UNAVAILABLE to STATUS_BY_CODE (503)",
+  "files": [
+   {
+    "path": "packages/shared/src/i18n/error-status.ts",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 1,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "00bcb6f30626",
+  "message": "fix: set MOCK_WEBHOOK_SECRET in e2e tests to fix CI failure",
+  "files": [
+   {
+    "path": "cloud/test/e2e/event-to-quota-e2e.test.ts",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "cloud/test/e2e/event-to-stale-e2e.test.ts",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "c4e8b77b7c68",
+  "message": "fix: IMP-TRIP-STATE — test name fixed (no visits assertion), markAsPlanned documented as intentionally permissive",
+  "files": [
+   {
+    "path": "backend/src/domain/entities/__tests__/trip.test.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "backend/src/domain/entities/trip.ts",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 3,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "5e83ff2e12ca",
+  "message": "fix: IMP8 — WS broadcaster trip-scoped subscriptions (subscribe message, skip non-subscribed clients)",
+  "files": [
+   {
+    "path": "backend/src/infrastructure/services/ws-broadcaster.ts",
+    "ins": 20,
+    "del": 9
+   },
+   {
+    "path": "backend/src/interfaces/http/routes/ws-routes.ts",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 31,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "bf40eb9fea2d",
+  "message": "fix: IMP7 — PlanClaimsSnapshot.source discriminator ('billing'|'fallback') per evitar fail-open silenciós",
+  "files": [
+   {
+    "path": "cloud/src/modules/billing/application/use-cases/get-user-claims.ts",
+    "ins": 2,
+    "del": 1
+   },
+   {
+    "path": "cloud/src/modules/billing/domain/ports/free-plan-claims.ts",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "cloud/src/modules/billing/domain/ports/i-user-claims-provider.ts",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 5,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b9f6be51aeab",
+  "message": "fix: remove unused 'screenshot' destructure in cloud feedback route",
+  "files": [
+   {
+    "path": "cloud/src/interfaces/http/routes/feedback.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "514aafdc4b7c",
+  "message": "fix: drop lighthouse:no-pwa preset, assert only category scores (warn)",
+  "files": [
+   {
+    "path": "frontend/lighthouserc.js",
+    "ins": 0,
+    "del": 1
+   },
+   {
+    "path": "web/lighthouserc.js",
+    "ins": 0,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f3e78230735d",
+  "message": "fix: use chrome-wrapper script to inject --no-sandbox for Lighthouse",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci-nightly.yml",
+    "ins": 10,
+    "del": 4
+   }
+  ],
+  "total_lines": 14,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "430e50f10544",
+  "message": "fix: pass --no-sandbox via CLI arg to lhci collect",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci-nightly.yml",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "cc00d49430a3",
+  "message": "fix: add --no-sandbox chromeFlag for Lighthouse in CI (root)",
+  "files": [
+   {
+    "path": "frontend/lighthouserc.js",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "web/lighthouserc.js",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b1d1b14d8d28",
+  "message": "fix: run playwright install from package dir for Lighthouse Chromium",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci-nightly.yml",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "51f260ff025c",
+  "message": "fix: install Chromium + set CHROME_PATH for Lighthouse CI",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci-nightly.yml",
+    "ins": 10,
+    "del": 2
+   }
+  ],
+  "total_lines": 12,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "27bd4b397c5f",
+  "message": "fix(electron): window bounds via electronApp.evaluate",
+  "files": [
+   {
+    "path": "electron/test/e2e/bootstrap.spec.ts",
+    "ins": 5,
+    "del": 2
+   }
+  ],
+  "total_lines": 7,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "e7b40904803a",
+  "message": "fix(electron): mock transports al map-data + electronWindow.bounds()",
+  "files": [
+   {
+    "path": "electron/test/e2e/bootstrap.spec.ts",
+    "ins": 6,
+    "del": 6
+   },
+   {
+    "path": "frontend/e2e/mock-server.mjs",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 16,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "4c96f04572e2",
+  "message": "fix(electron): mock map-data endpoint + Page.viewportSize + skip register flow",
+  "files": [
+   {
+    "path": "electron/test/e2e/bootstrap.spec.ts",
+    "ins": 7,
+    "del": 5
+   },
+   {
+    "path": "frontend/e2e/mock-server.mjs",
+    "ins": 17,
+    "del": 2
+   }
+  ],
+  "total_lines": 31,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6e4f29ec8f0f",
+  "message": "fix(electron): test selectors + webServer al Playwright config (mock API + next dev)",
+  "files": [
+   {
+    "path": "electron/playwright.config.ts",
+    "ins": 17,
+    "del": 0
+   },
+   {
+    "path": "electron/test/e2e/bootstrap.spec.ts",
+    "ins": 4,
+    "del": 5
+   },
+   {
+    "path": "electron/test/e2e/migration.spec.ts",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 30,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "5573fcc39d7f",
+  "message": "fix(electron): system libs (libgtk,libnss) + disable-dev-shm-usage",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci-nightly.yml",
+    "ins": 3,
+    "del": 0
+   },
+   {
+    "path": "electron/playwright.config.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 5,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "5d3023130c06",
+  "message": "fix(electron): build step (tsc) abans dels E2E",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci-nightly.yml",
+    "ins": 3,
+    "del": 0
+   }
+  ],
+  "total_lines": 3,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "cbb821ab46af",
+  "message": "fix(electron): xvfb-run per display virtual als E2E",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci-nightly.yml",
+    "ins": 5,
+    "del": 1
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "427d8c4a6bf6",
+  "message": "fix(e2e): admin login selectors — locator input[type=email] en lloc de getByLabel (sense htmlFor)",
+  "files": [
+   {
+    "path": "web/tests/e2e/admin/admin-smoke.spec.ts",
+    "ins": 7,
+    "del": 7
+   },
+   {
+    "path": "web/tests/e2e/admin/plans.spec.ts",
+    "ins": 4,
+    "del": 4
+   }
+  ],
+  "total_lines": 22,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b1b4a96db455",
+  "message": "fix(e2e): admin login heading selector, setup-2fa protegit per middleware",
+  "files": [
+   {
+    "path": "web/src/middleware.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "web/tests/e2e/admin/admin-smoke.spec.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "web/tests/e2e/admin/plans.spec.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "852a19478edb",
+  "message": "fix(e2e): middleware per admin auth (evita redirect loop); fix selectors forgot-password i footer",
+  "files": [
+   {
+    "path": "web/src/app/admin/layout.tsx",
+    "ins": 0,
+    "del": 5
+   },
+   {
+    "path": "web/src/middleware.ts",
+    "ins": 21,
+    "del": 0
+   }
+  ],
+  "total_lines": 26,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "720cbb4117ee",
+  "message": "fix(ci): remove upload-artifact@v4 (no compatible amb Gitea)",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci-nightly.yml",
+    "ins": 0,
+    "del": 28
+   },
+   {
+    "path": ".gitea/workflows/ci.yml",
+    "ins": 0,
+    "del": 12
+   }
+  ],
+  "total_lines": 40,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "63014579183d",
+  "message": "fix(tsc): leaflet png type with src property",
+  "files": [
+   {
+    "path": "frontend/src/types/images.d.ts",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "d6bbac5afc70",
+  "message": "fix(lint): overrides per react-hooks/refs, globals, preserve-memo, no-explicit-any, no-html-link",
+  "files": [
+   {
+    "path": "frontend/eslint.config.mjs",
+    "ins": 4,
+    "del": 0
+   },
+   {
+    "path": "web/eslint.config.mjs",
+    "ins": 6,
+    "del": 0
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "afba2852023d",
+  "message": "fix(ci): bypass pnpm script runner — npx eslint directament",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci.yml",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "fb4ae05ed817",
+  "message": "fix(ci): regenerar lockfile amb @axe-core/playwright al web importer",
+  "files": [
+   {
+    "path": "pnpm-lock.yaml",
+    "ins": 33,
+    "del": 5
+   }
+  ],
+  "total_lines": 38,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "c28c69312bb1",
+  "message": "fix(ci): .npmrc amb frozen-lockfile=false (pnpm no respecta env var)",
+  "files": [
+   {
+    "path": ".npmrc",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 1,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "2763907ddaa9",
+  "message": "fix(a11y): dashboard test adaptatiu — amb sessió testa dashboard, sense sessió testa login",
+  "files": [
+   {
+    "path": "web/tests/e2e/a11y.spec.ts",
+    "ins": 9,
+    "del": 1
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6b320c92532a",
+  "message": "fix(ci): pnpm version pinned to 11.1.3 (lockfile format)",
+  "files": [
+   {
+    "path": ".gitea/workflows/ci.yml",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": ".gitea/workflows/cloud-deploy.yml",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": ".gitea/workflows/web-deploy.yml",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "947a1c68566d",
+  "message": "fix: remove unused locale destructuring in legal/[page]",
+  "files": [
+   {
+    "path": "web/src/app/legal/[page]/page.tsx",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "41181942c9f8",
+  "message": "fix: type-safe dynamic i18n keys in legal/[page]",
+  "files": [
+   {
+    "path": "web/src/app/legal/[page]/page.tsx",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 5,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "72e68b1c921d",
+  "message": "fix: type-safe dynamic i18n keys in help/page.tsx",
+  "files": [
+   {
+    "path": "web/src/app/help/page.tsx",
+    "ins": 6,
+    "del": 5
+   }
+  ],
+  "total_lines": 11,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "9d1b897ff55e",
+  "message": "fix: type-safe dynamic i18n key in help/[slug]",
+  "files": [
+   {
+    "path": "web/src/app/help/[slug]/page.tsx",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 5,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "4c2ae814f38f",
+  "message": "fix: remove unused ArticleSlug type in help/[slug]",
+  "files": [
+   {
+    "path": "web/src/app/help/[slug]/page.tsx",
+    "ins": 0,
+    "del": 1
+   }
+  ],
+  "total_lines": 1,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "d6f95d3211b3",
+  "message": "fix: add missing feedback i18n to web/en.ts and web/es.ts",
+  "files": [
+   {
+    "path": "packages/shared/src/i18n/messages/web/en.ts",
+    "ins": 14,
+    "del": 0
+   },
+   {
+    "path": "packages/shared/src/i18n/messages/web/es.ts",
+    "ins": 14,
+    "del": 0
+   }
+  ],
+  "total_lines": 28,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "29a3f938213d",
+  "message": "fix: pnpm-workspace allowBuilds boolean values",
+  "files": [
+   {
+    "path": "pnpm-workspace.yaml",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "1c732470b1df",
+  "message": "fix(ci): strip https:// from REGISTRY in image base computation",
+  "files": [
+   {
+    "path": ".gitea/workflows/cloud-deploy.yml",
+    "ins": 3,
+    "del": 1
+   },
+   {
+    "path": ".gitea/workflows/web-deploy.yml",
+    "ins": 3,
+    "del": 1
+   }
+  ],
+  "total_lines": 8,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "395b4ee84f74",
+  "message": "fix: sql-metrics-service integration tests — Date serialization + unique external_id",
+  "files": [
+   {
+    "path": "cloud/test/integration/modules/admin/infrastructure/sql-metrics-service.test.ts",
+    "ins": 7,
+    "del": 6
+   }
+  ],
+  "total_lines": 13,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "afc5c6773465",
+  "message": "fix(P3): code review — show login_prompt instead of hard redirect on 401",
+  "files": [
+   {
+    "path": "web/src/app/api/invitations/[token]/route.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "web/src/app/join/page.tsx",
+    "ins": 14,
+    "del": 1
+   }
+  ],
+  "total_lines": 17,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "1ad9b74438a1",
+  "message": "fix(P2): countAcceptedByTrip +1 to account for trip owner member",
+  "files": [
+   {
+    "path": "cloud/src/modules/invitations/application/services/invitation-quota-service.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f484df8cc23a",
+  "message": "fix(i18n): unifica namespace syntax a _layout.tsx (colon → object form)",
+  "files": [
+   {
+    "path": "mobile/src/app/_layout.tsx",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "3892d2eac544",
+  "message": "fix(mobile): D6 SignalingClient emet onClose quan el token caduca",
+  "files": [
+   {
+    "path": "docs/deute-tecnic/SYNC-MOBILE-P2P.md",
+    "ins": 11,
+    "del": 7
+   },
+   {
+    "path": "mobile/src/realtime/__tests__/signaling.test.ts",
+    "ins": 28,
+    "del": 2
+   },
+   {
+    "path": "mobile/src/realtime/signaling.ts",
+    "ins": 3,
+    "del": 0
+   }
+  ],
+  "total_lines": 51,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "5e147282f25e",
+  "message": "fix(mobile): D10 test isolation WMDB — :memory: en entorn vitest",
+  "files": [
+   {
+    "path": "docs/deute-tecnic/SYNC-MOBILE-P2P.md",
+    "ins": 9,
+    "del": 7
+   },
+   {
+    "path": "mobile/.gitignore",
+    "ins": 0,
+    "del": 3
+   },
+   {
+    "path": "mobile/src/database/index.ts",
+    "ins": 7,
+    "del": 1
+   }
+  ],
+  "total_lines": 27,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "40c7e39aad17",
+  "message": "fix(web): redirect refresh handler usa WEB_PUBLIC_URL (darrere reverse proxy)",
+  "files": [
+   {
+    "path": "web/src/app/api/auth/__tests__/auth-routes.test.ts",
+    "ins": 26,
+    "del": 0
+   },
+   {
+    "path": "web/src/app/api/auth/refresh/route.ts",
+    "ins": 13,
+    "del": 2
+   }
+  ],
+  "total_lines": 41,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "36114927ca1b",
+  "message": "fix(cloud): 5 integration tests trencats per schema snake_case + bugs",
+  "files": [
+   {
+    "path": "cloud/test/integration/modules/billing/application/use-cases/seed-plans.test.ts",
+    "ins": 20,
+    "del": 17
+   },
+   {
+    "path": "cloud/test/integration/modules/billing/infrastructure/db/migrations/0001-billing.test.ts",
+    "ins": 4,
+    "del": 3
+   }
+  ],
+  "total_lines": 44,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "a1ab5566d06a",
+  "message": "fix(cloud/billing): arregla FREE_PLAN_CLAIMS per concordar amb el seed",
+  "files": [
+   {
+    "path": "cloud/src/modules/billing/domain/ports/free-plan-claims.ts",
+    "ins": 5,
+    "del": 3
+   },
+   {
+    "path": "cloud/test/unit/billing/domain/ports/free-plan-claims.test.ts",
+    "ins": 29,
+    "del": 1
+   }
+  ],
+  "total_lines": 38,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "d7cc13145997",
+  "message": "fix(mobile): treu el xip de rol de la barra de tabs (només al menú hamburguesa)",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/_layout.tsx",
+    "ins": 0,
+    "del": 20
+   }
+  ],
+  "total_lines": 20,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "60c96a72e0b5",
+  "message": "fix(mobile): polyfill crypto.getRandomValues per RN/Hermes",
+  "files": [
+   {
+    "path": "mobile/src/app/_layout.tsx",
+    "ins": 2,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/polyfills/__tests__/crypto.test.ts",
+    "ins": 42,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/polyfills/crypto.ts",
+    "ins": 30,
+    "del": 0
+   }
+  ],
+  "total_lines": 74,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6d2171030d25",
+  "message": "fix(mobile): P2pService serialitza l'error RTC (logging diagnòstic)",
+  "files": [
+   {
+    "path": "mobile/src/realtime/p2p-service.ts",
+    "ins": 15,
+    "del": 1
+   }
+  ],
+  "total_lines": 16,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "2adb7d24745b",
+  "message": "fix(mobile): P2P follower→leader — fallback origin_id + LWW logging",
+  "files": [
+   {
+    "path": "mobile/src/sync/__tests__/resolve-remote-id.test.ts",
+    "ins": 48,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/sync/resolve-remote-id.ts",
+    "ins": 8,
+    "del": 2
+   },
+   {
+    "path": "mobile/src/sync/sync-pull.ts",
+    "ins": 4,
+    "del": 0
+   }
+  ],
+  "total_lines": 62,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "dbe5182d2687",
+  "message": "fix(mobile): DatePickerField retorna ISO date-time (cura scheduledAt 400)",
+  "files": [
+   {
+    "path": "mobile/src/components/DatePickerField.tsx",
+    "ins": 6,
+    "del": 2
+   }
+  ],
+  "total_lines": 8,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b10480aea5d6",
+  "message": "fix(mobile): crear/editar viatge trencat — TripForm era dead code, FAB anava a ruta inexistent",
+  "files": [
+   {
+    "path": "mobile/src/app/(tabs)/index.tsx",
+    "ins": 76,
+    "del": 4
+   }
+  ],
+  "total_lines": 80,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "aeec7309464b",
+  "message": "fix(mobile): A.2 llista de viatges reactiva (observe) — sync P2P refresca UI",
+  "files": [
+   {
+    "path": "mobile/src/app/(tabs)/index.tsx",
+    "ins": 11,
+    "del": 7
+   }
+  ],
+  "total_lines": 18,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "644ac38ca837",
+  "message": "fix(mobile): A.2 generateOriginId fallava — crypto no existeix a RN/Hermes",
+  "files": [
+   {
+    "path": "mobile/src/database/__tests__/origin-id.test.ts",
+    "ins": 14,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/database/origin-id.ts",
+    "ins": 23,
+    "del": 4
+   }
+  ],
+  "total_lines": 42,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "54337fe34a0b",
+  "message": "fix(mobile): A.2 UI mostrava leader per electLeader, contradeia l'override",
+  "files": [
+   {
+    "path": "mobile/src/app/settings/p2p-debug.tsx",
+    "ins": 14,
+    "del": 10
+   }
+  ],
+  "total_lines": 24,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "31c074538d91",
+  "message": "fix(mobile): formatError desvetlla errors objecte al log P2P (debug E2E)",
+  "files": [
+   {
+    "path": "mobile/src/app/settings/p2p-debug.tsx",
+    "ins": 9,
+    "del": 1
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b5b5f76acb6b",
+  "message": "fix(mobile): A.2 primera sync follower anava a fullSync → 404 al leader (fix C)",
+  "files": [
+   {
+    "path": "mobile/src/realtime/__tests__/peer-sync-client.test.ts",
+    "ins": 20,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/realtime/peer-sync-client.ts",
+    "ins": 13,
+    "del": 1
+   }
+  ],
+  "total_lines": 35,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "3587881c0788",
+  "message": "fix(mobile): M1 syncAgainRequested zombie a stop() + I2 doc notifyLocalChange (code review A.2)",
+  "files": [
+   {
+    "path": "mobile/src/realtime/__tests__/peer-sync-client.test.ts",
+    "ins": 41,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/realtime/p2p-sync.ts",
+    "ins": 7,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/realtime/peer-sync-client.ts",
+    "ins": 14,
+    "del": 4
+   }
+  ],
+  "total_lines": 67,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "65b12ab16bb4",
+  "message": "fix(mobile): I1 origin_id no puja al payload del sync push (code review A.2)",
+  "files": [
+   {
+    "path": "mobile/src/sync/__tests__/api-payload.test.ts",
+    "ins": 13,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/sync/sync-push.ts",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 18,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "3b5aa04b0dcb",
+  "message": "fix(mobile): botó Diagnòstic P2P a la tab Config (settings.tsx)",
+  "files": [
+   {
+    "path": "mobile/src/app/(tabs)/settings.tsx",
+    "ins": 7,
+    "del": 0
+   }
+  ],
+  "total_lines": 7,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "e6f9421fadcc",
+  "message": "fix(mobile): signaling reconnect-race guard + cleanup timer (review I1)",
+  "files": [
+   {
+    "path": "mobile/src/realtime/__tests__/signaling.test.ts",
+    "ins": 17,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/realtime/signaling.ts",
+    "ins": 15,
+    "del": 1
+   }
+  ],
+  "total_lines": 33,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "0fd8affbf1c8",
+  "message": "fix(backend): tipa response.json() al geocoding (build preexistent trencat a main)",
+  "files": [
+   {
+    "path": "backend/src/infrastructure/services/geocoding-service.ts",
+    "ins": 3,
+    "del": 7
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "8899a8690be6",
+  "message": "fix(web): debounce refresh + try/catch connect + known-events guard + cleanup test (code review I1/M1/M2/M3)",
+  "files": [
+   {
+    "path": "web/src/components/dashboard/dashboard-live.tsx",
+    "ins": 15,
+    "del": 3
+   },
+   {
+    "path": "web/src/hooks/__tests__/use-cloud-events.test.ts",
+    "ins": 32,
+    "del": 0
+   },
+   {
+    "path": "web/src/hooks/use-cloud-events.ts",
+    "ins": 17,
+    "del": 2
+   }
+  ],
+  "total_lines": 69,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6287e8fe1b16",
+  "message": "fix(web): correct simulateCheckout path + cancel/simulateCheckout return types",
+  "files": [
+   {
+    "path": "web/src/lib/cloud-client.ts",
+    "ins": 9,
+    "del": 7
+   },
+   {
+    "path": "web/src/lib/types.ts",
+    "ins": 6,
+    "del": 0
+   }
+  ],
+  "total_lines": 22,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "cebc22eb6de6",
+  "message": "fix(web): drop unused reexport in cloud-client (noUnusedLocals)",
+  "files": [
+   {
+    "path": ".claude/settings.local.json",
+    "ins": 2,
+    "del": 1
+   },
+   {
+    "path": "web/src/lib/cloud-client.ts",
+    "ins": 0,
+    "del": 4
+   },
+   {
+    "path": "web/src/lib/cloud.ts",
+    "ins": 11,
+    "del": 0
+   }
+  ],
+  "total_lines": 18,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ba22ffc4329a",
+  "message": "fix(cloud/identity): run quota check before persisting user/verification",
+  "files": [
+   {
+    "path": "cloud/src/modules/identity/application/use-cases/oauth-login.ts",
+    "ins": 11,
+    "del": 2
+   },
+   {
+    "path": "cloud/src/modules/identity/application/use-cases/register.ts",
+    "ins": 8,
+    "del": 3
+   },
+   {
+    "path": "cloud/test/integration/identity/interfaces/auth-controller-quota.test.ts",
+    "ins": 20,
+    "del": 22
+   }
+  ],
+  "total_lines": 66,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "fae3598a3334",
+  "message": "fix(cloud/identity): EnforceDeviceQuotaUseCase strict >= comparison for limit=0",
+  "files": [
+   {
+    "path": "cloud/src/modules/identity/application/use-cases/enforce-device-quota.ts",
+    "ins": 7,
+    "del": 8
+   },
+   {
+    "path": "cloud/test/unit/modules/identity/application/use-cases/enforce-device-quota.test.ts",
+    "ins": 9,
+    "del": 2
+   }
+  ],
+  "total_lines": 26,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "39bfac0fd852",
+  "message": "fix(cloud): accurate billing events log + narrow E2E table reset",
+  "files": [
+   {
+    "path": "cloud/src/server.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "cloud/test/e2e/event-to-stale-e2e.test.ts",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "cloud/test/integration/support/test-db.ts",
+    "ins": 14,
+    "del": 0
+   }
+  ],
+  "total_lines": 20,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "99e33687a6cd",
+  "message": "fix(cloud/identity): harden sid validation and test claims_version propagation",
+  "files": [
+   {
+    "path": "cloud/src/modules/identity/infrastructure/services/jose-jwt-service.ts",
+    "ins": 10,
+    "del": 2
+   },
+   {
+    "path": "cloud/test/unit/identity/application/refresh.test.ts",
+    "ins": 28,
+    "del": 0
+   }
+  ],
+  "total_lines": 40,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "6b41c1f99e4b",
+  "message": "fix(cloud): move cross-cutting routes out of identityPlugin",
+  "files": [
+   {
+    "path": "cloud/src/modules/identity/interfaces/http/routes/auth.ts",
+    "ins": 0,
+    "del": 10
+   },
+   {
+    "path": "cloud/src/server/create-server.ts",
+    "ins": 10,
+    "del": 7
+   },
+   {
+    "path": "cloud/test/integration/identity/interfaces/auth-controller.test.ts",
+    "ins": 0,
+    "del": 25
+   }
+  ],
+  "total_lines": 52,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "3ae0b48fcaa1",
+  "message": "fix(cloud): make /.well-known/jwks.json fallback conditional",
+  "files": [
+   {
+    "path": "cloud/src/server/create-server.ts",
+    "ins": 6,
+    "del": 7
+   }
+  ],
+  "total_lines": 13,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "8f4ab313d9c6",
+  "message": "fix(cloud): use --node-linker=hoisted and CI=true to fix docker build",
+  "files": [
+   {
+    "path": "cloud/Dockerfile",
+    "ins": 2,
+    "del": 1
+   }
+  ],
+  "total_lines": 3,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "3c423481d528",
+  "message": "fix(cloud): fastify 5 logger crash via loggerInstance + --external:pino",
+  "files": [
+   {
+    "path": "cloud/Dockerfile",
+    "ins": 15,
+    "del": 0
+   },
+   {
+    "path": "cloud/package.json",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "cloud/src/server/create-server.ts",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 21,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "5d1bf3a2da05",
+  "message": "fix(cloud): REDIRECT_URI opcional accepta string buit",
+  "files": [
+   {
+    "path": "cloud/src/infrastructure/config/env.ts",
+    "ins": 8,
+    "del": 2
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "cc9402ac8e4e",
+  "message": "fix(cloud): swagger-ui nomes en non-production",
+  "files": [
+   {
+    "path": "cloud/Dockerfile",
+    "ins": 0,
+    "del": 2
+   },
+   {
+    "path": "cloud/src/server.ts",
+    "ins": 5,
+    "del": 1
+   }
+  ],
+  "total_lines": 8,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "1a356ce6b280",
+  "message": "fix(cloud): superRefine només valida credencials OAuth, no redirects",
+  "files": [
+   {
+    "path": "cloud/src/infrastructure/config/env.ts",
+    "ins": 6,
+    "del": 6
+   }
+  ],
+  "total_lines": 12,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "a7e77535abf6",
+  "message": "fix(cloud): copia static de @fastify/swagger-ui al dist",
+  "files": [
+   {
+    "path": "cloud/Dockerfile",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "739bf85c093b",
+  "message": "fix(cloud): copia node-gyp-build al runtime (dep d'argon2)",
+  "files": [
+   {
+    "path": "cloud/Dockerfile",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 1,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b5006401c616",
+  "message": "fix(cloud): Dockerfile amb Node 22 (pnpm 11 ho requereix)",
+  "files": [
+   {
+    "path": "cloud/Dockerfile",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 6,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "1bbcc83de53b",
+  "message": "fix(mobile): resolve deep link race condition, save URL history, consistent plugin pattern",
+  "files": [
+   {
+    "path": "mobile/plugins/withDeepLink.js",
+    "ins": 3,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/app/(auth)/login.tsx",
+    "ins": 9,
+    "del": 2
+   }
+  ],
+  "total_lines": 15,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "965a854c908c",
+  "message": "fix(mobile): add error handling to discovery, fix catch type",
+  "files": [
+   {
+    "path": "mobile/src/app/(auth)/login.tsx",
+    "ins": 17,
+    "del": 12
+   }
+  ],
+  "total_lines": 29,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "767b80874158",
+  "message": "fix(frontend): save stay price correctly — send priceAmount/priceCurrency instead of nested price object",
+  "files": [
+   {
+    "path": "frontend/src/components/trip/stays-panel.tsx",
+    "ins": 2,
+    "del": 1
+   }
+  ],
+  "total_lines": 3,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f93375ea47a4",
+  "message": "fix(mobile): add VisitPickerModal to empty gallery view so FAB works",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/gallery.tsx",
+    "ins": 10,
+    "del": 0
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "83d190cb8542",
+  "message": "fix(mobile): resolve remote visit ID to local ID when pulling images from server",
+  "files": [
+   {
+    "path": "mobile/src/sync/sync-pull.ts",
+    "ins": 16,
+    "del": 2
+   }
+  ],
+  "total_lines": 18,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "cbc274797d81",
+  "message": "fix(frontend): assignment dropdown visible — remove overflow clip, position correctly",
+  "files": [
+   {
+    "path": "frontend/src/components/gallery/gallery-panel.tsx",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b0a52a27c868",
+  "message": "fix(mobile): resolve local visit ID to remote ID before syncing sourceId",
+  "files": [
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 3,
+    "del": 2
+   },
+   {
+    "path": "mobile/src/sync/resolve-remote-id.ts",
+    "ins": 9,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/sync/sync-push.ts",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 19,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "8115d2a53779",
+  "message": "fix(mobile): sync image sourceType/sourceId to server for visit assignment",
+  "files": [
+   {
+    "path": "mobile/src/services/api.ts",
+    "ins": 9,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 12,
+    "del": 0
+   },
+   {
+    "path": "mobile/src/sync/sync-push.ts",
+    "ins": 19,
+    "del": 1
+   }
+  ],
+  "total_lines": 41,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f6f8174e2f08",
+  "message": "fix(mobile): restore select mode via long-press action sheet, hide filters when no visits",
+  "files": [
+   {
+    "path": "mobile/src/app/trip/[id]/gallery.tsx",
+    "ins": 26,
+    "del": 4
+   }
+  ],
+  "total_lines": 30,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "ade7d8f1a8c6",
+  "message": "fix(frontend): improve drag-drop UX - move cursor, dragLeave flicker, same-section guard",
+  "files": [
+   {
+    "path": "frontend/src/components/gallery/gallery-panel.tsx",
+    "ins": 16,
+    "del": 6
+   }
+  ],
+  "total_lines": 22,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "84b36e4e0c3a",
+  "message": "fix(frontend): address code review - dead handler, aria accessibility",
+  "files": [
+   {
+    "path": "frontend/src/components/gallery/gallery-panel.tsx",
+    "ins": 5,
+    "del": 4
+   }
+  ],
+  "total_lines": 9,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "a2de54c13c14",
+  "message": "fix(frontend): remove onChange call during typing in LocationPicker",
+  "files": [
+   {
+    "path": "frontend/src/components/map/location-picker.tsx",
+    "ins": 0,
+    "del": 1
+   }
+  ],
+  "total_lines": 1,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "3e269af771c9",
+  "message": "fix(frontend): prevent LocationPicker from overwriting user input during editing",
+  "files": [
+   {
+    "path": "frontend/src/components/map/location-picker.tsx",
+    "ins": 9,
+    "del": 2
+   }
+  ],
+  "total_lines": 11,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "9e236dd9e1bc",
+  "message": "fix(backend): use relative URLs for uploaded images to avoid mixed content",
+  "files": [
+   {
+    "path": "backend/src/infrastructure/services/__tests__/file-storage-service.test.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "backend/src/infrastructure/services/file-storage-service.ts",
+    "ins": 3,
+    "del": 3
+   },
+   {
+    "path": "backend/src/server.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "9f768468eb78",
+  "message": "fix(mobile): resolve remote trip ID before uploading images",
+  "files": [
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 15,
+    "del": 1
+   }
+  ],
+  "total_lines": 16,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "88874b7a7ffa",
+  "message": "fix(mobile): skip image creates/updates in sync-push, handled by ImageSync",
+  "files": [
+   {
+    "path": "mobile/src/sync/sync-push.ts",
+    "ins": 7,
+    "del": 0
+   }
+  ],
+  "total_lines": 7,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "879db9d6218f",
+  "message": "fix(mobile): un-nest SyncLogService calls from database.write in saved points",
+  "files": [
+   {
+    "path": "mobile/src/app/settings/saved-points.tsx",
+    "ins": 23,
+    "del": 13
+   }
+  ],
+  "total_lines": 36,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "31e6d6b70c31",
+  "message": "fix(mobile): replace FlatList with ScrollView in PointSelector dropdown",
+  "files": [
+   {
+    "path": "mobile/src/components/PointSelector.tsx",
+    "ins": 12,
+    "del": 22
+   }
+  ],
+  "total_lines": 34,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "9bafb5a07ba8",
+  "message": "fix(mobile): move auth redirect from render to useEffect",
+  "files": [
+   {
+    "path": "mobile/src/app/(auth)/login.tsx",
+    "ins": 5,
+    "del": 5
+   }
+  ],
+  "total_lines": 10,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "60d89081a428",
+  "message": "fix(mobile): add schema v5 migration for timestamp type change",
+  "files": [
+   {
+    "path": "mobile/src/database/migrations/index.ts",
+    "ins": 9,
+    "del": 0
+   }
+  ],
+  "total_lines": 9,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f67ff0e50534",
+  "message": "fix(mobile): set geocode threshold to 3 characters minimum",
+  "files": [
+   {
+    "path": "mobile/src/components/PointSelector.tsx",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b52da2c5b42d",
+  "message": "fix(mobile): map singular entity types in deletion sync to correct tables",
+  "files": [
+   {
+    "path": "mobile/src/sync/sync-pull.ts",
+    "ins": 12,
+    "del": 0
+   }
+  ],
+  "total_lines": 12,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "47a2d3fafa0c",
+  "message": "fix(mobile): persist sync timestamp to enable incremental sync and detect deletions",
+  "files": [
+   {
+    "path": "mobile/src/sync/sync-engine.ts",
+    "ins": 7,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/sync/sync-pull.ts",
+    "ins": 9,
+    "del": 6
+   }
+  ],
+  "total_lines": 23,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "dd360b43abc5",
+  "message": "fix(mobile): preserve v2 migration format to avoid DB reset",
+  "files": [
+   {
+    "path": "mobile/src/database/migrations/index.ts",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b60ceb4ee600",
+  "message": "fix(mobile): add migration v3 for images local_path columns",
+  "files": [
+   {
+    "path": "mobile/src/database/migrations/index.ts",
+    "ins": 17,
+    "del": 2
+   },
+   {
+    "path": "mobile/src/database/schema.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 0,
+    "del": 8
+   }
+  ],
+  "total_lines": 29,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "f9f1c226107b",
+  "message": "fix(mobile): re-fetch image record before update to avoid stale WatermelonDB ref",
+  "files": [
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 11,
+    "del": 5
+   }
+  ],
+  "total_lines": 16,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "87c2ab9c0967",
+  "message": "fix(mobile): robust base64 encoding without btoa for image downloads",
+  "files": [
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 20,
+    "del": 6
+   }
+  ],
+  "total_lines": 26,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "c3f363c97ede",
+  "message": "fix(mobile): bypass expo-file-system download, use fetch + writeAsStringAsync",
+  "files": [
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 20,
+    "del": 2
+   }
+  ],
+  "total_lines": 22,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "535dbabd636e",
+  "message": "fix(mobile): use expo-file-system/legacy for image downloads with auth",
+  "files": [
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 10,
+    "del": 26
+   }
+  ],
+  "total_lines": 36,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "c87fe1249710",
+  "message": "fix(mobile): use fetch+write for image download instead of File.downloadFileAsync",
+  "files": [
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 23,
+    "del": 9
+   }
+  ],
+  "total_lines": 32,
+  "public": false
+ },
+ {
+  "repo": "viatgecio",
+  "hash": "b207a2d8100d",
+  "message": "fix(mobile): image sync uses configured backend URL instead of localhost",
+  "files": [
+   {
+    "path": "mobile/src/sync/image-sync.ts",
+    "ins": 12,
+    "del": 3
+   }
+  ],
+  "total_lines": 15,
+  "public": false
+ },
+ {
+  "repo": "spring-boot-casino",
+  "hash": "65bb56c0a923",
+  "message": "fix: test bug",
+  "files": [
+   {
+    "path": "src/test/java/net/jordimp/casino/BetTests.java",
+    "ins": 10,
+    "del": 4
+   }
+  ],
+  "total_lines": 14,
+  "public": true
+ },
+ {
+  "repo": "spring-boot-casino",
+  "hash": "21827674ee06",
+  "message": "fix(tests): make BaseGame lazy-init from EnvWrapperUtils; avoid flaky BetTests",
+  "files": [
+   {
+    "path": "src/main/java/net/jordimp/casino/services/vo/BaseGame.java",
+    "ins": 40,
+    "del": 7
+   }
+  ],
+  "total_lines": 47,
+  "public": true
+ },
+ {
+  "repo": "spring-boot-casino",
+  "hash": "a528536a262d",
+  "message": "fix: Handle PlayerNotFoundException in GamePlayServiceImpl",
+  "files": [
+   {
+    "path": "src/main/java/net/jordimp/casino/services/GamePlayServiceImpl.java",
+    "ins": 7,
+    "del": 1
+   },
+   {
+    "path": "src/test/java/net/jordimp/casino/services/PlayerServiceRepositoryTests.java",
+    "ins": 2,
+    "del": 3
+   }
+  ],
+  "total_lines": 13,
+  "public": true
+ },
+ {
+  "repo": "spring-boot-casino",
+  "hash": "d37d08ca83b1",
+  "message": "fix: Environment maybe fail in null",
+  "files": [
+   {
+    "path": "src/main/java/net/jordimp/casino/StartUpInit.java",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": true
+ },
+ {
+  "repo": "spring-boot-casino",
+  "hash": "e103098f660e",
+  "message": "fix: Environment injection may fail",
+  "files": [
+   {
+    "path": "src/main/java/net/jordimp/casino/StartUpInit.java",
+    "ins": 11,
+    "del": 0
+   }
+  ],
+  "total_lines": 11,
+  "public": true
+ },
+ {
+  "repo": "spring-boot-casino",
+  "hash": "f01dabe376c0",
+  "message": "fix random game uuid",
+  "files": [
+   {
+    "path": "src/main/java/net/jordimp/casino/services/SampleJobService.java",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": true
+ },
+ {
+  "repo": "katas-java",
+  "hash": "da9c18e28654",
+  "message": "fix: annotation processors for lombok and mapstruct",
+  "files": [
+   {
+    "path": "pom.xml",
+    "ins": 12,
+    "del": 2
+   }
+  ],
+  "total_lines": 14,
+  "public": true
+ },
+ {
+  "repo": "md_mermaid_pdf",
+  "hash": "5000131d8a78",
+  "message": "ci: fix coverage report",
+  "files": [
+   {
+    "path": ".github/workflows/ci.yml",
+    "ins": 1,
+    "del": 14
+   }
+  ],
+  "total_lines": 15,
+  "public": true
+ },
+ {
+  "repo": "md_mermaid_pdf",
+  "hash": "fd981d4b190a",
+  "message": "ci: fix end of files",
+  "files": [
+   {
+    "path": "tests/pdf/test_converter.py",
+    "ins": 0,
+    "del": 1
+   }
+  ],
+  "total_lines": 1,
+  "public": true
+ },
+ {
+  "repo": "md_mermaid_pdf",
+  "hash": "a4acc2fba27c",
+  "message": "ci: fix end of files",
+  "files": [
+   {
+    "path": "tests/pdf/test_converter.py",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 1,
+  "public": true
+ },
+ {
+  "repo": "md_mermaid_pdf",
+  "hash": "e41e584d695e",
+  "message": "fix: CI missing imports",
+  "files": [
+   {
+    "path": "tests/pdf/test_converter.py",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "tests/resources/test.svg",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 4,
+  "public": true
+ },
+ {
+  "repo": "md_mermaid_pdf",
+  "hash": "41e758347556",
+  "message": "ci: fix YAML quoting in .pre-commit-config.yaml",
+  "files": [
+   {
+    "path": ".pre-commit-config.yaml",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2,
+  "public": true
+ },
+ {
+  "repo": "md_mermaid_pdf",
+  "hash": "db5ee7115f12",
+  "message": "ci: fix heredoc indentation in workflow",
+  "files": [
+   {
+    "path": ".github/workflows/ci.yml",
+    "ins": 12,
+    "del": 10
+   }
+  ],
+  "total_lines": 22,
+  "public": true
+ },
+ {
+  "repo": "md_mermaid_pdf",
+  "hash": "ee25a38083e4",
+  "message": "fix: pass ErrorHandler to MermaidWrapper",
+  "files": [
+   {
+    "path": "src/md_mermaid_pdf/markdown/mermaid.py",
+    "ins": 13,
+    "del": 3
+   }
+  ],
+  "total_lines": 16,
+  "public": true
+ },
+ {
+  "repo": "md_mermaid_pdf",
+  "hash": "3536fb448cd2",
+  "message": "fix: color import",
+  "files": [
+   {
+    "path": "README.md",
+    "ins": 5,
+    "del": 13
+   },
+   {
+    "path": "pyproject.toml",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "src/core/utils.py",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 22,
+  "public": true
+ },
+ {
+  "repo": "product-offers",
+  "hash": "766e83dadf9e",
+  "message": "test(integration): rely on seeded data.sql; fix sample data priorities to match object-mother",
+  "files": [
+   {
+    "path": "src/main/resources/data.sql",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "src/test/java/net/jordimp/productoffers/price/infrastructure/persistence/SpringDataPriceAdapterIntegrationTest.java",
+    "ins": 6,
+    "del": 2
+   }
+  ],
+  "total_lines": 12,
+  "public": true
+ },
+ {
+  "repo": "jordimp-sb",
+  "hash": "43204b9574c8",
+  "message": "fix: secondary email not send",
+  "files": [
+   {
+    "path": "src/main/java/net/jordimp/jordimpsb/JordimpSbApplication.java",
+    "ins": 2,
+    "del": 1
+   },
+   {
+    "path": "src/main/java/net/jordimp/jordimpsb/config/MailConfig.java",
+    "ins": 16,
+    "del": 53
+   }
+  ],
+  "total_lines": 72,
+  "public": false
  }
 ]

@@ -78,7 +78,11 @@ def main() -> int:
         try:
             found = 0
             for tid in pending:
-                pf = PROMPTS / f"{tid}.md"
+                sub = "" if not tid.startswith("C2-P") else "private/"
+                pf = PROMPTS / sub / f"{tid}.md"
+                if not pf.exists():
+                    print(f"  [{slug}] {tid} SENSE PROMPT, salt", flush=True)
+                    continue
                 answer = _dispatch(pf.read_text(encoding="utf-8"),
                                    out_dir / f"{tid}.answer.md", slug, O.PORT)
                 rec = grade_rec(tid, answer)

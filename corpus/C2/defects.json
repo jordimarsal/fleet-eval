@@ -33,7 +33,7 @@
         "selA.appendChild(o);"
       ],
       "context": 18,
-      "lang": "javascript",
+      "lang": "python",
       "patterns": [
         "(already|already been).{0,40}(render|append|server|html)",
         "re-?append",
@@ -158,7 +158,7 @@
         "class=\"drop\" id=\"drop\""
       ],
       "context": 16,
-      "lang": "html",
+      "lang": "python",
       "patterns": [
         "nested.{0,50}(interactive|button|control|element)",
         "input.{0,60}(inside|within|nested).{0,40}(button|role|drop)",
@@ -178,13 +178,266 @@
         "SONAR_SCANNER_IMAGE:-sonarsource/sonar-scanner-cli"
       ],
       "context": 16,
-      "lang": "bash",
+      "lang": "text",
       "patterns": [
         "(not|missing|without|no) .{0,30}export",
         "(export|inherit).{0,60}(environment|env|variable|credential)",
         "child.{0,40}(process|scanner).{0,60}(not|won'?t|doesn'?t).{0,30}(see|inherit|get)",
         "SONAR_HOST_URL.{0,120}(export|inherit|not set|unset)"
       ]
+    },
+    {
+      "id": "C2-14",
+      "repo": "ggufbench",
+      "hash": "273b6a6bac51",
+      "message": "fix(executors): fall back to the subprocess clock when GNU timeout is missing (macOS)",
+      "paths": [
+        "executors.py"
+      ],
+      "lang": "python",
+      "patterns": [
+        "hosts"
+      ],
+      "anchor": "prefix = [\"timeout\", str(timeout)]"
+    },
+    {
+      "id": "C2-15",
+      "repo": "ggufbench",
+      "hash": "aa0dd2197a0f",
+      "message": "fix(server): ServerManager takes extra_args; the smoke loads at 8k",
+      "paths": [
+        "server.py"
+      ],
+      "lang": "python",
+      "patterns": [
+        "(?i)extra[__]args",
+        "(?i)Appended",
+        "small"
+      ],
+      "anchor": "thinking=\"off\"):"
+    },
+    {
+      "id": "C2-22",
+      "repo": "quantdelta",
+      "hash": "541839ce7834",
+      "message": "fix(review): Strata blind-review fixes — tick alignment, R13 coverage, KL grid",
+      "paths": [
+        "src/quantdelta/runner/report_html.py"
+      ],
+      "lang": "python",
+      "patterns": [
+        "(?i)translateX",
+        "transform"
+      ],
+      "anchor": ".ticks { display:grid; grid-template-columns:repeat(5, 1fr); color:var(--mut);"
+    },
+    {
+      "id": "C2-23",
+      "repo": "buildwright",
+      "hash": "cc682d8f5a5d",
+      "message": "fix(runtime): errors de escriptura (OSError, p.ex. fitxers 0444 loop-owned) tornen com a ERROR feedback al worker en lloc de crashar el graf — el lock de feature_list va blocar un intent i el PermissionError sense gestio va tombar la S1 de farga-tui",
+      "paths": [
+        "src/buildwright/runtime.py"
+      ],
+      "lang": "python",
+      "patterns": [
+        "(?i)OSError",
+        "edit",
+        "owns"
+      ],
+      "anchor": "p.parent.mkdir(parents=True, exist_ok=True)"
+    },
+    {
+      "id": "C2-26",
+      "repo": "codebaserag",
+      "hash": "c7108ee08198",
+      "message": "fix(config): make dotenv loading opt-in via CODERAG_ENV_FILE",
+      "paths": [
+        "src/coderag/config.py"
+      ],
+      "lang": "python",
+      "patterns": [
+        "(?i)settings[__]customise[__]sources",
+        "(?i)PydanticBaseSettingsSource",
+        "(?i)file[__]secret[__]settings",
+        "(?i)DotEnvSettingsSource",
+        "(?i)CODERAG[__]ENV[__]FILE"
+      ],
+      "anchor": "from pydantic_settings import BaseSettings, SettingsConfigDict"
+    },
+    {
+      "id": "C2-27",
+      "repo": "debrief-mcp",
+      "hash": "8b18f61f7517",
+      "message": "fix(mcp_server): SIGINT handler exits immediately, no shutdown traceback",
+      "paths": [
+        "src/debrief/mcp_server.py"
+      ],
+      "lang": "python",
+      "patterns": [
+        "(?i)[__]on[__]sigint",
+        "(?i)Exception"
+      ],
+      "anchor": "except KeyboardInterrupt:"
+    },
+    {
+      "id": "C2-30",
+      "repo": "harness",
+      "hash": "f5eb151cfd83",
+      "message": "fix: check-traceability unresolved = not-done rows per protocol v1",
+      "paths": [
+        "templates/tools/check-traceability.py"
+      ],
+      "lang": "python",
+      "patterns": [
+        "reported",
+        "(?i)Status"
+      ],
+      "anchor": "ROW_RE = re.compile(r\"^\\|\\s*(R\\d+)\\s*\\|([^|]*)\\|\")"
+    },
+    {
+      "id": "C2-32",
+      "repo": "kafka-adapter-telemetry",
+      "hash": "9e700102ac3b",
+      "message": "fix: sample-cap coverage and guarded frame parsing",
+      "paths": [
+        "dashboard/src/stream/sseClient.ts"
+      ],
+      "lang": "typescript",
+      "patterns": [
+        "(?i)parseError",
+        "malformed",
+        "console"
+      ],
+      "anchor": "const parsed = JSON.parse(event.data) as { seq: number }"
+    },
+    {
+      "id": "C2-33",
+      "repo": "kafka-adapter-telemetry",
+      "hash": "988b9a60c6ef",
+      "message": "fix: cast native EventSource to EventSourceLike at the connectStream boundary",
+      "paths": [
+        "dashboard/src/stream/sseClient.ts"
+      ],
+      "lang": "typescript",
+      "patterns": [
+        "satisfies",
+        "runtime",
+        "unknown"
+      ],
+      "anchor": "open: (url: string) => EventSourceLike = url => new EventSource(url),"
+    },
+    {
+      "id": "C2-34",
+      "repo": "kafka-adapter-telemetry",
+      "hash": "c9c023a32ac3",
+      "message": "fix: controller listener deregistration, eviction logging, order-independent pin",
+      "paths": [
+        "telemetry-hub/src/main/java/com/jordimarcal/telemetry/hub/infrastructure/readapi/MetricsStreamController.java"
+      ],
+      "lang": "java",
+      "patterns": [
+        "(?i)Consumer",
+        "failure"
+      ],
+      "anchor": "metrics.addListener(this::forward);"
+    },
+    {
+      "id": "C2-36",
+      "repo": "redis-toolkit",
+      "hash": "61d6b64ff418",
+      "message": "fix(ratelimit): bound bucket state growth (DoS hardening)",
+      "paths": [
+        "ratelimit-infra/src/main/java/net/jordimp/redistoolkit/ratelimit/infra/memory/InMemoryQuotaStore.java"
+      ],
+      "lang": "java",
+      "patterns": [
+        "(?i)removeEldestEntry",
+        "(?i)LinkedHashMap",
+        "synchronized",
+        "(?i)MAX[__]BUCKETS",
+        "protected"
+      ],
+      "anchor": "import java.util.concurrent.ConcurrentHashMap;"
+    },
+    {
+      "id": "C2-39",
+      "repo": "estol-app",
+      "hash": "9f0fee9824cb",
+      "message": "fix(settings): el diàleg s'obre amb el config desat, no amb el mostreig",
+      "paths": [
+        "app/src/main/java/dev/jordimarsal/estol/MainActivity.kt"
+      ],
+      "lang": "kotlin",
+      "patterns": [
+        "(?i)exceptionOrNull",
+        "(?i)lineSequence",
+        "rejected",
+        "(?i)loadRaw",
+        "success"
+      ],
+      "anchor": "var settingsText by remember { mutableStateOf(\"\") }"
+    },
+    {
+      "id": "C2-40",
+      "repo": "reddit-bridge",
+      "hash": "f39bff0e35df",
+      "message": "fix: read saved items from the per-user listing",
+      "paths": [
+        "src/reddit_bridge/client.py"
+      ],
+      "lang": "python",
+      "patterns": [
+        "startswith",
+        "(?i)[__]username",
+        "requires",
+        "resolve",
+        "(?i)Cached"
+      ],
+      "anchor": "return self.get(\"/api/v1/user/saved.json\", params=params)"
+    },
+    {
+      "id": "C2-42",
+      "repo": "spring-boot-casino",
+      "hash": "a528536a262d",
+      "message": "fix: Handle PlayerNotFoundException in GamePlayServiceImpl",
+      "paths": [
+        "src/main/java/net/jordimp/casino/services/GamePlayServiceImpl.java"
+      ],
+      "lang": "java",
+      "patterns": [
+        "(?i)PlayerNotFoundException",
+        "empty"
+      ],
+      "anchor": "Optional<Player> playerOpt = Optional.ofNullable(playerService.findByUUID(bet.ge"
+    },
+    {
+      "id": "C2-43",
+      "repo": "spring-boot-casino",
+      "hash": "d37d08ca83b1",
+      "message": "fix: Environment maybe fail in null",
+      "paths": [
+        "src/main/java/net/jordimp/casino/StartUpInit.java"
+      ],
+      "lang": "java",
+      "patterns": [
+        "every15minutes"
+      ],
+      "anchor": "jobScheduler.<SampleJobService>scheduleRecurrently(x -> x.executeSampleJob(\"New "
+    },
+    {
+      "id": "C2-46",
+      "repo": "md_mermaid_pdf",
+      "hash": "ee25a38083e4",
+      "message": "fix: pass ErrorHandler to MermaidWrapper",
+      "paths": [
+        "src/md_mermaid_pdf/markdown/mermaid.py"
+      ],
+      "lang": "python",
+      "patterns": [
+        "(?i)Path"
+      ],
+      "anchor": "def __init__(self, cfg: PdfCfg) -> None:"
     }
   ]
 }

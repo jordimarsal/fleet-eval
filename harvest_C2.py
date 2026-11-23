@@ -19,7 +19,36 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 PROJECTS = Path.home() / "Documents/CV/projects"
-REPOS = ["dev-lab", "ggufbench", "jordimp", "mussol", "quantdelta", "seekandemploy"]
+WORKS = Path.home() / "works/typescript"
+# (nom, ruta, es_public): privat -> prompts/answers gitignorats (id C2-Pxx)
+REPOS = [
+    ("dev-lab", PROJECTS / "dev-lab", True),
+    ("ggufbench", PROJECTS / "ggufbench", True),
+    ("jordimp", PROJECTS / "jordimp", True),
+    ("mussol", PROJECTS / "mussol", True),
+    ("quantdelta", PROJECTS / "quantdelta", True),
+    ("seekandemploy", PROJECTS / "seekandemploy", True),
+    ("buildwright", PROJECTS / "buildwright", True),
+    ("codebaserag", PROJECTS / "codebaserag", True),
+    ("debrief-mcp", PROJECTS / "debrief-mcp", True),
+    ("harness", PROJECTS / "harness", True),
+    ("interview-simulator", PROJECTS / "interview-simulator", True),
+    ("kafka-adapter-telemetry", PROJECTS / "kafka-adapter-telemetry", True),
+    ("redis-toolkit", PROJECTS / "redis-toolkit", True),
+    ("riu", PROJECTS / "riu", True),
+    ("shortener", PROJECTS / "shortener", True),
+    ("model-ci", PROJECTS / "model-ci", True),
+    ("estol", PROJECTS / "estol", True),
+    ("estol-app", PROJECTS / "estol-app", True),
+    ("reddit-bridge", PROJECTS / "reddit-bridge", True),
+    ("viatgecio", WORKS / "viatgecio", False),
+    ("spring-boot-casino", Path.home() / "works/java/spring-boot-casino", True),
+    ("katas-java", Path.home() / "works/java/katas-java", True),
+    ("md_mermaid_pdf", Path.home() / "works/python/md_mermaid_pdf", True),
+    ("rustcut", Path.home() / "works/rust/rustcut", True),
+    ("product-offers", Path.home() / "works/assestments/product-offers", True),
+    ("jordimp-sb", Path.home() / "works/jordimp/jordimp-sb", False),
+]
 
 FIX_PAT = re.compile(r"\b(fix|bugfix|bug fix|corregido|arregla|correct|wrong|crash)\b", re.I)
 NOISE_PAT = re.compile(r"\b(merge|bump|release|version|chore|docs|typo|rename|rebase)\b", re.I)
@@ -55,9 +84,10 @@ def main() -> int:
         max_files = int(sys.argv[i + 1])
 
     out = []
-    for repo_name in REPOS:
-        repo = PROJECTS / repo_name
-        log = git(repo, "log", "--format=%H%x1f%s", "--max-count=400",
+    for repo_name, repo, is_public in REPOS:
+        if not repo.exists():
+            continue
+        log = git(repo, "log", "--format=%H%x1f%s", "--max-count=600",
                   "--grep=fix", "-i")
         for line in log.splitlines():
             if "\x1f" not in line:
@@ -75,7 +105,7 @@ def main() -> int:
                 continue
             # nomes codi, tests com a context sempre que el defecte no nomes hi sigui
             if any(f.endswith((".lock", ".json", ".md", ".svg", ".html")) and
-                   not any(p.endswith((".py", ".ts", ".js", ".java")) for p, _, _ in files)
+                   not any(p.endswith((".py", ".ts", ".js", ".java", ".rs", ".kt")) for p, _, _ in files)
                    for f, _, _ in files):
                 continue
             parents = git(repo, "log", "--format=%P", "-1", h).strip().split()
@@ -84,7 +114,7 @@ def main() -> int:
             out.append({
                 "repo": repo_name, "hash": h[:12], "message": msg,
                 "files": [{"path": p, "ins": i, "del": d} for p, i, d in files],
-                "total_lines": total,
+                "total_lines": total, "public": is_public,
             })
     out_dir = HERE / "corpus" / "C2"
     out_dir.mkdir(parents=True, exist_ok=True)

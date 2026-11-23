@@ -5,3 +5,8 @@ _probe_*/
 answers/**/*.prompt.md
 answers/**/*.timing.txt
 answers/**/*.retry.md
+# C2: defectes de repos privats (prompts amb codi + spec completa + respostes)
+corpus/C2/defects.private.json
+corpus/C2/draft_spec.json
+prompts/C2/private/
+answers/*/C2/C2-P*

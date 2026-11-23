@@ -21,7 +21,12 @@ CORPUS = HERE / "corpus" / "C2"
 
 def load_spec() -> dict[str, list[str]]:
     d = json.loads((CORPUS / "defects.json").read_text(encoding="utf-8"))
-    return {x["id"]: x["patterns"] for x in d["defects"]}
+    out = {x["id"]: x["patterns"] for x in d["defects"]}
+    priv = CORPUS / "defects.private.json"
+    if priv.exists():
+        dp = json.loads(priv.read_text(encoding="utf-8"))
+        out.update({x["id"]: x["patterns"] for x in dp["defects"]})
+    return out
 
 
 def grade_answer(answer: str, patterns: list[str]) -> tuple[bool, str]:
