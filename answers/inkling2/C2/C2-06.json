@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-06",
+ "found": true,
+ "pattern": "(cross|other|all|every|another).{0,30}(feature|impl_)",
+ "items": 3,
+ "false_positives_est": 2,
+ "answer_chars": 1121
+}

@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-09",
+ "found": true,
+ "pattern": "(export|inherit).{0,60}(environment|env|variable|credential)",
+ "items": 5,
+ "false_positives_est": 4,
+ "answer_chars": 2254
+}

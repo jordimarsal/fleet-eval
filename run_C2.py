@@ -36,6 +36,20 @@ def _numbered(answer: str) -> int:
     return len(re.findall(r"^\s*\d+[.)]\s", answer, re.M))
 
 
+def wait_servers_gone(timeout: float = 45.0) -> None:
+    """Bloqueja fins que cap llama-server del rig viu (els /app/ son contenidors)."""
+    import time
+    import subprocess as sp
+    t0 = time.time()
+    while time.time() - t0 < timeout:
+        r = sp.run(["pgrep", "-af", "llama-server"], capture_output=True, text=True)
+        alive = [ln for ln in r.stdout.splitlines() if "/app/" not in ln]
+        if not alive:
+            time.sleep(2)  # gracia: deixa que la VRAM es liquidí del tot
+            return
+        time.sleep(1)
+
+
 def main() -> int:
     slugs = sys.argv[1:] or list(O.FLEET)
     ids = sorted(G.load_spec())
@@ -48,8 +62,12 @@ def main() -> int:
             print(f"[{slug}] complet, salt", flush=True)
             continue
         O.stop_server()
+        wait_servers_gone()
         gguf = O.MODELS / O.FLEET[slug]
         args = O.build_args(gguf)
+        # context de ressenya: 200k demanat explicitament (els prompts fan ~2.5k,
+        # pero es vol marge; per sota del sostre auditat de qwen38, 262k)
+        args += ["-c", "200000"]
         log = HERE / "logs" / f"C2.{slug}.server.log"
         log.parent.mkdir(exist_ok=True)
         import subprocess as sp

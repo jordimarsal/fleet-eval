@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-08",
+ "found": true,
+ "pattern": "nested.{0,50}(interactive|button|control|element)",
+ "items": 8,
+ "false_positives_est": 7,
+ "answer_chars": 2478
+}

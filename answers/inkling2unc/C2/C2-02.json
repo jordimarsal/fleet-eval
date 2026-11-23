@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-02",
+ "found": true,
+ "pattern": "(already|already been).{0,40}(render|append|server|html)",
+ "items": 3,
+ "false_positives_est": 2,
+ "answer_chars": 1139
+}

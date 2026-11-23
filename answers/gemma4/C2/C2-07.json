@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-07",
+ "found": true,
+ "pattern": "empty.{0,40}(token|piece|string).{0,80}(skip|continue|legal|legitimate|valid|raise|reject|fail)",
+ "items": 2,
+ "false_positives_est": 1,
+ "answer_chars": 470
+}

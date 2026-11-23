@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-09",
+ "found": true,
+ "pattern": "(not|missing|without|no) .{0,30}export",
+ "items": 5,
+ "false_positives_est": 4,
+ "answer_chars": 15481
+}

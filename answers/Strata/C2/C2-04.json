@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-04",
+ "found": true,
+ "pattern": "(still|yet|not yet|hasn'?t).{0,40}(answer|respond|alive|up|running|dying|dead)",
+ "items": 10,
+ "false_positives_est": 9,
+ "answer_chars": 3046
+}

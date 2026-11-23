@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-04",
+ "found": true,
+ "pattern": "port.{0,60}(free|quiet|release|reuse)",
+ "items": 5,
+ "false_positives_est": 4,
+ "answer_chars": 1228
+}

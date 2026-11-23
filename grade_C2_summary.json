@@ -1,0 +1,52 @@
+{
+ "minicpm": {
+  "found": 5,
+  "recall": 0.56,
+  "fp_est": 40
+ },
+ "Strata": {
+  "found": 3,
+  "recall": 0.33,
+  "fp_est": 54
+ },
+ "inkling2": {
+  "found": 3,
+  "recall": 0.33,
+  "fp_est": 40
+ },
+ "inkling2unc": {
+  "found": 3,
+  "recall": 0.33,
+  "fp_est": 32
+ },
+ "Huihui": {
+  "found": 2,
+  "recall": 0.22,
+  "fp_est": 44
+ },
+ "SC117": {
+  "found": 2,
+  "recall": 0.22,
+  "fp_est": 45
+ },
+ "qwen38": {
+  "found": 2,
+  "recall": 0.22,
+  "fp_est": 21
+ },
+ "gemma4": {
+  "found": 1,
+  "recall": 0.11,
+  "fp_est": 42
+ },
+ "qwen36": {
+  "found": 0,
+  "recall": 0.0,
+  "fp_est": 72
+ },
+ "qwen4b": {
+  "found": 0,
+  "recall": 0.0,
+  "fp_est": 72
+ }
+}
