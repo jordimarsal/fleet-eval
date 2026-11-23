@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-27",
+ "found": true,
+ "pattern": "(?i)Exception",
+ "items": 4,
+ "false_positives_est": 3,
+ "answer_chars": 1205
+}

@@ -1,0 +1,10 @@
+{
+ "task_id": "C2-23",
+ "found": false,
+ "pattern": "",
+ "items": 0,
+ "false_positives_est": 0,
+ "answer_chars": 0,
+ "crash": true,
+ "note": "RuntimeError: dispatch failed: ()\n        ^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/http/client.py\", line 1457, in getresponse\n    r"
+}

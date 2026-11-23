@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-46",
+ "found": false,
+ "pattern": "",
+ "items": 13,
+ "false_positives_est": 13,
+ "answer_chars": 5216
+}

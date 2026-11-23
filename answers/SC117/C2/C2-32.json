@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-32",
+ "found": true,
+ "pattern": "malformed",
+ "items": 5,
+ "false_positives_est": 4,
+ "answer_chars": 1408
+}

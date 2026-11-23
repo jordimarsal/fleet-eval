@@ -51,6 +51,12 @@ def wait_servers_gone(timeout: float = 45.0) -> None:
 
 
 def main() -> int:
+    # regla d'or: Strata i llama.cpp es disputen la VRAM. Fail fast.
+    import subprocess as sp
+    r = sp.run(["pgrep", "-f", "Strata/engine/strata"], capture_output=True, text=True)
+    if r.stdout.strip():
+        print("AVORTAT: Strata esta en marxa (pgrep engine/strata). Atura'l primer.")
+        return 2
     slugs = sys.argv[1:] or list(O.FLEET)
     ids = sorted(G.load_spec())
     print(f"C2: {len(ids)} defectes reals x {len(slugs)} models", flush=True)
@@ -67,7 +73,10 @@ def main() -> int:
         args = O.build_args(gguf)
         # context de ressenya: 200k demanat explicitament (els prompts fan ~2.5k,
         # pero es vol marge; per sota del sostre auditat de qwen38, 262k)
-        args += ["-c", "200000"]
+        # EXCEPCIO: els Inklings (MoE looped) no capen 200k de buffer de calcul
+        # en 2x16GB -> 64k (C2.inkling2.server.log: 5.18GB de pp buffer a CUDA1)
+        ctx = 65536 if slug.startswith("inkling") else 200000
+        args += ["-c", str(ctx)]
         log = HERE / "logs" / f"C2.{slug}.server.log"
         log.parent.mkdir(exist_ok=True)
         import subprocess as sp
@@ -77,14 +86,38 @@ def main() -> int:
             raise RuntimeError(f"{slug} never healthy (see {log})")
         try:
             found = 0
+            crashes = 0
             for tid in pending:
                 sub = "" if not tid.startswith("C2-P") else "private/"
                 pf = PROMPTS / sub / f"{tid}.md"
                 if not pf.exists():
                     print(f"  [{slug}] {tid} SENSE PROMPT, salt", flush=True)
                     continue
-                answer = _dispatch(pf.read_text(encoding="utf-8"),
-                                   out_dir / f"{tid}.answer.md", slug, O.PORT)
+                answer = ""
+                try:
+                    answer = _dispatch(pf.read_text(encoding="utf-8"),
+                                       out_dir / f"{tid}.answer.md", slug, O.PORT)
+                except Exception as e:
+                    crashes += 1
+                    rec = {"task_id": tid, "found": False, "pattern": "",
+                           "items": 0, "false_positives_est": 0, "answer_chars": 0,
+                           "crash": True, "note": f"{type(e).__name__}: {str(e)[:120]}"}
+                    (out_dir / f"{tid}.json").write_text(
+                        json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
+                    print(f"  [{slug}] {tid} CRASH #{crashes} ({rec['note'][:60]})",
+                          flush=True)
+                    # el servidor ha pogut morir: torna'l en peu
+                    if not O.wait_healthy(limit=15):
+                        O.stop_server()
+                        wait_servers_gone()
+                        sp.Popen(args, stdout=fh, stderr=sp.STDOUT, start_new_session=True)
+                        if not O.wait_healthy():
+                            raise RuntimeError(f"{slug} unusable after crash")
+                    if crashes > max(3, len(pending) // 3):
+                        print(f"  [{slug}] massa crashes ({crashes}), avortant slug",
+                              flush=True)
+                        break
+                    continue
                 rec = grade_rec(tid, answer)
                 (out_dir / f"{tid}.json").write_text(
                     json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")

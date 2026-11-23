@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-46",
+ "found": true,
+ "pattern": "(?i)Path",
+ "items": 6,
+ "false_positives_est": 5,
+ "answer_chars": 7110
+}

@@ -1,0 +1,10 @@
+{
+ "task_id": "C2-15",
+ "found": false,
+ "pattern": "",
+ "items": 0,
+ "false_positives_est": 0,
+ "answer_chars": 0,
+ "crash": true,
+ "note": "el servidor inkling2unc crasheja reproduiblement amb aquest prompt (server_queue start_loop)"
+}

@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-34",
+ "found": true,
+ "pattern": "failure",
+ "items": 10,
+ "false_positives_est": 9,
+ "answer_chars": 5695
+}

@@ -1,0 +1,8 @@
+{
+ "task_id": "C2-23",
+ "found": true,
+ "pattern": "(?i)OSError",
+ "items": 7,
+ "false_positives_est": 6,
+ "answer_chars": 1588
+}
