@@ -142,6 +142,54 @@ un model local domini de manera estadísticament defensable.
   model. Requereix explicar bé la construcció del corpus (la part més rica:
   collita de commits fix, remei com a clau de grading).
 
+## ANGLE ESCOLLIT: B — winner's curse (decisio 2026-11-23)
+
+### Les xifres nuclears (verificades)
+
+| Fet | Valor |
+|---|---|
+| minicpm, primera onada (n=9) | **5/9 = 0.556** — "el millor ressenyador de la flota" |
+| minicpm, corpus nou (24 defectes, mateix grading) | **4/24 = 0.167** |
+| minicpm total (n=33) | 9/33 = 0.27 — mig taulell |
+| Simulació: 10 models idèntics (p=0.27), n=9 | **E[max] = 0.51** — l'observat (0.56) ÉS el màxim esperat d'una flota igualada |
+| Idem | **P(que algun model "lideri" amb ≥5/9) = 50%** |
+| Idem | **P(que algun model faci 0/9) = 45%** — els dos zeros observats (qwen36, qwen4b) també |
+| McNemar aparellat, n=33 | cap parell significatiu (p mín 0.18) |
+
+Script reproduïble: `docs/winner_curse_sim.py` (sortida verificada).
+
+### Esquelet de l'article (≈1500-1800 paraules)
+
+1. **Hook**: "La setmana passada la nostra bateria va coronar un guanyador.
+   Aquesta setmana, el mateix grading amb més defectes l'ha executat."
+   minicpm 0.56 → 0.167 en material nou.
+2. **Context en 5 línies**: flota local de 10 LLM (2×RTX 5080); volíem routing
+   per rol; calia saber qui era el millor ressenyador.
+3. **La bateria** (breu): 9 defectes reals collits del propi git (estat PRE de
+   commits fix), grading mecànic pel remei. Taules de la primera onada.
+4. **La temptació**: declara minicpm guanyador, enruta-hi les ressenyes. És el
+   que fan els leaderboards cada dia.
+5. **Per què vam dubtar**: Wilson CI ±32pp a n=9; escollir el màxim de 10 models
+   = escollir la sort.
+6. **La simulació** (la peça central): taula E[max]/P(max≥5/9)/P(min=0). La
+   forma del rànquing observat és la d'una flota igualada.
+7. **La comprovació empírica**: ampliació a n=33 (mateix grading, corpus nou,
+   23 repos). Col·lapse a la banda 0.12-0.33; McNemar pla. El tall fi:
+   0.556 → 0.167 en material fresc.
+8. **Lliçons** (la part portable):
+   - El guanyador d'una bateria petita mesura la seva sort, no la seva qualitat.
+   - Amplia ABANS de coronar; si no pots ampliar, no coronis: assigna esglaons.
+   - Test aparellat sobre corpus idèntic, mai comparació de punts solts.
+   - Publica el null: ens va costar una jornada, estalvia'n milers.
+9. **Què fem ara**: sense guanyador → esglaons (Strata com a referència,
+   banda alta intercanviable) i routing només on hi ha senyal (implementer).
+10. **Reproducció**: repo, scripts, corpus (públic), sim.
+
+### Decisions pendents de l'article
+- Idioma: EN (abast) — les notes estan en català per treballar.
+- On: blog personal / dev.to? (definir)
+- Nom de la flota i hardware al text (2×RTX 5080, llama.cpp b####, Strata).
+
 ## Obert (si l'article es fa, aquests forats es poden mencionar o tapar)
 
 - n=50 era l'objectiu declarat; vam tancar a n=33 per poda de curació honesta
