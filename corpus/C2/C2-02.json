@@ -1,0 +1,18 @@
+{
+ "id": "C2-02",
+ "repo": "ggufbench",
+ "hash": "5b655b49f536c44b92b9b5e46096bd60e9ce743f",
+ "message": "fix(compare): picker JS no longer re-appends server-rendered options (2x list in browsers)",
+ "paths": [
+  "html_report.py"
+ ],
+ "patterns": [
+  "(already|already been).{0,40}(render|append|server|html)",
+  "re-?append",
+  "(duplicat|doubl|twice|two times|duplica|dobla)",
+  "append.{0,60}(again|already|existing|rendered)"
+ ],
+ "excerpt_ranges": "920-957",
+ "pre_bytes": 52248,
+ "prompt_bytes": 1975
+}

@@ -1,0 +1,19 @@
+{
+ "id": "C2-04",
+ "repo": "ggufbench",
+ "hash": "f68988cbfecfc0d7eb47bdccfe9a125b4455ae56",
+ "message": "fix(tools): probe-context must not mistake a dying server for a load that fits",
+ "paths": [
+  "harness/tools/probe-context.py"
+ ],
+ "patterns": [
+  "(still|yet|not yet|hasn'?t).{0,40}(answer|respond|alive|up|running|dying|dead)",
+  "(previous|prior|old).{0,50}(load|server|instance|process)",
+  "port.{0,60}(free|quiet|release|reuse)",
+  "health.{0,80}(stale|previous|old|belongs|not.{0,20}(new|this|own)))",
+  "wait.{0,40}port.{0,40}free"
+ ],
+ "excerpt_ranges": "47-138",
+ "pre_bytes": 7544,
+ "prompt_bytes": 4363
+}

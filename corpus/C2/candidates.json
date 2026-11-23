@@ -1,0 +1,1017 @@
+[
+ {
+  "repo": "dev-lab",
+  "hash": "a781848d8885",
+  "message": "fix(tests): R3/R4 de gitlab_ci fan skip net al runner (els logs d'evidència són gitignored)",
+  "files": [
+   {
+    "path": "harness/progress/history.md",
+    "ins": 6,
+    "del": 0
+   },
+   {
+    "path": "tests/gitlab_ci.test.js",
+    "ins": 9,
+    "del": 5
+   }
+  ],
+  "total_lines": 20
+ },
+ {
+  "repo": "dev-lab",
+  "hash": "8d2f16c32bb0",
+  "message": "fix(quality): el template de index.html genera el drop com a <button> amb input fora (S6819)",
+  "files": [
+   {
+    "path": "build.py",
+    "ins": 6,
+    "del": 4
+   },
+   {
+    "path": "index.html",
+    "ins": 6,
+    "del": 4
+   }
+  ],
+  "total_lines": 20
+ },
+ {
+  "repo": "dev-lab",
+  "hash": "3413ce9a91b8",
+  "message": "fix(quality): regex d'imatges sense quantificador reluctance (S8786+S5857)",
+  "files": [
+   {
+    "path": "build.py",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 2
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "94a15e83be0e",
+  "message": "fix(refusal): rename the screening list — mypy strict on report.py",
+  "files": [
+   {
+    "path": "report.py",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 6
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "4086c964da17",
+  "message": "fix(report): retirement matching is slug-based, recovered rows gray too",
+  "files": [
+   {
+    "path": "README.md",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "html_report.py",
+    "ins": 14,
+    "del": 2
+   },
+   {
+    "path": "tests/test_html_report.py",
+    "ins": 26,
+    "del": 0
+   }
+  ],
+  "total_lines": 46
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "50dedad48d45",
+  "message": "fix(sonar): report.py — fallback sort key amb tuple de longitud fixa (S8495)",
+  "files": [
+   {
+    "path": ".scannerwork/report-task.txt",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "report.py",
+    "ins": 1,
+    "del": 1
+   }
+  ],
+  "total_lines": 6
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "ef3606b40379",
+  "message": "fix(pool): clean rebuild after the two-checkout merge",
+  "files": [
+   {
+    "path": "results/models/pool.jsonl",
+    "ins": 4,
+    "del": 13
+   }
+  ],
+  "total_lines": 17
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "31f4044a708c",
+  "message": "fix(tests): scope the nvidia-smi mock to nvidia-smi calls only (macOS file probe)",
+  "files": [
+   {
+    "path": "tests/test_run_cli.py",
+    "ins": 19,
+    "del": 5
+   }
+  ],
+  "total_lines": 24
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "273b6a6bac51",
+  "message": "fix(executors): fall back to the subprocess clock when GNU timeout is missing (macOS)",
+  "files": [
+   {
+    "path": "executors.py",
+    "ins": 3,
+    "del": 1
+   },
+   {
+    "path": "tests/test_executors.py",
+    "ins": 20,
+    "del": 0
+   }
+  ],
+  "total_lines": 24
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "aa0dd2197a0f",
+  "message": "fix(server): ServerManager takes extra_args; the smoke loads at 8k",
+  "files": [
+   {
+    "path": "server.py",
+    "ins": 7,
+    "del": 2
+   },
+   {
+    "path": "tests/test_smoke.py",
+    "ins": 8,
+    "del": 1
+   }
+  ],
+  "total_lines": 18
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "b1efb8ea66b8",
+  "message": "fix(server): allow the modern draft-head flags in model profiles",
+  "files": [
+   {
+    "path": "config.py",
+    "ins": 10,
+    "del": 1
+   },
+   {
+    "path": "tests/test_server.py",
+    "ins": 16,
+    "del": 0
+   }
+  ],
+  "total_lines": 27
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "f68988cbfecf",
+  "message": "fix(tools): probe-context must not mistake a dying server for a load that fits",
+  "files": [
+   {
+    "path": "harness/tools/probe-context.py",
+    "ins": 60,
+    "del": 12
+   }
+  ],
+  "total_lines": 72
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "dca31a4830e8",
+  "message": "fix(graders): keep the tool-cap probe in the multi-run branch (§C13)",
+  "files": [
+   {
+    "path": "graders.py",
+    "ins": 6,
+    "del": 0
+   },
+   {
+    "path": "tests/test_graders.py",
+    "ins": 12,
+    "del": 0
+   }
+  ],
+  "total_lines": 18
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "e66828f536c7",
+  "message": "fix(config): allow the sampler flags in a model profile (they were trimmed)",
+  "files": [
+   {
+    "path": "config.py",
+    "ins": 7,
+    "del": 2
+   },
+   {
+    "path": "tests/test_server.py",
+    "ins": 19,
+    "del": 2
+   }
+  ],
+  "total_lines": 30
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "7c71dced210e",
+  "message": "fix(config): pin the sampler in the baseline — GGUF metadata was deciding top_k",
+  "files": [
+   {
+    "path": "config.py",
+    "ins": 9,
+    "del": 0
+   },
+   {
+    "path": "docs/SPEC.md",
+    "ins": 11,
+    "del": 3
+   },
+   {
+    "path": "tests/test_config.py",
+    "ins": 34,
+    "del": 1
+   }
+  ],
+  "total_lines": 58
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "b7d9aec30184",
+  "message": "fix(bench): excluded tasks print as excluded (not failed) in tools/agent live log",
+  "files": [
+   {
+    "path": "graders.py",
+    "ins": 3,
+    "del": 2
+   }
+  ],
+  "total_lines": 5
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "5b655b49f536",
+  "message": "fix(compare): picker JS no longer re-appends server-rendered options (2x list in browsers)",
+  "files": [
+   {
+    "path": "html_report.py",
+    "ins": 3,
+    "del": 7
+   },
+   {
+    "path": "tests/test_html_report.py",
+    "ins": 5,
+    "del": 0
+   }
+  ],
+  "total_lines": 15
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "f721a9c6cbfb",
+  "message": "fix(compare): picker ordered by (slug, think) — each model's off/on adjacent",
+  "files": [
+   {
+    "path": "html_report.py",
+    "ins": 3,
+    "del": 1
+   },
+   {
+    "path": "tests/test_html_report.py",
+    "ins": 12,
+    "del": 0
+   }
+  ],
+  "total_lines": 16
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "6483634949bb",
+  "message": "fix(compare): picker lists unique pairs, retired models out (explicit pair still renders)",
+  "files": [
+   {
+    "path": "html_report.py",
+    "ins": 12,
+    "del": 1
+   },
+   {
+    "path": "tests/test_html_report.py",
+    "ins": 45,
+    "del": 0
+   }
+  ],
+  "total_lines": 58
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "e3d836b95e5f",
+  "message": "fix(test): retired-dir test hermetic for CI (no workspace models/ there)",
+  "files": [
+   {
+    "path": "tests/test_html_report.py",
+    "ins": 9,
+    "del": 4
+   }
+  ],
+  "total_lines": 13
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "7e1a14875dc2",
+  "message": "fix(receipts): server_build includes the binary commit (0.4.0-dev+b31b71f)",
+  "files": [
+   {
+    "path": "run.py",
+    "ins": 6,
+    "del": 1
+   },
+   {
+    "path": "tests/test_run_cli.py",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 11
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "3fa95cce3801",
+  "message": "fix(config): allow --reasoning-format and --no-jinja in profiles",
+  "files": [
+   {
+    "path": "config.py",
+    "ins": 3,
+    "del": 0
+   }
+  ],
+  "total_lines": 3
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "d6648f8f0ca2",
+  "message": "fix(test): TestGradersMultiRun skips on hosts without namespace isolation",
+  "files": [
+   {
+    "path": "tests/test_graders.py",
+    "ins": 1,
+    "del": 0
+   }
+  ],
+  "total_lines": 1
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "4da89619c74e",
+  "message": "fix(test): guard TestRunAgentScripted with the sandbox skip (last CI offender)",
+  "files": [
+   {
+    "path": "tests/test_agent.py",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "tests/test_graders.py",
+    "ins": 2,
+    "del": 0
+   }
+  ],
+  "total_lines": 3
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "80a36400ad8f",
+  "message": "fix(test): code-execution tests skip on hosts without namespace isolation",
+  "files": [
+   {
+    "path": "tests/test_agent.py",
+    "ins": 4,
+    "del": 1
+   },
+   {
+    "path": "tests/test_executors.py",
+    "ins": 4,
+    "del": 0
+   },
+   {
+    "path": "tests/test_graders.py",
+    "ins": 4,
+    "del": 1
+   }
+  ],
+  "total_lines": 14
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "2ea72883cd16",
+  "message": "fix(publish): ship the last-executed compare pair, not a regenerated default",
+  "files": [
+   {
+    "path": "harness/tools/publish-report.sh",
+    "ins": 13,
+    "del": 4
+   }
+  ],
+  "total_lines": 17
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "dc628887ff5f",
+  "message": "fix(test): smoke e2e skips when Strata holds the GPUs (8080)",
+  "files": [
+   {
+    "path": "tests/test_smoke.py",
+    "ins": 14,
+    "del": 4
+   }
+  ],
+  "total_lines": 18
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "0371775acaef",
+  "message": "fix(mypy): annotate optimal_by_slug dicts — caught by the new mypy CI job",
+  "files": [
+   {
+    "path": "report.py",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 4
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "197c8d2f394e",
+  "message": "fix(run): read llama-server version from stderr (was unknown)",
+  "files": [
+   {
+    "path": "run.py",
+    "ins": 2,
+    "del": 1
+   },
+   {
+    "path": "tests/test_run_cli.py",
+    "ins": 31,
+    "del": 0
+   }
+  ],
+  "total_lines": 34
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "3d169f3e8a7a",
+  "message": "fix(html_report): drop bars, text-only rows (bars crushed names in grid)",
+  "files": [
+   {
+    "path": "html_report.py",
+    "ins": 13,
+    "del": 24
+   },
+   {
+    "path": "tests/test_html_report.py",
+    "ins": 8,
+    "del": 0
+   }
+  ],
+  "total_lines": 45
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "ecd185fc5dc2",
+  "message": "fix(html_report): think badge before name + full-name tooltip (ellipsis cut it)",
+  "files": [
+   {
+    "path": "harness/progress/current.md",
+    "ins": 5,
+    "del": 2
+   },
+   {
+    "path": "html_report.py",
+    "ins": 7,
+    "del": 5
+   },
+   {
+    "path": "tests/test_html_report.py",
+    "ins": 4,
+    "del": 1
+   }
+  ],
+  "total_lines": 24
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "d486a5da2cb8",
+  "message": "fix(html_report): readable heat text (solid bg) + think badge on every model row",
+  "files": [
+   {
+    "path": "html_report.py",
+    "ins": 21,
+    "del": 6
+   },
+   {
+    "path": "tests/test_html_report.py",
+    "ins": 17,
+    "del": 0
+   }
+  ],
+  "total_lines": 44
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "5a6903ba5c98",
+  "message": "fix(agent): locate solution/test files case-insensitively",
+  "files": [
+   {
+    "path": "AGENTS.md",
+    "ins": 6,
+    "del": 1
+   },
+   {
+    "path": "agent.py",
+    "ins": 19,
+    "del": 3
+   },
+   {
+    "path": "tests/test_agent.py",
+    "ins": 33,
+    "del": 0
+   }
+  ],
+  "total_lines": 62
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "ef48e76f5522",
+  "message": "fix(tools): an EXPECTED without 'arguments' checks the tool name only",
+  "files": [
+   {
+    "path": "graders.py",
+    "ins": 7,
+    "del": 1
+   },
+   {
+    "path": "tests/test_graders.py",
+    "ins": 19,
+    "del": 0
+   }
+  ],
+  "total_lines": 27
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "a75e589fb965",
+  "message": "fix(report): scoreboard columns adapt to the longest model slug",
+  "files": [
+   {
+    "path": "report.py",
+    "ins": 13,
+    "del": 11
+   }
+  ],
+  "total_lines": 24
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "9ab665c6fdaa",
+  "message": "fix(code): exclude truncation/format failures from the code score",
+  "files": [
+   {
+    "path": "graders.py",
+    "ins": 20,
+    "del": 11
+   },
+   {
+    "path": "run.py",
+    "ins": 5,
+    "del": 1
+   },
+   {
+    "path": "tests/test_graders.py",
+    "ins": 31,
+    "del": 0
+   }
+  ],
+  "total_lines": 68
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "88b44ca5355e",
+  "message": "fix(code): send a format system prompt so models export and avoid prose",
+  "files": [
+   {
+    "path": "graders.py",
+    "ins": 18,
+    "del": 1
+   },
+   {
+    "path": "tests/test_graders.py",
+    "ins": 13,
+    "del": 0
+   }
+  ],
+  "total_lines": 32
+ },
+ {
+  "repo": "ggufbench",
+  "hash": "4c57529da93f",
+  "message": "fix(report): dedup pool by slug on load, one row per model",
+  "files": [
+   {
+    "path": "report.py",
+    "ins": 8,
+    "del": 4
+   },
+   {
+    "path": "tests/test_report.py",
+    "ins": 13,
+    "del": 1
+   }
+  ],
+  "total_lines": 26
+ },
+ {
+  "repo": "jordimp",
+  "hash": "e65195899aef",
+  "message": "fix(ci): reintents a la instal·lació de Chromium (DNS del runner)",
+  "files": [
+   {
+    "path": ".github/workflows/qa.yml",
+    "ins": 26,
+    "del": 1
+   }
+  ],
+  "total_lines": 27
+ },
+ {
+  "repo": "jordimp",
+  "hash": "8f4c19bd3a1b",
+  "message": "fix(sonar): regex lineals a specs (S8786 x6 sense atomic groups) + trim a contrast",
+  "files": [
+   {
+    "path": "src/lib/llms.spec.ts",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "src/styles/contrast.spec.ts",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 8
+ },
+ {
+  "repo": "jordimp",
+  "hash": "9e9fe5ab05f7",
+  "message": "fix(sonar): citation — col lapse de punts orfes sense regex (S8786)",
+  "files": [
+   {
+    "path": "ask-api/src/ask_api/citation.py",
+    "ins": 9,
+    "del": 2
+   }
+  ],
+  "total_lines": 11
+ },
+ {
+  "repo": "jordimp",
+  "hash": "b5f04eac3a76",
+  "message": "fix(content): catalan — trona → truca el timbre (bell CTA, stand copy, post CTA)",
+  "files": [
+   {
+    "path": "src/data/content.ts",
+    "ins": 4,
+    "del": 4
+   },
+   {
+    "path": "tests/fixtures/parity.json",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 12
+ },
+ {
+  "repo": "jordimp",
+  "hash": "1230fd8f4940",
+  "message": "fix(blog): external links in the porter post open in a new tab (target=_blank + noopener noreferrer, site convention)",
+  "files": [
+   {
+    "path": "src/data/content.ts",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 6
+ },
+ {
+  "repo": "jordimp",
+  "hash": "d64256b3bf9b",
+  "message": "fix(blog): link the HF model and the finetune pipeline from the porter post (F23 follow-up 6b)",
+  "files": [
+   {
+    "path": "src/data/content.ts",
+    "ins": 3,
+    "del": 3
+   },
+   {
+    "path": "tests/fixtures/parity.json",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 12
+ },
+ {
+  "repo": "jordimp",
+  "hash": "890a3d658622",
+  "message": "fix(ask-api): green the CI gate — lint the finetune scripts (import order, UTC, long lines)",
+  "files": [
+   {
+    "path": "ask-api/finetune/finetune_gen_dataset.py",
+    "ins": 7,
+    "del": 4
+   },
+   {
+    "path": "ask-api/finetune/train_lora.py",
+    "ins": 11,
+    "del": 2
+   }
+  ],
+  "total_lines": 24
+ },
+ {
+  "repo": "jordimp",
+  "hash": "e50a176cd549",
+  "message": "fix(ask-api): green the CI gate — drop unused import and stale noqa in gen_bench",
+  "files": [
+   {
+    "path": "ask-api/scripts/gen_bench.py",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 6
+ },
+ {
+  "repo": "jordimp",
+  "hash": "cdca3bc33dcb",
+  "message": "fix(content): skills mention on every harness card surface (F17 follow-up)",
+  "files": [
+   {
+    "path": "src/data/content.ts",
+    "ins": 6,
+    "del": 6
+   },
+   {
+    "path": "tests/fixtures/parity.json",
+    "ins": 15,
+    "del": 15
+   }
+  ],
+  "total_lines": 42
+ },
+ {
+  "repo": "jordimp",
+  "hash": "3b8d3e0cc837",
+  "message": "fix(content): drop literal backticks from the skills highlight (F17 follow-up)",
+  "files": [
+   {
+    "path": "src/data/content.ts",
+    "ins": 3,
+    "del": 3
+   },
+   {
+    "path": "tests/fixtures/parity.json",
+    "ins": 6,
+    "del": 6
+   }
+  ],
+  "total_lines": 18
+ },
+ {
+  "repo": "jordimp",
+  "hash": "ea175891d225",
+  "message": "fix(seo): fuller home EN og:description — specs before code, est. 2017",
+  "files": [
+   {
+    "path": "src/data/content.spec.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "src/data/content.ts",
+    "ins": 1,
+    "del": 1
+   },
+   {
+    "path": "tests/fixtures/parity.json",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 8
+ },
+ {
+  "repo": "jordimp",
+  "hash": "837da49535a3",
+  "message": "fix(projects): style tier groups and pin the filter behavior",
+  "files": [
+   {
+    "path": "src/styles/site.css",
+    "ins": 15,
+    "del": 0
+   },
+   {
+    "path": "tests/projects.spec.ts",
+    "ins": 18,
+    "del": 3
+   }
+  ],
+  "total_lines": 36
+ },
+ {
+  "repo": "jordimp",
+  "hash": "f8fd3fa2a4c0",
+  "message": "fix(content): correct Spanish como and pin how-steps verbatim",
+  "files": [
+   {
+    "path": "src/data/content.spec.ts",
+    "ins": 23,
+    "del": 7
+   },
+   {
+    "path": "src/data/content.ts",
+    "ins": 2,
+    "del": 2
+   },
+   {
+    "path": "tests/fixtures/parity.json",
+    "ins": 2,
+    "del": 2
+   }
+  ],
+  "total_lines": 38
+ },
+ {
+  "repo": "jordimp",
+  "hash": "b6705bd6dd33",
+  "message": "fix(quality): make the pure module Node-loadable for the collector adapter",
+  "files": [
+   {
+    "path": "src/lib/quality.ts",
+    "ins": 14,
+    "del": 2
+   }
+  ],
+  "total_lines": 16
+ },
+ {
+  "repo": "jordimp",
+  "hash": "db77ddd65dec",
+  "message": "fix(content): footer and colophon copy reflects Astro build (human feedback #2)",
+  "files": [
+   {
+    "path": "src/data/content.ts",
+    "ins": 6,
+    "del": 6
+   },
+   {
+    "path": "tests/fixtures/parity.json",
+    "ins": 3,
+    "del": 3
+   }
+  ],
+  "total_lines": 18
+ },
+ {
+  "repo": "jordimp",
+  "hash": "f0cbfc2a9500",
+  "message": "fix(harness): scope traceability tables per feature (R-ids restart at R1 per feature)",
+  "files": [
+   {
+    "path": "harness/tools/check-traceability.py",
+    "ins": 10,
+    "del": 4
+   }
+  ],
+  "total_lines": 14
+ },
+ {
+  "repo": "mussol",
+  "hash": "555005cf1891",
+  "message": "fix(web): the move rejection reason was squeezed into an unreadable sliver",
+  "files": [
+   {
+    "path": "tests/test_web.py",
+    "ins": 8,
+    "del": 0
+   },
+   {
+    "path": "web/app.js",
+    "ins": 1,
+    "del": 0
+   },
+   {
+    "path": "web/styles.css",
+    "ins": 4,
+    "del": 0
+   }
+  ],
+  "total_lines": 13
+ },
+ {
+  "repo": "quantdelta",
+  "hash": "95a11fa7bdc7",
+  "message": "fix(review): Strata hardening — prompt escape coverage, interpretation boundaries",
+  "files": [
+   {
+    "path": "tests/unit/runner/test_report_html.py",
+    "ins": 12,
+    "del": 1
+   }
+  ],
+  "total_lines": 13
+ },
+ {
+  "repo": "quantdelta",
+  "hash": "541839ce7834",
+  "message": "fix(review): Strata blind-review fixes — tick alignment, R13 coverage, KL grid",
+  "files": [
+   {
+    "path": "src/quantdelta/runner/report_html.py",
+    "ins": 10,
+    "del": 8
+   },
+   {
+    "path": "tests/unit/runner/test_report_html.py",
+    "ins": 12,
+    "del": 3
+   }
+  ],
+  "total_lines": 33
+ },
+ {
+  "repo": "quantdelta",
+  "hash": "cf6dc6aa73d6",
+  "message": "fix(llamacpp): tolerate empty-string token pieces in logprobs",
+  "files": [
+   {
+    "path": "src/quantdelta/backends/llamacpp/backend.py",
+    "ins": 17,
+    "del": 6
+   },
+   {
+    "path": "tests/unit/backends/llamacpp/test_logprobs.py",
+    "ins": 52,
+    "del": 2
+   }
+  ],
+  "total_lines": 77
+ },
+ {
+  "repo": "seekandemploy",
+  "hash": "22e4d0fb8068",
+  "message": "fix(sonar): exporta SONAR_HOST_URL/SONAR_TOKEN al scanner natiu (sino anava a SonarCloud i demanava organization)",
+  "files": [
+   {
+    "path": "harness/tools/sonar-review.sh",
+    "ins": 4,
+    "del": 1
+   }
+  ],
+  "total_lines": 5
+ },
+ {
+  "repo": "seekandemploy",
+  "hash": "5b7147e49e4a",
+  "message": "fix(compose): use host networking so the app reaches the local LLM on 127.0.0.1",
+  "files": [
+   {
+    "path": "compose.yaml",
+    "ins": 1,
+    "del": 2
+   }
+  ],
+  "total_lines": 3
+ }
+]

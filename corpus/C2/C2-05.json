@@ -1,0 +1,18 @@
+{
+ "id": "C2-05",
+ "repo": "jordimp",
+ "hash": "1230fd8f4940f554234ab837a8e74413b23e9551",
+ "message": "fix(blog): external links in the porter post open in a new tab (target=_blank + noopener noreferrer, site convention)",
+ "paths": [
+  "src/data/content.ts"
+ ],
+ "patterns": [
+  "noopener",
+  "noreferrer",
+  "tabnabbing",
+  "target\\s*=\\s*[\"']?_blank"
+ ],
+ "excerpt_ranges": "1484-1509",
+ "pre_bytes": 185381,
+ "prompt_bytes": 2434
+}

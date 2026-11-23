@@ -1,0 +1,18 @@
+{
+ "id": "C2-08",
+ "repo": "dev-lab",
+ "hash": "8d2f16c32bb0c0cef832d6aabf8e5e570ed5db65",
+ "message": "fix(quality): el template de index.html genera el drop com a <button> amb input fora (S6819)",
+ "paths": [
+  "build.py"
+ ],
+ "patterns": [
+  "nested.{0,50}(interactive|button|control|element)",
+  "input.{0,60}(inside|within|nested).{0,40}(button|role|drop)",
+  "button.{0,60}(contain|inside|wrap).{0,40}input",
+  "(role|div).{0,60}button.{0,80}input"
+ ],
+ "excerpt_ranges": "433-466",
+ "pre_bytes": 23071,
+ "prompt_bytes": 2244
+}

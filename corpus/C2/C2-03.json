@@ -1,0 +1,19 @@
+{
+ "id": "C2-03",
+ "repo": "ggufbench",
+ "hash": "ef48e76f5522c3b329a9b8b15126170906a318dd",
+ "message": "fix(tools): an EXPECTED without 'arguments' checks the tool name only",
+ "paths": [
+  "graders.py"
+ ],
+ "patterns": [
+  "absent.{0,60}(skip|ignore|optional|only name|not check)",
+  "\"?arguments\"? .{0,40}(absent|missing|not (set|given|specif)).{0,60}(only|just|tool name|ignore|skip)",
+  "only.{0,40}(tool name|the name|name is)",
+  "name-only",
+  "arguments.{0,60}(optional|not required)"
+ ],
+ "excerpt_ranges": "63-104",
+ "pre_bytes": 9283,
+ "prompt_bytes": 2595
+}

@@ -1,0 +1,19 @@
+{
+ "id": "C2-07",
+ "repo": "quantdelta",
+ "hash": "cf6dc6aa73d63b3092ad928e52338fcb80979a58",
+ "message": "fix(llamacpp): tolerate empty-string token pieces in logprobs",
+ "paths": [
+  "src/quantdelta/backends/llamacpp/backend.py"
+ ],
+ "patterns": [
+  "empty.{0,40}(token|piece|string).{0,80}(skip|continue|legal|legitimate|valid|raise|reject|fail)",
+  "(raise|fail|reject).{0,60}empty",
+  "skip.{0,40}(empty|blank)",
+  "(continue|skip).{0,40}instead of (rais|fail)",
+  "whitespace.{0,60}(empty|empty string|\"\")"
+ ],
+ "excerpt_ranges": "122-151",
+ "pre_bytes": 17862,
+ "prompt_bytes": 1882
+}

@@ -1,0 +1,18 @@
+{
+ "id": "C2-09",
+ "repo": "seekandemploy",
+ "hash": "22e4d0fb806801fa00b5b2e4cd479cb2d3c1dbdf",
+ "message": "fix(sonar): exporta SONAR_HOST_URL/SONAR_TOKEN al scanner natiu (sino anava a SonarCloud i demanava sonar.organization)",
+ "paths": [
+  "harness/tools/sonar-review.sh"
+ ],
+ "patterns": [
+  "(not|missing|without|no) .{0,30}export",
+  "(export|inherit).{0,60}(environment|env|variable|credential)",
+  "child.{0,40}(process|scanner).{0,60}(not|won'?t|doesn'?t).{0,30}(see|inherit|get)",
+  "SONAR_HOST_URL.{0,120}(export|inherit|not set|unset)"
+ ],
+ "excerpt_ranges": "205-238",
+ "pre_bytes": 14273,
+ "prompt_bytes": 1866
+}

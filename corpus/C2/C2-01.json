@@ -1,0 +1,18 @@
+{
+ "id": "C2-01",
+ "repo": "ggufbench",
+ "hash": "197c8d2f394e07b2e116262b3bc3fbefd1462dac",
+ "message": "fix(run): read llama-server version from stderr (was unknown)",
+ "paths": [
+  "run.py"
+ ],
+ "patterns": [
+  "stdout\\s*\\+\\s*stderr",
+  "out\\.stderr",
+  "stderr.{0,80}(version|--version|build)",
+  "(version|--version).{0,80}stderr"
+ ],
+ "excerpt_ranges": "184-213",
+ "pre_bytes": 13761,
+ "prompt_bytes": 1878
+}

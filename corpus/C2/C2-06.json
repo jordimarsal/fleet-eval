@@ -1,0 +1,19 @@
+{
+ "id": "C2-06",
+ "repo": "jordimp",
+ "hash": "f0cbfc2a95007d9f347ceb8890f7d7e04386cd09",
+ "message": "fix(harness): scope traceability tables per feature (R-ids restart at R1 per feature)",
+ "paths": [
+  "harness/tools/check-traceability.py"
+ ],
+ "patterns": [
+  "(cross|other|all|every|another).{0,30}(feature|impl_)",
+  "(glob|merge|collect).{0,60}(all|every|across|cross).{0,40}(feature|file|table|impl)",
+  "per[- ]feature",
+  "R1.{0,80}(restart|colli|merge|clash|overwrite|clobber)",
+  "feature.{0,60}(scop|filter|glob|select)"
+ ],
+ "excerpt_ranges": "0-96",
+ "pre_bytes": 6590,
+ "prompt_bytes": 4270
+}
