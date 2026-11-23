@@ -1,0 +1,28 @@
+{
+  "task_id": "P19_seekandemploy_apply-list-stale",
+  "repo": "seekandemploy",
+  "executor": "qwen38",
+  "planner_slug": "qwen4b",
+  "mode": "incremental",
+  "n_steps": 5,
+  "per_step_budget": 9600,
+  "steps": [
+    "T1: Implement --stale DAYS flag parsing and validation",
+    "T2: Compute stale applications based on last event timestamp",
+    "T3: Generate output with live/stale counts and application list",
+    "T4: Enforce exclusion of rejected/withdrawn applications",
+    "T5: Add compatibility check between --stale and --all flags"
+  ],
+  "verds_final": 0,
+  "baseline_total": 30,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 2,
+  "monotone": true
+}

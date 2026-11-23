@@ -1,0 +1,36 @@
+{
+  "task_id": "P17_quantdelta_llamacpp_backend_hardening",
+  "repo": "quantdelta",
+  "executor": "qwen38",
+  "planner_slug": "calibra_qwen38",
+  "mode": "incremental",
+  "n_steps": 9,
+  "per_step_budget": 5333,
+  "steps": [
+    "T1: Widen the `/metrics` parser (R1–R4). Add `_VALUE`, `_LABELS`, `_LINE` as in",
+    "T2: Byte-only gauge recognition (R5). Replace the `\"memory\"` substring rule with",
+    "T3: Hash-only manifest cache (R6, ADR-005). Cache `_artifact_sha256` under the lock;",
+    "T4: Concurrency lock (R7, ADR-006). Add `threading.Lock`; guard the four counters,",
+    "T5: `base_url` validation (R8). Parse with `urlsplit`; case-insensitive http/https",
+    "T6: Truncation semantics (R9). No adapter behaviour change; add tests pinning",
+    "T7: R29 amended scope (R10). Document the amended scope in the feature 3 design",
+    "T8: Stub backlog + concurrency test (R11). Use a `ThreadingHTTPServer` subclass with",
+    "T9: Traceability + gates. Add `feature: llamacpp_backend_hardening` and the R1–R11"
+  ],
+  "verds_final": 0,
+  "baseline_total": 130,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 0,
+  "monotone": true
+}

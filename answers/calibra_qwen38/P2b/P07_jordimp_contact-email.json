@@ -1,0 +1,30 @@
+{
+  "task_id": "P07_jordimp_contact-email",
+  "repo": "jordimp",
+  "executor": "qwen38",
+  "planner_slug": "calibra_qwen38",
+  "mode": "incremental",
+  "n_steps": 6,
+  "per_step_budget": 8000,
+  "steps": [
+    "T0: Mailbox gate — provision and verify `hello@jordimp.net`",
+    "T1: Single source of truth + unit tests + snapshot",
+    "T2: E2E — footer and front-desk surfaces in all three locales",
+    "T3: Negative assertion — no `gmail.com` in sources or built HTML",
+    "T4: Regenerate the parity fixture and diff-review it",
+    "T5: Full gate and closure"
+  ],
+  "verds_final": 0,
+  "baseline_total": 122,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 5,
+  "monotone": true
+}

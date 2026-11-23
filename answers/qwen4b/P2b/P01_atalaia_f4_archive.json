@@ -1,0 +1,30 @@
+{
+  "task_id": "P01_atalaia_f4_archive",
+  "repo": "atalaia",
+  "executor": "qwen38",
+  "planner_slug": "qwen4b",
+  "mode": "incremental",
+  "n_steps": 6,
+  "per_step_budget": 8000,
+  "steps": [
+    "T1: Implement archive/unarchive API endpoints with id validation and state persistence",
+    "T2: Update project model to include archived status and modify detail payload",
+    "T3: Modify UI to show tabs for active and archived projects with proper filtering",
+    "T4: Ensure UI reflects state changes immediately after refresh",
+    "T5: Validate state file handling on startup and during server restarts",
+    "T6: Verify no modifications are made to scanned project trees when storing archive state"
+  ],
+  "verds_final": 0,
+  "baseline_total": 20,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 2,
+  "monotone": true
+}

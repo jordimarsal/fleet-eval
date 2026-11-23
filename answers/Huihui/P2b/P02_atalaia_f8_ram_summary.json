@@ -1,0 +1,26 @@
+{
+  "task_id": "P02_atalaia_f8_ram_summary",
+  "repo": "atalaia",
+  "executor": "qwen38",
+  "planner_slug": "Huihui",
+  "mode": "incremental",
+  "n_steps": 4,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: Implement /api/system endpoint with direct file read",
+    "T2: Update UI to display RAM summary and handle null values",
+    "T3: Write unit tests for API and UI logic",
+    "T4: Document implementation and traceability"
+  ],
+  "verds_final": 0,
+  "baseline_total": 42,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 2,
+  "monotone": true
+}

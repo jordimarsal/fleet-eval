@@ -1,0 +1,26 @@
+{
+  "task_id": "P19_seekandemploy_apply-list-stale",
+  "repo": "seekandemploy",
+  "executor": "qwen38",
+  "planner_slug": "Huihui",
+  "mode": "incremental",
+  "n_steps": 4,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: Implement --stale flag and validation logic in CLI",
+    "T2: Implement stale application query and sorting logic",
+    "T3: Implement output formatting with counts and days",
+    "T4: Add unit tests for stale listing behavior"
+  ],
+  "verds_final": 0,
+  "baseline_total": 30,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 0,
+  "monotone": true
+}

@@ -1,0 +1,24 @@
+{
+  "task_id": "P06_jordimp_cmd-code-copy",
+  "repo": "jordimp",
+  "executor": "qwen38",
+  "planner_slug": "calibra_qwen38",
+  "mode": "incremental",
+  "n_steps": 3,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: Create `src/lib/cmd-code.ts` with `splitCmdLine(text)` per design §Files (first occurrence of `npx skills add jordimarsal/harness`, three untouched segments, `null` on no-match) — but land the colocated red spec `src/lib/cmd-code.spec.ts` FIRST (match case, no-match, command at line start, command at line end); `npx vitest run src/lib/cmd-code.spec.ts` must fail before the implementation exists and pass after",
+    "T2: Create `src/components/site/CmdLine.astro` per design (escaped text segments + `<code class=\"cmd-copy\" data-copy>` + hover/focus copy control, no `set:html`); render it in the project build log (`src/pages/[lang]/projects/[slug].astro`) and in the department floor highlights (`src/components/site/DeptCard.astro`); add the scoped `.cmd-copy` styles to `src/styles/site.css`; after `npm run build`, assert `dist/{en,es,ca}/projects/harness-standard/` and `dist/{en,es,ca}/departments/tooling/` contain `<code class=\"cmd-copy\"` with `data-copy=\"npx skills add jordimarsal/harness\"`, and other pages do not",
+    "T3: Full battery — `harness/init.sh`, `npx vitest run` (F17 content assertions untouched and green), `npm run check`, `npm run build`, `npm run distill:parity` (fixture diff covers only the command markup on affected pages), llms snapshot byte-identical; confirm `git diff` is limited to the new util/spec/component, the two surfaces, `site.css` and fixtures"
+  ],
+  "verds_final": 0,
+  "baseline_total": 6,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0
+  ],
+  "files_applied": 2,
+  "monotone": true
+}

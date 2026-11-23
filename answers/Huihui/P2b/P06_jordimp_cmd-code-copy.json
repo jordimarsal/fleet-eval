@@ -1,0 +1,30 @@
+{
+  "task_id": "P06_jordimp_cmd-code-copy",
+  "repo": "jordimp",
+  "executor": "qwen38",
+  "planner_slug": "Huihui",
+  "mode": "incremental",
+  "n_steps": 6,
+  "per_step_budget": 8000,
+  "steps": [
+    "T1: Implement pure segmentation helper and unit tests",
+    "T2: Create CmdCode component with copy affordance",
+    "T3: Update rendering surfaces to use CmdCode",
+    "T4: Add CSS styles for command code element",
+    "T5: Verify content source integrity and snapshots",
+    "T6: Update parity fixture if necessary"
+  ],
+  "verds_final": 0,
+  "baseline_total": 6,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 2,
+  "monotone": true
+}

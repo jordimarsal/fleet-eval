@@ -1,0 +1,26 @@
+{
+  "task_id": "P06_jordimp_cmd-code-copy",
+  "repo": "jordimp",
+  "executor": "qwen38",
+  "planner_slug": "qwen4b",
+  "mode": "incremental",
+  "n_steps": 4,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: Implement command extraction and segmentation helper",
+    "T2: Add copy affordance to code element with keyboard/hover support",
+    "T3: Verify rendering parity and content integrity across locales",
+    "T4: Update tests for new cmd-code logic and copy behavior"
+  ],
+  "verds_final": 0,
+  "baseline_total": 6,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 3,
+  "monotone": true
+}

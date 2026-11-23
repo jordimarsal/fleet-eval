@@ -1,0 +1,24 @@
+{
+  "task_id": "P19_seekandemploy_apply-list-stale",
+  "repo": "seekandemploy",
+  "executor": "qwen38",
+  "planner_slug": "calibra_qwen38",
+  "mode": "incremental",
+  "n_steps": 3,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: `stale_open_applications(applications, *, days, today)` a",
+    "T2: Flag `--stale DAYS` a `apply list` (`cli.py`): files amb `(Xd)`,",
+    "T3: Gate complet + execució en viu sobre la BD real perquè l'humà vegi"
+  ],
+  "verds_final": 0,
+  "baseline_total": 30,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0
+  ],
+  "files_applied": 0,
+  "monotone": true
+}

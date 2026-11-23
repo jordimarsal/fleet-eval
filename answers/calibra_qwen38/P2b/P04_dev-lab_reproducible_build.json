@@ -1,0 +1,28 @@
+{
+  "task_id": "P04_dev-lab_reproducible_build",
+  "repo": "dev-lab",
+  "executor": "qwen38",
+  "planner_slug": "calibra_qwen38",
+  "mode": "incremental",
+  "n_steps": 5,
+  "per_step_budget": 9600,
+  "steps": [
+    "T1: Crear `vendor/` (marked.min.js, highlight.min.js, fonts/fonts-local.css, fonts/*.woff2 — còpies byte-idèntiques dels outputs commitats) i apuntar `build.py` als nous paths amb `require_vendor()` (sortida neta si falta)",
+    "T2: Refactoritzar validacions: `unassigned_notes(notes)` + `validate_questions()` executades a build i `--check`, amb `sys.exit` dur (R3, R4); el `--check` queda com a validació completa sense escriptura (R6)",
+    "T3: Treure `datetime.date.today()` del footer de l'índex (text estàtic)",
+    "T4: Crear `tests/build.test.js`: vendors presents + sandbox end-to-end (fixture sense vendor → R2; nota sense grup → R3; pregunta invàlida → R4; doble build amb sha256 idèntic → R5; --check valida sense escriure → R6)",
+    "T5: Rebuild complet al repo (ara possible): verificar `git diff` de `p/*.html` buit (cross-check del mirror anterior), `index.html` només canvia el footer, assets regenerats idèntics; portes verdes + logs `harness/logs/reproducible_build/batch-{1,2}.log`"
+  ],
+  "verds_final": 2,
+  "baseline_total": 7,
+  "score": 0.2857,
+  "progress": [
+    3,
+    1,
+    2,
+    2,
+    2
+  ],
+  "files_applied": 18,
+  "monotone": false
+}

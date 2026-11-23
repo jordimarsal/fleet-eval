@@ -1,0 +1,26 @@
+{
+  "task_id": "P02_atalaia_f8_ram_summary",
+  "repo": "atalaia",
+  "executor": "qwen38",
+  "planner_slug": "qwen4b",
+  "mode": "incremental",
+  "n_steps": 4,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: Implement direct reading of /proc/meminfo to extract free_ram_mb",
+    "T2: Update API endpoint to serve free_ram_mb from /proc/meminfo directly",
+    "T3: Modify UI summary rendering to aggregate up entries and include free RAM",
+    "T4: Ensure missing or malformed /proc/meminfo returns null without error"
+  ],
+  "verds_final": 0,
+  "baseline_total": 42,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 2,
+  "monotone": true
+}

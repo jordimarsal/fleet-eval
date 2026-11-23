@@ -1,0 +1,24 @@
+{
+  "task_id": "P02_atalaia_f8_ram_summary",
+  "repo": "atalaia",
+  "executor": "qwen38",
+  "planner_slug": "calibra_qwen38",
+  "mode": "incremental",
+  "n_steps": 3,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: free_ram_mb (parse MemAvailable tolerant) + tests",
+    "T2: GET /api/system + tests",
+    "T3: UI top bar (Σ serveis + lliure) refrescat per poll + tests estàtics"
+  ],
+  "verds_final": 0,
+  "baseline_total": 42,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0
+  ],
+  "files_applied": 6,
+  "monotone": true
+}

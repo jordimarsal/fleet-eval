@@ -1,0 +1,32 @@
+{
+  "task_id": "P17_quantdelta_llamacpp_backend_hardening",
+  "repo": "quantdelta",
+  "executor": "qwen38",
+  "planner_slug": "Huihui",
+  "mode": "incremental",
+  "n_steps": 7,
+  "per_step_budget": 6857,
+  "steps": [
+    "T1: Harden Prometheus parser for numeric and label edge cases",
+    "T2: Refactor memory recognition to strict `_bytes` suffix",
+    "T3: Implement `base_url` validation in `LlamaCppConfig`",
+    "T4: Update `run()` logic for truncation handling",
+    "T5: Implement manifest caching with dynamic fingerprint resolution",
+    "T6: Add thread-safety locks to `LlamaCppBackend`",
+    "T7: Document adapter scope and update tests for concurrency"
+  ],
+  "verds_final": 0,
+  "baseline_total": 130,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 0,
+  "monotone": true
+}

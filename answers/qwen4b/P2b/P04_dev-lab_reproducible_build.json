@@ -1,0 +1,28 @@
+{
+  "task_id": "P04_dev-lab_reproducible_build",
+  "repo": "dev-lab",
+  "executor": "qwen38",
+  "planner_slug": "qwen4b",
+  "mode": "incremental",
+  "n_steps": 5,
+  "per_step_budget": 9600,
+  "steps": [
+    "T1: Move vendor files to assets and update build.py paths",
+    "T2: Implement missing file validation with error reporting",
+    "T3: Add schema validation for extra questions",
+    "T4: Ensure no build date is embedded in output",
+    "T5: Implement full content validation via --check flag"
+  ],
+  "verds_final": 2,
+  "baseline_total": 7,
+  "score": 0.2857,
+  "progress": [
+    2,
+    1,
+    2,
+    2,
+    2
+  ],
+  "files_applied": 4,
+  "monotone": false
+}

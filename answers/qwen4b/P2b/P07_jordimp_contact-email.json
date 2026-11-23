@@ -1,0 +1,30 @@
+{
+  "task_id": "P07_jordimp_contact-email",
+  "repo": "jordimp",
+  "executor": "qwen38",
+  "planner_slug": "qwen4b",
+  "mode": "incremental",
+  "n_steps": 6,
+  "per_step_budget": 8000,
+  "steps": [
+    "T1: Update CONTACT_EMAIL in src/config.ts and ensure SITE.email references it",
+    "T2: Modify FooterDesk component to set href to mailto:hello@jordimp.net while preserving localized label",
+    "T3: Adjust front-desk department page to display hello@jordimp.net in contact-row and set copy button data-copy attribute",
+    "T4: Patch personJsonLd email property to use mailto:hello@jordimp.net",
+    "T5: Verify llms.txt and llms-full.txt endpoints emit correct contact text",
+    "T6: Validate that no occurrence of gmail.com or hello@jordimp.net exists in src/, tests/, or dist/ before build"
+  ],
+  "verds_final": 0,
+  "baseline_total": 122,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 4,
+  "monotone": true
+}

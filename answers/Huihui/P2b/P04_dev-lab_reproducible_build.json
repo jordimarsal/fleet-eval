@@ -1,0 +1,26 @@
+{
+  "task_id": "P04_dev-lab_reproducible_build",
+  "repo": "dev-lab",
+  "executor": "qwen38",
+  "planner_slug": "Huihui",
+  "mode": "incremental",
+  "n_steps": 4,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: Vendor assets migration and path update",
+    "T2: Implement hard validation logic for vendors, groups, and questions",
+    "T3: Implement reproducible build output and --check mode",
+    "T4: Add automated verification tests"
+  ],
+  "verds_final": 2,
+  "baseline_total": 7,
+  "score": 0.2857,
+  "progress": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "files_applied": 11,
+  "monotone": true
+}

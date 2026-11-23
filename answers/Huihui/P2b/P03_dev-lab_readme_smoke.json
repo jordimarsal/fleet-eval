@@ -1,0 +1,22 @@
+{
+  "task_id": "P03_dev-lab_readme_smoke",
+  "repo": "dev-lab",
+  "executor": "qwen38",
+  "planner_slug": "Huihui",
+  "mode": "incremental",
+  "n_steps": 2,
+  "per_step_budget": 12000,
+  "steps": [
+    "T1: Create Catalan README with required structure and commands",
+    "T2: Implement build smoke test integration into npm test"
+  ],
+  "verds_final": 1,
+  "baseline_total": 2,
+  "score": 0.5,
+  "progress": [
+    1,
+    1
+  ],
+  "files_applied": 1,
+  "monotone": true
+}

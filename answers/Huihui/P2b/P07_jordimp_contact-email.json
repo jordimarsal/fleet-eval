@@ -1,0 +1,36 @@
+{
+  "task_id": "P07_jordimp_contact-email",
+  "repo": "jordimp",
+  "executor": "qwen38",
+  "planner_slug": "Huihui",
+  "mode": "incremental",
+  "n_steps": 9,
+  "per_step_budget": 5333,
+  "steps": [
+    "T1: Define CONTACT_EMAIL and update config references",
+    "T2: Update content data to use canonical email",
+    "T3: Implement email pill hrefs in Footer and DeptPanel",
+    "T4: Update Front Desk department page contact row",
+    "T5: Update SEO JSON-LD Person block",
+    "T6: Update LLMs text generation endpoints",
+    "T7: Update unit tests for new email literal",
+    "T8: Update E2E tests for email visibility and links",
+    "T9: Record implementation evidence and provider details"
+  ],
+  "verds_final": 0,
+  "baseline_total": 122,
+  "score": 0.0,
+  "progress": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_applied": 4,
+  "monotone": true
+}
